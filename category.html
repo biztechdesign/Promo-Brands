@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Drinkware &mdash; Promo Brand</title>
+<meta name="description" content="Custom branded bottles, mugs, tumblers and flasks. MOQ from 25 units. Eco-friendly options available." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#363A36',
+          paper:  '#FFFFFF',
+          stone:  '#6B6B6B',
+          line:   '#E5E5E5',
+          accent: '#EC1C51',
+        },
+        fontFamily: {
+          sans:    ['"Open Sans"', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+          display: ['"Open Sans"', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        },
+        maxWidth: { '8xl': '88rem' },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .display { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: -0.025em; font-weight: 700; }
+  .arrow-link { display:inline-flex; align-items:center; gap:.5rem; }
+  .arrow-link svg { transition: transform .25s ease; }
+  .arrow-link:hover svg { transform: translateX(4px); }
+  .product-card .product-img { transition: transform .45s ease; }
+  .product-card:hover .product-img { transform: scale(1.06); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chevron { transform: rotate(180deg); }
+  .chevron { transition: transform 0.2s ease; }
+</style>
+</head>
+<body class="bg-paper text-ink font-sans">
+
+<!-- =================== UTILITY BAR =================== -->
+<div class="text-paper text-xs lg:text-sm" style="background-color:#EC1C51;">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-9 flex items-center justify-between">
+    <p class="hidden md:block">A brand: evolved. <a href="#" class="underline underline-offset-2 hover:no-underline">Find out more about the new look for Promo Brand &rarr;</a></p>
+    <p class="md:hidden">Free UK delivery on orders over &pound;500</p>
+    <div class="flex items-center gap-5">
+      <a href="tel:+442083189603" class="hidden sm:inline-flex items-center gap-1.5 hover:opacity-80">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        +44 (0) 208 318 9603
+      </a>
+      <span class="hidden lg:inline opacity-50">|</span>
+      <a href="mailto:hello@promo-brand.com" class="hidden lg:inline hover:opacity-80">hello@promo-brand.com</a>
+      <span class="opacity-50">|</span>
+      <details class="relative">
+        <summary class="hover:opacity-80 cursor-pointer">EN / GBP</summary>
+        <div class="absolute right-0 top-6 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
+          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Language</p>
+          <ul class="space-y-1 mb-3">
+            <li><a href="#" class="hover:text-accent">English</a></li>
+            <li><a href="#" class="hover:text-accent">Fran&ccedil;ais</a></li>
+            <li><a href="#" class="hover:text-accent">Deutsch</a></li>
+            <li><a href="#" class="hover:text-accent">Nederlands</a></li>
+          </ul>
+          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Currency</p>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:text-accent">GBP &pound;</a></li>
+            <li><a href="#" class="hover:text-accent">EUR &euro;</a></li>
+            <li><a href="#" class="hover:text-accent">USD $</a></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- =================== HEADER =================== -->
+<header class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-8">
+    <a href="index.html" class="flex items-center shrink-0">
+      <img src="images/logo.svg" alt="Promo Brand" class="h-9 lg:h-10 w-auto" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-base font-medium">
+      <a href="#" class="hover:text-accent">Bags</a>
+      <a href="#" class="text-accent font-bold">Drinkware</a>
+      <a href="#" class="hover:text-accent">Tech</a>
+      <a href="#" class="hover:text-accent">Clothing</a>
+      <a href="#" class="hover:text-accent">Pens</a>
+      <a href="#" class="hover:text-accent">Notebooks</a>
+      <a href="#" class="hover:text-accent">Office</a>
+      <a href="#" class="hover:text-accent">Outdoors</a>
+      <a href="#" class="hover:text-accent">Giveaways</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button aria-label="Search" class="w-9 h-9 flex items-center justify-center hover:text-accent">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="accounts.html" aria-label="Account" class="w-9 h-9 flex items-center justify-center hover:text-accent">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </a>
+      <a href="#" class="hidden sm:inline-flex items-center gap-2 bg-accent text-paper px-5 py-2.5 text-base font-bold hover:bg-black transition">
+        Get a Quote
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+      <button id="mobile-nav-toggle" class="lg:hidden w-9 h-9 flex items-center justify-center" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- =================== BREADCRUMB =================== -->
+<nav class="bg-paper border-b border-line" aria-label="Breadcrumb">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-3">
+    <ol class="flex items-center gap-1.5 text-sm">
+      <li><a href="index.html" class="text-stone hover:text-accent transition">Home</a></li>
+      <li class="text-stone/40" aria-hidden="true">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
+      </li>
+      <li><a href="brand.html" class="text-stone hover:text-accent transition">All Products</a></li>
+      <li class="text-stone/40" aria-hidden="true">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
+      </li>
+      <li class="text-ink font-medium" aria-current="page">Drinkware</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- =================== PAGE CONTENT =================== -->
+<div class="bg-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-10 lg:py-[70px]">
+    <h1 class="display text-2xl sm:text-3xl lg:text-4xl mb-8 lg:mb-10">Drinkware</h1>
+    <div class="flex gap-8 xl:gap-12 items-start">
+
+      <!-- ===== SIDEBAR: FILTERS (desktop) ===== -->
+      <aside class="w-56 xl:w-64 shrink-0 hidden lg:block">
+
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-base font-bold">Filters</h2>
+          <button class="text-base text-accent hover:text-ink transition font-medium">Clear all</button>
+        </div>
+
+        <!-- Category -->
+        <details open class="border-b border-line pb-5 mb-5">
+          <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+            Category
+            <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+          </summary>
+          <ul class="space-y-3 mt-4">
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" checked class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> All Drinkware
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Bottles
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Mugs
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Cups &amp; Tumblers
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Flasks
+            </label></li>
+          </ul>
+        </details>
+
+        <!-- Branding Method -->
+        <details open class="border-b border-line pb-5 mb-5">
+          <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+            Branding Method
+            <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+          </summary>
+          <ul class="space-y-3 mt-4">
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Printed
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Embossed
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Laser Engraved
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Embroidered
+            </label></li>
+          </ul>
+        </details>
+
+        <!-- Colour -->
+        <details open class="border-b border-line pb-5 mb-5">
+          <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+            Colour
+            <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+          </summary>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button class="w-6 h-6 ring-2 ring-offset-1 ring-ink" style="background:#363A36" title="Ink" aria-label="Ink"></button>
+            <button class="w-6 h-6 border border-line" style="background:#FFFFFF" title="White" aria-label="White"></button>
+            <button class="w-6 h-6" style="background:#EC1C51" title="Red" aria-label="Red"></button>
+            <button class="w-6 h-6" style="background:#1E3A5F" title="Navy" aria-label="Navy"></button>
+            <button class="w-6 h-6" style="background:#C0922A" title="Gold" aria-label="Gold"></button>
+            <button class="w-6 h-6" style="background:#2E7D32" title="Forest" aria-label="Forest"></button>
+            <button class="w-6 h-6" style="background:#546E7A" title="Slate" aria-label="Slate"></button>
+            <button class="w-6 h-6 border border-line" style="background:#F0F0F0" title="Light Grey" aria-label="Light Grey"></button>
+          </div>
+        </details>
+
+        <!-- Price Range -->
+        <details open class="border-b border-line pb-5 mb-5">
+          <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+            Price Range
+            <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+          </summary>
+          <ul class="space-y-3 mt-4">
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="radio" name="price-d" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Under &pound;5
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="radio" name="price-d" checked class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;5 &ndash; &pound;10
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="radio" name="price-d" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;10 &ndash; &pound;20
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="radio" name="price-d" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;20 &ndash; &pound;50
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="radio" name="price-d" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;50+
+            </label></li>
+          </ul>
+        </details>
+
+        <!-- Material -->
+        <details open class="pb-2">
+          <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+            Material
+            <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+          </summary>
+          <ul class="space-y-3 mt-4">
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Stainless Steel
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Aluminium
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Ceramic
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> BPA-Free Plastic
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Bamboo
+            </label></li>
+            <li><label class="flex items-center gap-2.5 text-base cursor-pointer hover:text-accent transition">
+              <input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Glass
+            </label></li>
+          </ul>
+        </details>
+
+      </aside>
+
+      <!-- ===== MAIN PRODUCT AREA ===== -->
+      <div class="flex-1 min-w-0">
+
+        <!-- TOOLBAR -->
+        <div class="flex flex-wrap items-center gap-3 mb-6 lg:mb-8 border-b border-line pb-5">
+
+          <!-- Mobile filter button -->
+          <button id="open-filters"
+                  class="lg:hidden inline-flex items-center gap-2 border border-line px-4 py-2.5 text-sm font-bold hover:border-ink transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25"/>
+            </svg>
+            Filters
+          </button>
+
+          <!-- Item count -->
+          <p class="text-sm text-stone mr-auto">
+            Showing <strong class="text-ink">1&ndash;12</strong> of <strong class="text-ink">36</strong> products
+          </p>
+
+          <!-- Sort by -->
+          <div class="relative">
+            <label for="sort-select" class="sr-only">Sort by</label>
+            <select id="sort-select"
+                    class="appearance-none border border-line pl-3 pr-8 py-2.5 text-sm bg-paper focus:outline-none focus:border-ink cursor-pointer">
+              <option>Most Popular</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest First</option>
+              <option>A&ndash;Z</option>
+            </select>
+            <span class="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-stone">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+            </span>
+          </div>
+
+          <!-- Per page -->
+          <div class="relative hidden sm:block">
+            <label for="perpage-select" class="sr-only">Per page</label>
+            <select id="perpage-select"
+                    class="appearance-none border border-line pl-3 pr-8 py-2.5 text-sm bg-paper focus:outline-none focus:border-ink cursor-pointer">
+              <option>12 per page</option>
+              <option>24 per page</option>
+              <option>36 per page</option>
+            </select>
+            <span class="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-stone">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+            </span>
+          </div>
+
+          <!-- View toggle -->
+          <div class="hidden sm:flex border border-line">
+            <button id="view-grid" class="w-9 h-9 flex items-center justify-center bg-ink text-paper"
+                    aria-label="Grid view" aria-pressed="true">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                <rect x="1" y="1" width="6" height="6" rx=".5"/>
+                <rect x="9" y="1" width="6" height="6" rx=".5"/>
+                <rect x="1" y="9" width="6" height="6" rx=".5"/>
+                <rect x="9" y="9" width="6" height="6" rx=".5"/>
+              </svg>
+            </button>
+            <button id="view-list"
+                    class="w-9 h-9 flex items-center justify-center text-stone border-l border-line hover:text-ink hover:bg-line/40 transition"
+                    aria-label="List view" aria-pressed="false">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+
+          <!-- Product 1 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image1.jpg" class="product-img w-full h-full object-cover" alt="Aurora Insulated Bottle 500ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-black text-paper text-[10px] uppercase tracking-widest px-2 py-1">Eco</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Aurora Insulated Bottle 500ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4.5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24"><defs><linearGradient id="hc1"><stop offset="50%" stop-color="#F59E0B"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#hc1)"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#1E3A5F"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;7.20 <span class="text-sm font-normal text-stone">/ MOQ 100</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image2.png" class="product-img w-full h-full object-cover" alt="Contour Travel Mug 350ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-accent text-paper text-[10px] uppercase tracking-widest px-2 py-1">New</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Contour Travel Mug 350ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="none" stroke="#D1D5DB" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#C0922A"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#546E7A"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;4.80 <span class="text-sm font-normal text-stone">/ MOQ 50</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image3.jpg" class="product-img w-full h-full object-cover" alt="Summit Vacuum Flask 1L" loading="lazy"/>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Summit Vacuum Flask 1L</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#2E7D32"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;12.50 <span class="text-sm font-normal text-stone">/ MOQ 25</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image4.jpg" class="product-img w-full h-full object-cover" alt="Grip Hydro Tumbler 400ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-ink text-paper text-[10px] uppercase tracking-widest px-2 py-1">Sale</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Grip Hydro Tumbler 400ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="none" stroke="#D1D5DB" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#000000"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#1E3A5F"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;3.50 <span class="text-sm font-normal text-stone">/ MOQ 100</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image5.jpg" class="product-img w-full h-full object-cover" alt="Copper-Lined Bottle 750ml" loading="lazy"/>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Copper-Lined Bottle 750ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4.5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24"><defs><linearGradient id="hc5"><stop offset="50%" stop-color="#F59E0B"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#hc5)"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#C0922A"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;9.90 <span class="text-sm font-normal text-stone">/ MOQ 50</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image6.jpg" class="product-img w-full h-full object-cover" alt="Barista Flat White Cup 300ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-black text-paper text-[10px] uppercase tracking-widest px-2 py-1">Eco</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Barista Flat White Cup 300ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#546E7A"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;5.40 <span class="text-sm font-normal text-stone">/ MOQ 75</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 7 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image7.jpg" class="product-img w-full h-full object-cover" alt="Slim Aluminium Bottle 600ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-accent text-paper text-[10px] uppercase tracking-widest px-2 py-1">New</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Slim Aluminium Bottle 600ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4.5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24"><defs><linearGradient id="hc7"><stop offset="50%" stop-color="#F59E0B"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#hc7)"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#1E3A5F"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;6.20 <span class="text-sm font-normal text-stone">/ MOQ 100</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 8 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image1.jpg" class="product-img w-full h-full object-cover" alt="Ceramic Desk Mug 380ml" loading="lazy"/>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Ceramic Desk Mug 380ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="none" stroke="#D1D5DB" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#6B6B6B"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;3.80 <span class="text-sm font-normal text-stone">/ MOQ 50</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 9 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image2.png" class="product-img w-full h-full object-cover" alt="Bamboo Lid Travel Cup 350ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-black text-paper text-[10px] uppercase tracking-widest px-2 py-1">Eco</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Bamboo Lid Travel Cup 350ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#2E7D32"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;8.50 <span class="text-sm font-normal text-stone">/ MOQ 50</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 10 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image3.jpg" class="product-img w-full h-full object-cover" alt="Borosilicate Glass Bottle 480ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-accent text-paper text-[10px] uppercase tracking-widest px-2 py-1">New</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Borosilicate Glass Bottle 480ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4.5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24"><defs><linearGradient id="hc10"><stop offset="50%" stop-color="#F59E0B"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#hc10)"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#546E7A"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;11.20 <span class="text-sm font-normal text-stone">/ MOQ 25</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 11 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image4.jpg" class="product-img w-full h-full object-cover" alt="XL Metallic Sports Bottle 1L" loading="lazy"/>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">XL Metallic Sports Bottle 1L</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="none" stroke="#D1D5DB" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#C0922A"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#546E7A"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;14.00 <span class="text-sm font-normal text-stone">/ MOQ 25</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+          <!-- Product 12 -->
+          <article class="product-card group border border-line">
+            <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="relative aspect-square overflow-hidden bg-stone/5">
+                <img src="images/image5.jpg" class="product-img w-full h-full object-cover" alt="Double-Wall Espresso Cup 200ml" loading="lazy"/>
+                <span class="absolute top-3 left-3 bg-ink text-paper text-[10px] uppercase tracking-widest px-2 py-1">Sale</span>
+              </div>
+              <div class="p-4">
+                <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Double-Wall Espresso Cup 200ml</h3>
+                <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="5 out of 5 stars">
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="flex items-center gap-1.5 mb-3">
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+                  <span class="w-5 h-5 rounded-full shrink-0" style="background:#000000"></span>
+                </div>
+                <p class="text-lg font-bold mb-3">&pound;4.20 <span class="text-sm font-normal text-stone">/ MOQ 100</span></p>
+                <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </a>
+          </article>
+
+        </div>
+        <!-- /PRODUCT GRID -->
+
+        <!-- PAGINATION -->
+        <nav class="mt-10 lg:mt-12 flex items-center justify-center gap-1" aria-label="Pagination">
+          <a href="#" class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink transition text-stone" aria-label="Previous page">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 19-7-7 7-7"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-accent text-paper font-bold text-sm" aria-current="page">1</a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink transition text-sm hover:bg-line/30">2</a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink transition text-sm hover:bg-line/30">3</a>
+          <span class="w-10 h-10 flex items-center justify-center text-stone text-sm select-none">&hellip;</span>
+          <a href="#" class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink transition text-sm hover:bg-line/30">9</a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink transition text-stone" aria-label="Next page">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg>
+          </a>
+        </nav>
+
+      </div>
+      <!-- /MAIN PRODUCT AREA -->
+
+    </div>
+  </div>
+</div>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+
+  <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%);">
+    <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
+
+      <div class="bg-paper px-6 py-14 lg:px-16 lg:py-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+          <div>
+            <h4 class="text-base font-bold mb-6 text-ink">Shop</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Bags</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Drinkware</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Eco Products</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Stationery</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Lifestyle</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-bold mb-6 invisible">.</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Technology</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Clothing</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Brands</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">View Everything</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-bold mb-6 text-ink">Useful Links</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">About Us</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Contact Us</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">News</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Terms &amp; Conditions</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Sustainability</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-bold mb-6 invisible">.</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Our Values</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">FAQ&rsquo;s</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Compliance</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-black text-paper px-6 py-14 lg:px-16 lg:py-20">
+        <div class="w-full max-w-md">
+          <h4 class="text-base font-bold mb-6">Get Newsletter Updates</h4>
+          <form class="flex mb-6">
+            <input type="email" placeholder="Enter your email address"
+                   class="flex-1 px-4 py-3 text-ink text-base bg-paper focus:outline-none placeholder:text-stone" />
+            <button type="submit"
+                    class="bg-accent text-paper px-6 py-3 text-base font-bold hover:bg-paper hover:text-ink transition">Sign Up</button>
+          </form>
+          <div class="bg-paper text-ink px-4 py-3 flex items-center gap-3 max-w-xs">
+            <div class="w-6 h-6 border-2 border-stone bg-paper shrink-0"></div>
+            <span class="text-base flex-1">I&rsquo;m not a robot</span>
+            <div class="text-center text-stone">
+              <svg class="w-7 h-7 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M21 12a9 9 0 1 1-3-6.7" stroke-linecap="round"/>
+                <path d="M21 4v5h-5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="text-[8px] tracking-wider">reCAPTCHA</p>
+              <p class="text-[7px] text-stone/70">Privacy &middot; Terms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%); border-top: 1px solid #E5E5E5; position: relative;">
+    <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
+      <div class="bg-paper px-6 py-6 lg:px-16 text-xs lg:text-sm text-stone flex items-center">
+        &copy; 2026 &ndash; Promo Brand &ndash; Site Designed By Elsner
+      </div>
+      <div class="bg-black px-6 py-6 lg:px-16 flex items-center justify-end">
+        <div class="flex gap-1">
+          <a href="#" aria-label="YouTube" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+          <a href="#" aria-label="Facebook" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="X" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.2 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.5-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.5.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.5.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.2 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-2a1.2 1.2 0 110 2.3 1.2 1.2 0 010-2.3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <a href="#top" aria-label="Back to top"
+       class="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-accent text-paper items-center justify-center hover:bg-paper hover:text-accent transition">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/></svg>
+    </a>
+  </div>
+
+</footer>
+
+<!-- =================== MOBILE NAV DRAWER =================== -->
+<div id="mobile-nav" class="fixed inset-0 z-50 hidden lg:hidden">
+  <div id="mobile-nav-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+  <div class="absolute top-0 left-0 h-full w-72 max-w-[85vw] bg-paper flex flex-col shadow-2xl">
+    <div class="h-20 flex items-center justify-between px-6 border-b border-line shrink-0">
+      <img src="images/logo.svg" alt="Promo Brand" class="h-9 w-auto" />
+      <button id="close-mobile-nav" aria-label="Close menu" class="w-9 h-9 flex items-center justify-center hover:text-accent transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto px-6 py-2 divide-y divide-line">
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Bags</a>
+      <a href="#" class="flex items-center py-4 text-base font-bold text-accent">Drinkware</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Tech</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Clothing</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Pens</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Notebooks</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Office</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Outdoors</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Giveaways</a>
+    </nav>
+    <div class="p-6 border-t border-line shrink-0">
+      <a href="#" class="flex items-center justify-center gap-2 bg-accent text-paper px-5 py-3 text-base font-bold hover:bg-black transition">
+        Get a Quote
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== MOBILE FILTER DRAWER =================== -->
+<div id="filter-drawer" class="fixed inset-0 z-50 hidden lg:hidden">
+  <div id="filter-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+  <div class="absolute top-0 right-0 h-full w-80 max-w-[90vw] bg-paper flex flex-col shadow-2xl">
+    <div class="h-16 flex items-center justify-between px-5 border-b border-line shrink-0">
+      <h2 class="text-base font-bold">Filters</h2>
+      <button id="close-filters" aria-label="Close filters" class="w-9 h-9 flex items-center justify-center hover:text-accent transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto px-5 py-5 space-y-0">
+
+      <!-- Category -->
+      <details open class="border-b border-line pb-5 mb-5">
+        <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+          Category
+          <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <ul class="space-y-3 mt-4">
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" checked class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> All Drinkware</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Bottles</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Mugs</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Cups &amp; Tumblers</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Flasks</label></li>
+        </ul>
+      </details>
+
+      <!-- Branding Method -->
+      <details open class="border-b border-line pb-5 mb-5">
+        <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+          Branding Method
+          <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <ul class="space-y-3 mt-4">
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Printed</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Embossed</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Laser Engraved</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Embroidered</label></li>
+        </ul>
+      </details>
+
+      <!-- Colour -->
+      <details open class="border-b border-line pb-5 mb-5">
+        <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+          Colour
+          <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <button class="w-6 h-6 ring-2 ring-offset-1 ring-ink" style="background:#363A36" title="Ink"></button>
+          <button class="w-6 h-6 border border-line" style="background:#FFFFFF" title="White"></button>
+          <button class="w-6 h-6" style="background:#EC1C51" title="Red"></button>
+          <button class="w-6 h-6" style="background:#1E3A5F" title="Navy"></button>
+          <button class="w-6 h-6" style="background:#C0922A" title="Gold"></button>
+          <button class="w-6 h-6" style="background:#2E7D32" title="Forest"></button>
+          <button class="w-6 h-6" style="background:#546E7A" title="Slate"></button>
+          <button class="w-6 h-6 border border-line" style="background:#F0F0F0" title="Light Grey"></button>
+        </div>
+      </details>
+
+      <!-- Price Range -->
+      <details open class="border-b border-line pb-5 mb-5">
+        <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+          Price Range
+          <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <ul class="space-y-3 mt-4">
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="radio" name="price-m" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Under &pound;5</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="radio" name="price-m" checked class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;5 &ndash; &pound;10</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="radio" name="price-m" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;10 &ndash; &pound;20</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="radio" name="price-m" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;20 &ndash; &pound;50</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="radio" name="price-m" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> &pound;50+</label></li>
+        </ul>
+      </details>
+
+      <!-- Material -->
+      <details open class="pb-2">
+        <summary class="flex items-center justify-between text-lg font-bold text-ink select-none">
+          Material
+          <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <ul class="space-y-3 mt-4">
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Stainless Steel</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Aluminium</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Ceramic</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> BPA-Free Plastic</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Bamboo</label></li>
+          <li><label class="flex items-center gap-2.5 text-sm cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-[#EC1C51] cursor-pointer shrink-0" /> Glass</label></li>
+        </ul>
+      </details>
+
+    </div>
+    <div class="p-5 border-t border-line shrink-0 flex gap-3">
+      <button id="apply-filters"
+              class="flex-1 bg-accent text-paper py-3 text-base font-bold hover:bg-black transition">
+        Apply Filters
+      </button>
+      <button id="clear-filters-mobile"
+              class="px-4 py-3 border border-line text-sm font-bold hover:border-ink transition">
+        Clear
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    // Mobile nav
+    var nav     = document.getElementById('mobile-nav');
+    var overlay = document.getElementById('mobile-nav-overlay');
+    var openBtn = document.getElementById('mobile-nav-toggle');
+    var closeBtn= document.getElementById('close-mobile-nav');
+
+    function openNav()  { nav.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { nav.classList.add('hidden');    document.body.style.overflow = ''; }
+
+    openBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    overlay.addEventListener('click', closeNav);
+
+    // Mobile filter drawer
+    var drawer       = document.getElementById('filter-drawer');
+    var filterOverlay= document.getElementById('filter-overlay');
+    var openFilters  = document.getElementById('open-filters');
+    var closeFilters = document.getElementById('close-filters');
+    var applyFilters = document.getElementById('apply-filters');
+
+    function openDrawer()  { drawer.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { drawer.classList.add('hidden');    document.body.style.overflow = ''; }
+
+    openFilters.addEventListener('click', openDrawer);
+    closeFilters.addEventListener('click', closeDrawer);
+    filterOverlay.addEventListener('click', closeDrawer);
+    applyFilters.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeNav(); closeDrawer(); }
+    });
+
+    // View toggle (grid/list)
+    var gridBtn  = document.getElementById('view-grid');
+    var listBtn  = document.getElementById('view-list');
+    var grid     = document.getElementById('product-grid');
+
+    gridBtn.addEventListener('click', function () {
+      grid.className = grid.className.replace('grid-cols-1', 'grid-cols-2') + ' md:grid-cols-3';
+      grid.classList.remove('grid-cols-1');
+      grid.classList.add('grid-cols-2');
+      gridBtn.classList.add('bg-ink', 'text-paper');
+      gridBtn.classList.remove('text-stone', 'hover:text-ink', 'hover:bg-line/40');
+      listBtn.classList.remove('bg-ink', 'text-paper');
+      listBtn.classList.add('text-stone', 'hover:text-ink', 'hover:bg-line/40');
+    });
+
+    listBtn.addEventListener('click', function () {
+      grid.classList.remove('grid-cols-2', 'md:grid-cols-3');
+      grid.classList.add('grid-cols-1');
+      listBtn.classList.add('bg-ink', 'text-paper');
+      listBtn.classList.remove('text-stone', 'hover:text-ink', 'hover:bg-line/40');
+      gridBtn.classList.remove('bg-ink', 'text-paper');
+      gridBtn.classList.add('text-stone', 'hover:text-ink', 'hover:bg-line/40');
+    });
+  })();
+</script>
+
+</body>
+</html>

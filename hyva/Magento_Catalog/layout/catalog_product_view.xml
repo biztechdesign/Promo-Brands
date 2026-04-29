@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+    Layout override for the product detail page (PDP).
+
+    Place at:
+      app/design/frontend/PromoBrand/hyva/Magento_Catalog/layout/catalog_product_view.xml
+
+    Removes the default Hyvä two-column product columns block and injects
+    a single view.phtml that owns the full gallery + info + accordion layout.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <!-- Remove the default Hyvä columns wrapper (which contains media + main info) -->
+        <referenceBlock name="catalog.product.view.columns" remove="true"/>
+
+        <!-- Also remove the default product info main in case it is registered separately -->
+        <referenceBlock name="product.info.main" remove="true"/>
+
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View"
+                   name="product.view.main"
+                   template="Magento_Catalog::product/view.phtml"
+                   cacheable="false">
+
+                <arguments>
+                    <!-- ProductPage view model: breadcrumb helpers, short description, etc. -->
+                    <argument name="view_model"
+                              xsi:type="object">Hyva\Theme\ViewModel\ProductPage</argument>
+
+                    <!-- ProductPrice view model: final/regular price values -->
+                    <argument name="price_view_model"
+                              xsi:type="object">Hyva\Theme\ViewModel\ProductPrice</argument>
+
+                    <!-- ProductImages view model: gallery image collection -->
+                    <argument name="product_images_view_model"
+                              xsi:type="object">Hyva\Theme\ViewModel\ProductImages</argument>
+                </arguments>
+
+            </block>
+        </referenceContainer>
+    </body>
+
+</page>

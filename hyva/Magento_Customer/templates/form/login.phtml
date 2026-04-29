@@ -1,0 +1,214 @@
+<?php
+/**
+ * Hyvä-compatible login template for Promo Brand theme.
+ *
+ * Place at:
+ *   app/design/frontend/PromoBrand/hyva/Magento_Customer/templates/form/login.phtml
+ *
+ * Requires the following custom color tokens in tailwind.config.js:
+ *   ink: '#363A36', paper: '#FFFFFF', stone: '#6B6B6B',
+ *   line: '#E5E5E5', accent: '#EC1C51'
+ *
+ * @var \Magento\Customer\Block\Form\Login $block
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Hyva\Theme\Model\ViewModelRegistry $viewModels
+ */
+?>
+
+<div class="max-w-8xl mx-auto px-4 lg:px-8 py-12 lg:py-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-0">
+
+        <!-- ============================================================
+             LEFT COLUMN: Registered Customers / Login Form
+             ============================================================ -->
+        <div class="lg:pr-16 xl:pr-20 lg:border-r border-line">
+
+            <h2 class="text-2xl lg:text-3xl font-bold tracking-tight mb-2">
+                <?= $escaper->escapeHtml(__('Registered Customers')) ?>
+            </h2>
+            <p class="text-stone text-base leading-relaxed mb-8">
+                <?= $escaper->escapeHtml(__('If you have an account, sign in with your email address.')) ?>
+            </p>
+
+            <form class="form form-login"
+                  action="<?= $escaper->escapeUrl($block->getPostActionUrl()) ?>"
+                  method="post"
+                  x-data="{ showPassword: false }"
+                  @submit.prevent="$el.submit()">
+
+                <?= $block->getBlockHtml('formkey') ?>
+
+                <fieldset class="fieldset login"
+                          data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>">
+
+                    <!-- Email Address -->
+                    <div class="mb-5">
+                        <label for="email"
+                               class="block text-base font-bold mb-2">
+                            <?= $escaper->escapeHtml(__('Email Address')) ?>
+                            <span class="text-accent ml-0.5" aria-hidden="true">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            name="login[username]"
+                            id="email"
+                            autocomplete="email"
+                            required
+                            class="w-full border border-line px-4 py-3 text-base text-ink
+                                   placeholder:text-stone/60 focus:outline-none focus:border-ink
+                                   transition"
+                            value="<?= $escaper->escapeHtmlAttr($block->getUsername()) ?>"
+                        />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-4">
+                        <label for="pass"
+                               class="block text-base font-bold mb-2">
+                            <?= $escaper->escapeHtml(__('Password')) ?>
+                            <span class="text-accent ml-0.5" aria-hidden="true">*</span>
+                        </label>
+                        <div class="relative">
+                            <input
+                                :type="showPassword ? 'text' : 'password'"
+                                name="login[password]"
+                                id="pass"
+                                autocomplete="current-password"
+                                required
+                                class="w-full border border-line px-4 py-3 text-base text-ink
+                                       placeholder:text-stone/60 focus:outline-none focus:border-ink
+                                       transition pr-12"
+                            />
+                            <!-- Password visibility toggle -->
+                            <button
+                                type="button"
+                                @click="showPassword = !showPassword"
+                                :aria-label="showPassword
+                                    ? '<?= $escaper->escapeJs(__('Hide Password')) ?>'
+                                    : '<?= $escaper->escapeJs(__('Show Password')) ?>'"
+                                class="absolute inset-y-0 right-0 w-12 flex items-center
+                                       justify-center text-stone hover:text-ink transition"
+                            >
+                                <!-- Eye icon: password is hidden -->
+                                <template x-if="!showPassword">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                         stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51
+                                                 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963
+                                                 7.178.07.207.07.431 0
+                                                 .639C20.577 16.49 16.64 19.5 12
+                                                 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                                    </svg>
+                                </template>
+                                <!-- Eye-slash icon: password is visible -->
+                                <template x-if="showPassword">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                         stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226
+                                                 16.338 7.244 19.5 12 19.5c.993 0
+                                                 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451
+                                                 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065
+                                                 7.498a10.522 10.522 0 0 1-4.293
+                                                 5.774M6.228 6.228 3 3m3.228 3.228
+                                                 3.65 3.65m7.894 7.894L21 21m-3.228-3.228
+                                                 -3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242
+                                                 4.242L9.88 9.88"/>
+                                    </svg>
+                                </template>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Forgot Password link -->
+                    <div class="mb-8 flex justify-end">
+                        <a href="<?= $escaper->escapeUrl($block->getForgotPasswordUrl()) ?>"
+                           class="text-sm text-stone hover:text-accent transition
+                                  underline underline-offset-2">
+                            <?= $escaper->escapeHtml(__('Forgot Your Password?')) ?>
+                        </a>
+                    </div>
+
+                    <?= $block->getChildHtml('form_additional_info') ?>
+
+                    <!-- Sign In Button -->
+                    <div class="primary">
+                        <button type="submit"
+                                class="inline-flex items-center gap-2 bg-accent text-white
+                                       px-8 py-4 text-base font-bold hover:bg-black
+                                       transition focus:outline-none focus:ring-2
+                                       focus:ring-accent focus:ring-offset-2">
+                            <?= $escaper->escapeHtml(__('Sign In')) ?>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                 stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+
+        <!-- ============================================================
+             RIGHT COLUMN: New Customers
+             ============================================================ -->
+        <div class="lg:pl-16 xl:pl-20">
+
+            <h2 class="text-2xl lg:text-3xl font-bold tracking-tight mb-2">
+                <?= $escaper->escapeHtml(__('New Customers')) ?>
+            </h2>
+            <p class="text-stone text-base leading-relaxed mb-8">
+                <?= $escaper->escapeHtml(__(
+                    'Create a free account to manage your orders, save your details, '
+                    . 'and enjoy a faster checkout experience.'
+                )) ?>
+            </p>
+
+            <ul class="space-y-4 mb-10"
+                aria-label="<?= $escaper->escapeHtmlAttr(__('Account benefits')) ?>">
+                <?php
+                $benefits = [
+                    __('View and track all your orders in one place'),
+                    __('Save billing and delivery addresses for faster checkout'),
+                    __('Access your artwork approvals and order history'),
+                    __('Receive exclusive pricing and early access to promotions'),
+                ];
+                foreach ($benefits as $benefit) :
+                ?>
+                <li class="flex items-start gap-3">
+                    <span class="shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center
+                                 justify-center text-accent mt-0.5" aria-hidden="true">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor"
+                             stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="m4.5 12.75 6 6 9-13.5"/>
+                        </svg>
+                    </span>
+                    <span class="text-base text-stone leading-relaxed">
+                        <?= $escaper->escapeHtml($benefit) ?>
+                    </span>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+
+            <!-- Create Account CTA -->
+            <a href="<?= $escaper->escapeUrl($block->getCreateAccountUrl()) ?>"
+               class="inline-flex items-center gap-2 bg-ink text-white px-8 py-4
+                      text-base font-bold hover:bg-accent transition focus:outline-none
+                      focus:ring-2 focus:ring-ink focus:ring-offset-2">
+                <?= $escaper->escapeHtml(__('Create an Account')) ?>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                     stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                </svg>
+            </a>
+
+        </div>
+    </div>
+</div>

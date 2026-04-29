@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+    Layout override for the Magento Customer login page (customer/account/login).
+    Place this file at:
+      app/design/frontend/PromoBrand/hyva/Magento_Customer/layout/customer_account_login.xml
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <update handle="customer_account"/>
+
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Customer\Block\Form\Login"
+                   name="customer_form_login"
+                   template="Magento_Customer::form/login.phtml"
+                   cacheable="false"/>
+        </referenceContainer>
+    </body>
+
+</page>

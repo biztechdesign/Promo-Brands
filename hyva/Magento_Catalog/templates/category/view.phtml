@@ -1,0 +1,362 @@
+<?php
+/**
+ * Hyvä-compatible product-listing category page.
+ *
+ * Place at:
+ *   app/design/frontend/PromoBrand/hyva/Magento_Catalog/templates/category/view.phtml
+ *
+ * Renders: breadcrumb, page header, sidebar filters, toolbar, product grid, pagination.
+ *
+ * @var \Magento\Catalog\Block\Category\View $block
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Hyva\Theme\Model\ViewModelRegistry $viewModels
+ */
+
+$category = $block->getCurrentCategory();
+$categoryName = $category ? $escaper->escapeHtml($category->getName()) : '';
+$categoryDesc = $category ? strip_tags($category->getDescription()) : '';
+
+/** @var \Magento\Catalog\Model\ResourceModel\Product\Collection $products */
+$productCollection = $category
+    ? $category->getProductCollection()
+        ->addAttributeToSelect(['name', 'url_key', 'price', 'small_image', 'thumbnail'])
+        ->setPageSize(12)
+        ->setCurPage(max(1, (int) ($block->getRequest()->getParam('p', 1))))
+    : null;
+
+$totalCount = $productCollection ? $productCollection->getSize() : 0;
+$currentPage = $productCollection ? $productCollection->getCurPage() : 1;
+$lastPage    = $productCollection ? $productCollection->getLastPageNumber() : 1;
+
+// Breadcrumb: collect parent categories
+$breadcrumbs = [];
+if ($category) {
+    $parentIds = array_slice(explode('/', $category->getPath()), 2, -1);
+    foreach ($parentIds as $parentId) {
+        $parent = $category->load($parentId);
+        if ($parent->getId() && $parent->getIsActive()) {
+            $breadcrumbs[] = [
+                'name' => $escaper->escapeHtml($parent->getName()),
+                'url'  => $escaper->escapeUrl($parent->getUrl()),
+            ];
+        }
+    }
+}
+?>
+
+<!-- =================== BREADCRUMB =================== -->
+<nav class="bg-paper border-b border-line" aria-label="<?= $escaper->escapeHtmlAttr(__('Breadcrumb')) ?>">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-3">
+        <ol class="flex items-center flex-wrap gap-1.5 text-sm">
+            <li>
+                <a href="<?= $escaper->escapeUrl($block->getBaseUrl()) ?>"
+                   class="text-stone hover:text-accent transition">
+                    <?= $escaper->escapeHtml(__('Home')) ?>
+                </a>
+            </li>
+
+            <?php foreach ($breadcrumbs as $crumb): ?>
+                <li class="text-stone/40" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/>
+                    </svg>
+                </li>
+                <li>
+                    <a href="<?= $crumb['url'] ?>" class="text-stone hover:text-accent transition">
+                        <?= $crumb['name'] ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+
+            <li class="text-stone/40" aria-hidden="true">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/>
+                </svg>
+            </li>
+            <li class="text-ink font-medium" aria-current="page"><?= $categoryName ?></li>
+        </ol>
+    </div>
+</nav>
+
+<!-- =================== PAGE HEADER =================== -->
+<div class="bg-paper border-b border-line">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-8 lg:py-10">
+        <h1 class="display text-2xl sm:text-3xl lg:text-4xl"><?= $categoryName ?></h1>
+        <?php if ($categoryDesc): ?>
+            <p class="text-base text-stone mt-2 max-w-2xl leading-relaxed">
+                <?= $escaper->escapeHtml($categoryDesc) ?>
+            </p>
+        <?php endif; ?>
+    </div>
+</div>
+
+<!-- =================== MAIN CONTENT =================== -->
+<div class="bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-10 lg:py-[70px]">
+        <div class="flex gap-8 xl:gap-12 items-start">
+
+            <!-- ===== SIDEBAR FILTERS (desktop) ===== -->
+            <aside class="w-56 xl:w-64 shrink-0 hidden lg:block"
+                   x-data="categoryFilters()"
+                   id="filter-sidebar">
+
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-base font-bold"><?= $escaper->escapeHtml(__('Filters')) ?></h2>
+                    <button @click="clearAll()"
+                            class="text-sm text-accent hover:text-ink transition font-medium">
+                        <?= $escaper->escapeHtml(__('Clear all')) ?>
+                    </button>
+                </div>
+
+                <?= $block->getChildHtml('catalog.leftnav') ?>
+
+                <!-- Price Range -->
+                <details open class="border-b border-line pb-5 mb-5">
+                    <summary class="flex items-center justify-between text-sm font-bold text-ink select-none">
+                        <?= $escaper->escapeHtml(__('Price Range')) ?>
+                        <svg class="w-4 h-4 text-stone chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <ul class="space-y-3 mt-4">
+                        <?php
+                        $priceRanges = [
+                            ['label' => __('Under £5'),    'from' => '',   'to' => '5'],
+                            ['label' => __('£5 – £10'),   'from' => '5',  'to' => '10'],
+                            ['label' => __('£10 – £20'),  'from' => '10', 'to' => '20'],
+                            ['label' => __('£20 – £50'),  'from' => '20', 'to' => '50'],
+                            ['label' => __('£50+'),        'from' => '50', 'to' => ''],
+                        ];
+                        foreach ($priceRanges as $range):
+                            $query = http_build_query(array_filter([
+                                'price' => $range['from'] . '-' . $range['to'],
+                            ]));
+                        ?>
+                            <li>
+                                <a href="?<?= $escaper->escapeHtmlAttr($query) ?>"
+                                   class="flex items-center gap-2.5 text-sm hover:text-accent transition">
+                                    <?= $escaper->escapeHtml($range['label']) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </details>
+
+            </aside>
+
+            <!-- ===== MAIN PRODUCT AREA ===== -->
+            <div class="flex-1 min-w-0">
+
+                <!-- TOOLBAR -->
+                <div class="flex flex-wrap items-center gap-3 mb-6 lg:mb-8 border-b border-line pb-5">
+
+                    <!-- Mobile filter button -->
+                    <button @click="$dispatch('open-filter-drawer')"
+                            class="lg:hidden inline-flex items-center gap-2 border border-line px-4 py-2.5 text-sm font-bold hover:border-ink transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25"/>
+                        </svg>
+                        <?= $escaper->escapeHtml(__('Filters')) ?>
+                    </button>
+
+                    <!-- Item count -->
+                    <p class="text-sm text-stone mr-auto">
+                        <?= $escaper->escapeHtml(__('Showing')) ?>
+                        <strong class="text-ink">
+                            <?= (int)(($currentPage - 1) * 12 + 1) ?>–<?= min($currentPage * 12, $totalCount) ?>
+                        </strong>
+                        <?= $escaper->escapeHtml(__('of')) ?>
+                        <strong class="text-ink"><?= (int) $totalCount ?></strong>
+                        <?= $escaper->escapeHtml(__('products')) ?>
+                    </p>
+
+                    <!-- Sort by -->
+                    <div class="relative">
+                        <label for="sort-order" class="sr-only"><?= $escaper->escapeHtml(__('Sort by')) ?></label>
+                        <select id="sort-order"
+                                onchange="window.location.href = this.value"
+                                class="appearance-none border border-line pl-3 pr-8 py-2.5 text-sm bg-paper focus:outline-none focus:border-ink cursor-pointer">
+                            <?php
+                            $sortOrders = [
+                                'position'  => __('Most Popular'),
+                                'price'     => __('Price: Low to High'),
+                                'price_desc'=> __('Price: High to Low'),
+                                'created_at'=> __('Newest First'),
+                                'name'      => __('A–Z'),
+                            ];
+                            $currentSort = $block->getRequest()->getParam('product_list_order', 'position');
+                            foreach ($sortOrders as $key => $label):
+                                $sortQuery = http_build_query(['product_list_order' => $key]);
+                            ?>
+                                <option value="?<?= $escaper->escapeHtmlAttr($sortQuery) ?>"
+                                    <?= $currentSort === $key ? 'selected' : '' ?>>
+                                    <?= $escaper->escapeHtml($label) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <span class="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-stone">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- Per page -->
+                    <div class="relative hidden sm:block">
+                        <label for="per-page" class="sr-only"><?= $escaper->escapeHtml(__('Per page')) ?></label>
+                        <select id="per-page"
+                                onchange="window.location.href = this.value"
+                                class="appearance-none border border-line pl-3 pr-8 py-2.5 text-sm bg-paper focus:outline-none focus:border-ink cursor-pointer">
+                            <?php foreach ([12, 24, 36] as $limit): ?>
+                                <option value="?<?= $escaper->escapeHtmlAttr(http_build_query(['product_list_limit' => $limit])) ?>">
+                                    <?= (int) $limit ?> <?= $escaper->escapeHtml(__('per page')) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <span class="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-stone">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <!-- View toggle -->
+                    <div class="hidden sm:flex border border-line" x-data="{ mode: 'grid' }">
+                        <button @click="mode = 'grid'"
+                                :class="mode === 'grid' ? 'bg-ink text-paper' : 'text-stone hover:text-ink hover:bg-line/40'"
+                                class="w-9 h-9 flex items-center justify-center transition"
+                                aria-label="<?= $escaper->escapeHtmlAttr(__('Grid view')) ?>">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                <rect x="1" y="1" width="6" height="6" rx=".5"/>
+                                <rect x="9" y="1" width="6" height="6" rx=".5"/>
+                                <rect x="1" y="9" width="6" height="6" rx=".5"/>
+                                <rect x="9" y="9" width="6" height="6" rx=".5"/>
+                            </svg>
+                        </button>
+                        <button @click="mode = 'list'"
+                                :class="mode === 'list' ? 'bg-ink text-paper' : 'text-stone hover:text-ink hover:bg-line/40'"
+                                class="w-9 h-9 flex items-center justify-center border-l border-line transition"
+                                aria-label="<?= $escaper->escapeHtmlAttr(__('List view')) ?>">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT GRID -->
+                <?= $block->getChildHtml('product_list') ?>
+
+                <!-- PAGINATION -->
+                <?php if ($lastPage > 1): ?>
+                    <nav class="mt-10 lg:mt-12 flex items-center justify-center gap-1"
+                         aria-label="<?= $escaper->escapeHtmlAttr(__('Pagination')) ?>">
+
+                        <?php if ($currentPage > 1): ?>
+                            <a href="?p=<?= (int)($currentPage - 1) ?>"
+                               class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink transition text-stone"
+                               aria-label="<?= $escaper->escapeHtmlAttr(__('Previous page')) ?>">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m15 19-7-7 7-7"/>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+
+                        <?php for ($p = 1; $p <= $lastPage; $p++): ?>
+                            <?php if ($p === $currentPage): ?>
+                                <span class="w-10 h-10 flex items-center justify-center bg-accent text-paper font-bold text-sm"
+                                      aria-current="page"><?= (int) $p ?></span>
+                            <?php elseif ($p === 1 || $p === $lastPage || abs($p - $currentPage) <= 1): ?>
+                                <a href="?p=<?= (int) $p ?>"
+                                   class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink hover:bg-line/30 transition text-sm">
+                                    <?= (int) $p ?>
+                                </a>
+                            <?php elseif (abs($p - $currentPage) === 2): ?>
+                                <span class="w-10 h-10 flex items-center justify-center text-stone text-sm select-none">&hellip;</span>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+
+                        <?php if ($currentPage < $lastPage): ?>
+                            <a href="?p=<?= (int)($currentPage + 1) ?>"
+                               class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink transition text-stone"
+                               aria-label="<?= $escaper->escapeHtmlAttr(__('Next page')) ?>">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/>
+                                </svg>
+                            </a>
+                        <?php endif; ?>
+
+                    </nav>
+                <?php endif; ?>
+
+            </div>
+            <!-- /MAIN PRODUCT AREA -->
+
+        </div>
+    </div>
+</div>
+
+<!-- =================== MOBILE FILTER DRAWER =================== -->
+<div x-data="{ open: false }"
+     @open-filter-drawer.window="open = true"
+     @keydown.escape.window="open = false"
+     class="lg:hidden">
+
+    <!-- Backdrop -->
+    <div x-show="open"
+         x-transition:enter="transition-opacity ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition-opacity ease-in duration-150"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         @click="open = false"
+         class="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
+         x-cloak></div>
+
+    <!-- Panel -->
+    <div x-show="open"
+         x-transition:enter="transition ease-out duration-250"
+         x-transition:enter-start="translate-x-full"
+         x-transition:enter-end="translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="translate-x-0"
+         x-transition:leave-end="translate-x-full"
+         class="fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-paper z-50 flex flex-col shadow-2xl"
+         x-cloak>
+
+        <div class="h-16 flex items-center justify-between px-5 border-b border-line shrink-0">
+            <h2 class="text-base font-bold"><?= $escaper->escapeHtml(__('Filters')) ?></h2>
+            <button @click="open = false"
+                    class="w-9 h-9 flex items-center justify-center hover:text-accent transition"
+                    aria-label="<?= $escaper->escapeHtmlAttr(__('Close filters')) ?>">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto px-5 py-5">
+            <?= $block->getChildHtml('catalog.leftnav') ?>
+        </div>
+
+        <div class="p-5 border-t border-line shrink-0 flex gap-3">
+            <button @click="open = false"
+                    class="flex-1 bg-accent text-paper py-3 text-base font-bold hover:bg-black transition">
+                <?= $escaper->escapeHtml(__('Apply Filters')) ?>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function categoryFilters() {
+    return {
+        clearAll() {
+            window.location.href = window.location.pathname;
+        }
+    };
+}
+</script>

@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Promo Brand &mdash; Bespoke Branded Merchandise</title>
+<meta name="description" content="Custom-made promotional products designed to reflect your brand. Trusted by Coca-Cola, Google, Amazon, British Airways and more." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#363A36',
+          paper:  '#FFFFFF',
+          stone:  '#6B6B6B',
+          line:   '#E5E5E5',
+          accent: '#EC1C51',
+        },
+        fontFamily: {
+          sans:    ['"Open Sans"', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+          display: ['"Open Sans"', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        },
+        maxWidth: { '8xl': '88rem' },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .display { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: -0.025em; font-weight: 700; }
+  .arrow-link { display:inline-flex; align-items:center; gap:.5rem; }
+  .arrow-link svg { transition: transform .25s ease; }
+  .arrow-link:hover svg { transform: translateX(4px); }
+  .marquee { animation: marquee 40s linear infinite; }
+  @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+  .product-card .product-img { transition: transform .45s ease; }
+  .product-card:hover .product-img { transform: scale(1.06); }
+  .tile-overlay { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.85) 100%); }
+  .star { color: #EC1C51; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  #picks-track::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body class="bg-paper text-ink font-sans">
+
+<!-- =================== UTILITY BAR =================== -->
+<div class="text-paper text-xs lg:text-sm" style="background-color:#EC1C51;">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-9 flex items-center justify-between">
+    <p class="hidden md:block">A brand: evolved. <a href="#" class="underline underline-offset-2 hover:no-underline">Find out more about the new look for Promo Brand &rarr;</a></p>
+    <p class="md:hidden">Free UK delivery on orders over &pound;500</p>
+    <div class="flex items-center gap-5">
+      <a href="tel:+442083189603" class="hidden sm:inline-flex items-center gap-1.5 hover:opacity-80">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        +44 (0) 208 318 9603
+      </a>
+      <span class="hidden lg:inline opacity-50">|</span>
+      <a href="mailto:hello@promo-brand.com" class="hidden lg:inline hover:opacity-80">hello@promo-brand.com</a>
+      <span class="opacity-50">|</span>
+      <details class="relative">
+        <summary class="hover:opacity-80 cursor-pointer">EN / GBP</summary>
+        <div class="absolute right-0 top-6 z-50 bg-paper text-ink border border-line shadow-lg rounded-sm p-3 w-40 text-[11px]">
+          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Language</p>
+          <ul class="space-y-1 mb-3">
+            <li><a href="#" class="hover:text-accent">English</a></li>
+            <li><a href="#" class="hover:text-accent">Fran&ccedil;ais</a></li>
+            <li><a href="#" class="hover:text-accent">Deutsch</a></li>
+            <li><a href="#" class="hover:text-accent">Nederlands</a></li>
+            <li><a href="#" class="hover:text-accent">Espa&ntilde;ol</a></li>
+            <li><a href="#" class="hover:text-accent">Italiano</a></li>
+          </ul>
+          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Currency</p>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:text-accent">GBP &pound;</a></li>
+            <li><a href="#" class="hover:text-accent">EUR &euro;</a></li>
+            <li><a href="#" class="hover:text-accent">USD $</a></li>
+            <li><a href="#" class="hover:text-accent">AED د.إ</a></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- =================== HEADER =================== -->
+<header class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-8">
+    <a href="/" class="flex items-center shrink-0">
+      <img src="images/logo.svg" alt="Promo Brand" class="h-9 lg:h-10 w-auto" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-base font-medium">
+      <a href="#" class="hover:text-accent">Bags</a>
+      <a href="#" class="hover:text-accent">Drinkware</a>
+      <a href="#" class="hover:text-accent">Tech</a>
+      <a href="#" class="hover:text-accent">Clothing</a>
+      <a href="#" class="hover:text-accent">Pens</a>
+      <a href="#" class="hover:text-accent">Notebooks</a>
+      <a href="#" class="hover:text-accent">Office</a>
+      <a href="#" class="hover:text-accent">Outdoors</a>
+      <a href="#" class="hover:text-accent">Giveaways</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button aria-label="Search" class="w-9 h-9 flex items-center justify-center hover:text-accent">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
+      </button>
+      <a href="accounts.html" aria-label="Account" class="w-9 h-9 flex items-center justify-center hover:text-accent">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </a>
+      <a href="#" class="hidden sm:inline-flex items-center gap-2 bg-accent text-paper px-5 py-2.5 text-base font-bold hover:bg-black transition">
+        Get a Quote
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+      <button id="mobile-nav-toggle" class="lg:hidden w-9 h-9 flex items-center justify-center" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- =================== 1. HERO =================== -->
+<section class="relative overflow-hidden bg-black min-h-[520px] lg:min-h-[720px]">
+
+  <!-- Pure dark gradient — no background photo -->
+  <div class="absolute inset-0" style="background: linear-gradient(135deg, #0a0a0a 0%, #181818 55%, #0f0005 100%);"></div>
+  <!-- Accent glow: top-right -->
+  <div class="absolute top-0 right-0 w-3/5 h-full pointer-events-none" style="background: radial-gradient(ellipse at 90% 20%, rgba(236,28,81,0.22) 0%, transparent 58%);"></div>
+  <!-- Accent glow: bottom-right -->
+  <div class="absolute bottom-0 right-0 w-2/5 h-1/2 pointer-events-none" style="background: radial-gradient(ellipse at 80% 100%, rgba(236,28,81,0.12) 0%, transparent 60%);"></div>
+
+  <!-- Two-column grid -->
+  <div class="relative z-10 max-w-8xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-0 items-center min-h-[520px] lg:min-h-[720px]">
+
+    <!-- LEFT: Text -->
+    <div class="text-paper py-[70px]">
+      <h1 class="display text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.93] mb-8">
+        Bespoke<br/>
+        <em class="font-light italic">Branded</em><br/>
+        Merchandise.
+      </h1>
+      <p class="text-paper/70 text-lg max-w-lg leading-relaxed mb-10">
+        Custom-made promotional products designed to reflect your brand &mdash; sourced ethically, delivered globally, branded beautifully.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#" class="inline-flex items-center gap-2 bg-accent text-paper px-8 py-4 text-base font-bold hover:bg-paper hover:text-ink transition arrow-link">
+          Get a Free Quote
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="#" class="inline-flex items-center gap-2 text-base font-bold text-paper/90 border-b border-paper/50 pb-0.5 hover:text-accent hover:border-accent transition">
+          Browse the Catalogue
+        </a>
+      </div>
+      <div class="mt-12 flex items-center gap-2 text-paper/70 text-xs lg:text-sm">
+        <span class="star text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>Rated <strong class="text-paper">4.97 / 5</strong> &middot; 1,200+ reviews</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Hero banner image -->
+    <div class="hidden lg:flex items-center justify-center" style="height: 720px;">
+      <img src="images/herobanner.png"
+           alt="Branded merchandise showcase"
+           class="w-full h-full object-contain object-center" />
+    </div>
+  </div>
+</section>
+
+<!-- =================== 2. USP BAR =================== -->
+<section class="bg-paper text-ink border-b border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-8 lg:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-1">Premium Quality</h3>
+        <p class="text-sm text-stone leading-relaxed">Carefully crafted products made to meet high quality standards.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-1">Fast Turnaround</h3>
+        <p class="text-sm text-stone leading-relaxed">Quick production and delivery to keep your projects on schedule.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"/></svg>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-1">Low Minimums</h3>
+        <p class="text-sm text-stone leading-relaxed">Order in flexible quantities that suit both small and large needs.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4">
+      <div class="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75a7.5 7.5 0 0 1 15 0M3.75 6.75c-.621 0-1.125.504-1.125 1.125v3.75c0 .621.504 1.125 1.125 1.125h1.5c.621 0 1.125-.504 1.125-1.125v-3.75c0-.621-.504-1.125-1.125-1.125zm16.5 0c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-1.5c-.621 0-1.125-.504-1.125-1.125v-3.75c0-.621.504-1.125 1.125-1.125z"/></svg>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-1">Dedicated Support</h3>
+        <p class="text-sm text-stone leading-relaxed">Get expert assistance from idea to final delivery.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================== 3. FEATURED CATEGORIES =================== -->
+<section class="pt-[70px] bg-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8">
+    <div class="flex items-end justify-between mb-12 flex-wrap gap-6">
+      <div>
+        <h2 class="display text-3xl lg:text-4xl leading-tight max-w-xl">Shop by Collection</h2>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      <a href="#" class="group relative aspect-[3/4] overflow-hidden block">
+        <img src="images/bags.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Bags"/>
+        <div class="absolute inset-0 tile-overlay"></div>
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-paper">
+          <h3 class="display text-lg sm:text-2xl mb-1">Bags</h3>
+          <p class="text-xs font-bold opacity-80 arrow-link">Shop Now <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></p>
+        </div>
+      </a>
+      <a href="#" class="group relative aspect-[3/4] overflow-hidden block">
+        <img src="images/notepads.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Notebooks &amp; Pads"/>
+        <div class="absolute inset-0 tile-overlay"></div>
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-paper">
+          <h3 class="display text-lg sm:text-2xl mb-1">Notebooks &amp; Pads</h3>
+          <p class="text-xs font-bold opacity-80 arrow-link">Shop Now <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></p>
+        </div>
+      </a>
+      <a href="#" class="group relative aspect-[3/4] overflow-hidden block">
+        <img src="images/clothing.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Clothing"/>
+        <div class="absolute inset-0 tile-overlay"></div>
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-paper">
+          <h3 class="display text-lg sm:text-2xl mb-1">Clothing</h3>
+          <p class="text-xs font-bold opacity-80 arrow-link">Shop Now <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></p>
+        </div>
+      </a>
+      <a href="#" class="group relative aspect-[3/4] overflow-hidden block">
+        <img src="images/themes.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Themes &amp; Events"/>
+        <div class="absolute inset-0 tile-overlay"></div>
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-paper">
+          <h3 class="display text-lg sm:text-2xl mb-1">Themes &amp; Events</h3>
+          <p class="text-xs font-bold opacity-80 arrow-link">Shop Now <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 4. PRODUCT SLIDER / BEST SELLERS =================== -->
+<section class="py-[70px] bg-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8">
+    <div class="flex items-end justify-between mb-10 flex-wrap gap-6">
+      <div>
+        <h2 class="display text-3xl lg:text-4xl leading-tight max-w-xl">This Month&rsquo;s Top Picks</h2>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <button id="picks-prev" class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink hover:bg-ink hover:text-paper transition" aria-label="Previous">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+          </button>
+          <button id="picks-next" class="w-10 h-10 flex items-center justify-center border border-line hover:border-ink hover:bg-ink hover:text-paper transition" aria-label="Next">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </button>
+        </div>
+        <a href="#" class="arrow-link text-base font-bold border-b border-ink pb-1 hover:text-accent hover:border-accent">
+          View the Full Catalogue
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div id="picks-track" class="flex gap-5 overflow-x-auto scroll-smooth" style="scrollbar-width:none;-ms-overflow-style:none;">
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image1.jpg"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image2.jpg'"
+                 alt="Aurora Insulated Bottle 500ml" loading="lazy"/>
+            <span class="absolute top-3 left-3 bg-black text-paper text-[10px] uppercase tracking-widest px-2 py-1">Eco</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Aurora Insulated Bottle 500ml</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4.5 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><defs><linearGradient id="hi1"><stop offset="50%" stop-color="#F59E0B"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#hi1)"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+              <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#1E3A5F"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;7.20 <span class="text-sm font-normal text-stone">/ MOQ 100</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image2.png"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image1.jpg'"
+                 alt="Heritage Organic Cotton Tote" loading="lazy"/>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Heritage Organic Cotton Tote</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="5 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+              <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#2E7D32"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#6B6B6B"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;2.40 <span class="text-sm font-normal text-stone">/ MOQ 250</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image3.jpg"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image1.jpg'"
+                 alt="Sonic BT Wireless Headphones" loading="lazy"/>
+            <span class="absolute top-3 left-3 bg-black text-paper text-[10px] uppercase tracking-widest px-2 py-1">Tech</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Sonic BT Wireless Headphones</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#D1D5DB" stroke-width="1.5"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#000000"></span>
+              <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#1E3A5F"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;24.00 <span class="text-sm font-normal text-stone">/ MOQ 50</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image4.jpg"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image1.jpg'"
+                 alt="Atelier A5 Hardback Notebook" loading="lazy"/>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Atelier A5 Hardback Notebook</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4.5 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><defs><linearGradient id="hi4"><stop offset="50%" stop-color="#F59E0B"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#hi4)"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#8B1F3F"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#2E7D32"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#546E7A"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;5.80 <span class="text-sm font-normal text-stone">/ MOQ 100</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image5.jpg"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image1.jpg'"
+                 alt="Signature Heavyweight Hoodie" loading="lazy"/>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Signature Heavyweight Hoodie</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="5 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+              <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#546E7A"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#2E7D32"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;18.50 <span class="text-sm font-normal text-stone">/ MOQ 25</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image6.jpg"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image1.jpg'"
+                 alt="Executive Metal Rollerball Pen" loading="lazy"/>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Executive Metal Rollerball Pen</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#D1D5DB" stroke-width="1.5"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#C0922A"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#546E7A"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;3.20 <span class="text-sm font-normal text-stone">/ MOQ 100</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image7.jpg"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image1.jpg'"
+                 alt="Six-Panel Embroidered Cap" loading="lazy"/>
+            <span class="absolute top-3 left-3 bg-accent text-paper text-[10px] uppercase tracking-widest px-2 py-1">Trending</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Six-Panel Embroidered Cap</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4.5 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><defs><linearGradient id="hi7"><stop offset="50%" stop-color="#F59E0B"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#hi7)"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#000000"></span>
+              <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#1E3A5F"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;6.40 <span class="text-sm font-normal text-stone">/ MOQ 50</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+      <article class="product-card group border border-line/60 shrink-0 w-[calc(50%-10px)] sm:w-[calc(33.333%-14px)] lg:w-[calc(25%-15px)]">
+        <a href="#" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          <div class="relative aspect-square overflow-hidden bg-stone/5">
+            <img src="images/image8.jpg"
+                 class="product-img w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='images/image1.jpg'"
+                 alt="Pebble 10,000mAh Wireless Power Bank" loading="lazy"/>
+          </div>
+          <div class="p-4 sm:p-5">
+            <h3 class="text-base lg:text-lg font-bold mb-2 truncate">Pebble 10,000mAh Wireless Power Bank</h3>
+            <div class="flex items-center gap-0.5 mb-2.5" role="img" aria-label="4 out of 5 stars">
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" fill="#F59E0B" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="#D1D5DB" stroke-width="1.5"/></svg>
+            </div>
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#363A36"></span>
+              <span class="w-5 h-5 rounded-full shrink-0 border border-stone/30" style="background:#FFFFFF"></span>
+              <span class="w-5 h-5 rounded-full shrink-0" style="background:#EC1C51"></span>
+            </div>
+            <p class="text-lg font-bold mb-3">&pound;14.90 <span class="text-sm font-normal text-stone">/ MOQ 50</span></p>
+            <a href="#" class="flex items-center justify-center gap-2 w-full bg-accent text-paper py-2.5 text-sm font-bold hover:bg-ink transition">
+              Enquire <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== 5. BRAND LOGOS =================== -->
+<section class="py-16 border-y border-line bg-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8">
+    <div class="overflow-hidden">
+      <div class="marquee flex gap-16 items-center whitespace-nowrap text-stone">
+        <span class="display text-3xl opacity-60">Coca-Cola</span>
+        <span class="text-2xl font-bold opacity-60">EasyJet</span>
+        <span class="display italic text-3xl opacity-60">Savills</span>
+        <span class="text-2xl font-light opacity-60">Google&nbsp;Nest</span>
+        <span class="display text-3xl opacity-60">amazon</span>
+        <span class="text-2xl font-medium opacity-60">British Airways</span>
+        <span class="text-2xl font-light opacity-60">American&nbsp;Airlines</span>
+        <span class="display text-3xl opacity-60">bp</span>
+        <span class="text-2xl font-bold italic opacity-60">Virgin Atlantic</span>
+        <span class="text-2xl opacity-60">boohoo</span>
+        <span class="display text-3xl opacity-60">Superdrug</span>
+        <!-- duplicate for seamless marquee -->
+        <span class="display text-3xl opacity-60">Coca-Cola</span>
+        <span class="text-2xl font-bold opacity-60">EasyJet</span>
+        <span class="display italic text-3xl opacity-60">Savills</span>
+        <span class="text-2xl font-light opacity-60">Google&nbsp;Nest</span>
+        <span class="display text-3xl opacity-60">amazon</span>
+        <span class="text-2xl font-medium opacity-60">British Airways</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 6. HOW IT WORKS =================== -->
+<section class="py-[70px] bg-black text-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 mb-14">
+      <div class="lg:col-span-5">
+        <h2 class="display text-3xl lg:text-4xl leading-tight">From Idea to Delivery in 4 Easy Steps</h2>
+      </div>
+      <p class="lg:col-span-5 lg:col-start-8 text-paper/80 text-lg leading-relaxed self-end">
+        We&rsquo;ve refined the process over a decade of branding the world&rsquo;s most-loved companies. Here&rsquo;s what working with us looks like.
+      </p>
+    </div>
+    <div class="relative grid md:grid-cols-2 lg:grid-cols-4">
+      <!-- Equal-length horizontal connecting lines through icon centers (desktop only) -->
+      <div class="hidden lg:block absolute h-px bg-white/50 pointer-events-none z-0" style="top: 72px; left: 12.5%; right: 12.5%;"></div>
+      <div class="bg-black p-8 lg:p-10 text-center">
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="1.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1M9 11l1.5 1.5L13 10M9 16l1.5 1.5L13 15"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-3">Choose</h3>
+        <p class="text-base text-paper/80 leading-relaxed">Browse 5,000+ products or send your spec &mdash; we&rsquo;ll source it.</p>
+      </div>
+      <div class="bg-black p-8 lg:p-10 text-center">
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21l4-1 11-11-3-3L4 17l-1 4zM14 6l3 3"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-3">Brand</h3>
+        <p class="text-base text-paper/80 leading-relaxed">Send artwork &mdash; we mock it up free in 24 hours.</p>
+      </div>
+      <div class="bg-black p-8 lg:p-10 text-center">
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2.5 2.5L16 9"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-3">Approve</h3>
+        <p class="text-base text-paper/80 leading-relaxed">Sign off the visual, lock the spec &mdash; we go to print.</p>
+      </div>
+      <div class="bg-black p-8 lg:p-10 text-center">
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7h11v10H3zM14 11h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-3">Delivered</h3>
+        <p class="text-base text-paper/80 leading-relaxed">Worldwide despatch in days, fully tracked &amp; insured.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 7. TESTIMONIALS =================== -->
+<section class="py-[70px] bg-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="display text-3xl lg:text-4xl leading-tight max-w-2xl mx-auto">Trusted by Brands That Raise the Bar</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <figure class="border border-line p-8 lg:p-10">
+        <div class="star text-lg mb-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="display text-xl leading-snug mb-8">&ldquo;The mock-ups landed in 4 hours. Production was tight, but they hit every deadline. Will reorder.&rdquo;</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-line flex items-center justify-center font-semibold text-sm">SR</div>
+          <div>
+            <div class="text-base font-bold">Samantha R.</div>
+            <div class="text-sm text-stone">Creative Director, Boutique Hotel Group</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="border border-line p-8 lg:p-10">
+        <div class="star text-lg mb-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="display text-xl leading-snug mb-8">&ldquo;1,200 branded gift boxes for our launch &mdash; sustainable, on-brand, on time. Faultless.&rdquo;</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-line flex items-center justify-center font-semibold text-sm">DK</div>
+          <div>
+            <div class="text-base font-bold">Daniel K.</div>
+            <div class="text-sm text-stone">Marketing Manager, FinTech Startup</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="border border-line p-8 lg:p-10">
+        <div class="star text-lg mb-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote class="display text-xl leading-snug mb-8">&ldquo;A genuine extension of our marketing team. Five years in and they still surprise us.&rdquo;</blockquote>
+        <figcaption class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-line flex items-center justify-center font-semibold text-sm">PM</div>
+          <div>
+            <div class="text-base font-bold">Priya M.</div>
+            <div class="text-sm text-stone">Head of Brand, Global Airline</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 8. BLOG PREVIEW =================== -->
+<section class="py-[70px] bg-paper border-t border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8">
+    <div class="flex items-end justify-between mb-12 flex-wrap gap-6">
+      <div>
+        <h2 class="display text-3xl lg:text-4xl leading-tight max-w-xl">Ideas to Inspire Your Next Drop</h2>
+      </div>
+      <a href="#" class="arrow-link text-base font-bold border-b border-ink pb-1 hover:text-accent hover:border-accent">
+        Read All Articles
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+      <article>
+        <a href="#" class="group block">
+          <div class="relative aspect-[4/3] overflow-hidden mb-5 bg-line">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80'"
+                 alt="Sustainable merch trends"/>
+            <span class="absolute top-4 left-4 bg-accent text-paper text-[10px] uppercase tracking-widest px-2.5 py-1">Sustainability</span>
+          </div>
+          <p class="text-sm uppercase tracking-widest text-stone mb-3">12 Apr 2026 &middot; 5 min read</p>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-accent transition leading-tight">Five eco-merch swaps every brand should make in 2026.</h3>
+          <p class="text-base text-stone leading-relaxed line-clamp-3">From recycled-PET totes to plantable seed-paper notebooks &mdash; upgrades that drive measurable impact without inflating budgets.</p>
+        </a>
+      </article>
+
+      <article>
+        <a href="#" class="group block">
+          <div class="relative aspect-[4/3] overflow-hidden mb-5 bg-line">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=80'"
+                 alt="Branding techniques"/>
+            <span class="absolute top-4 left-4 bg-black text-paper text-[10px] uppercase tracking-widest px-2.5 py-1">How-to</span>
+          </div>
+          <p class="text-sm uppercase tracking-widest text-stone mb-3">28 Mar 2026 &middot; 7 min read</p>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-accent transition leading-tight">Print, embroider, or engrave? A buyer&rsquo;s guide to branding methods.</h3>
+          <p class="text-base text-stone leading-relaxed line-clamp-3">When each technique pays off &mdash; from screen-print runs at scale to laser-engraving for premium executive gifting.</p>
+        </a>
+      </article>
+
+      <article>
+        <a href="#" class="group block">
+          <div class="relative aspect-[4/3] overflow-hidden mb-5 bg-line">
+            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=80"
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80'"
+                 alt="Conference merch case study"/>
+            <span class="absolute top-4 left-4 bg-black text-paper text-[10px] uppercase tracking-widest px-2.5 py-1">Case study</span>
+          </div>
+          <p class="text-sm uppercase tracking-widest text-stone mb-3">14 Mar 2026 &middot; 4 min read</p>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-accent transition leading-tight">Inside a 1,200-box conference launch &mdash; the EasyJet brief.</h3>
+          <p class="text-base text-stone leading-relaxed line-clamp-3">How we curated, kitted and despatched 1,200 fully-assembled welcome boxes to 12 European cities in 18 days.</p>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== 9. ENQUIRY CTA — dark, high-contrast =================== -->
+<section class="bg-black text-paper hidden">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-[70px] grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-6">
+      <h2 class="display text-3xl lg:text-4xl leading-tight mb-6">Request Your Quote Today</h2>
+      <p class="text-paper/60 text-lg max-w-md leading-relaxed mb-10">No obligations. No long forms. Just send us the brief and we&rsquo;ll come back with options, mock-ups and a price.</p>
+      <ul class="space-y-4 text-sm text-paper/70">
+        <li class="flex items-start gap-3"><span class="text-accent mt-0.5 text-base">&#10003;</span> Free artwork mock-up within 24 hours</li>
+        <li class="flex items-start gap-3"><span class="text-accent mt-0.5 text-base">&#10003;</span> No-obligation pricing, no set-up fees hidden</li>
+        <li class="flex items-start gap-3"><span class="text-accent mt-0.5 text-base">&#10003;</span> Dedicated account manager for every order</li>
+      </ul>
+    </div>
+    <form class="lg:col-span-6 bg-paper text-ink p-8 lg:p-10 space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <input type="text" placeholder="First name" class="border border-line px-4 py-3 text-sm focus:outline-none focus:border-ink" />
+        <input type="text" placeholder="Last name" class="border border-line px-4 py-3 text-sm focus:outline-none focus:border-ink" />
+      </div>
+      <input type="email" placeholder="Work email" class="w-full border border-line px-4 py-3 text-sm focus:outline-none focus:border-ink" />
+      <input type="text" placeholder="Company" class="w-full border border-line px-4 py-3 text-sm focus:outline-none focus:border-ink" />
+      <textarea placeholder="Tell us about your project &mdash; product, quantity, deadline" rows="4" class="w-full border border-line px-4 py-3 text-sm focus:outline-none focus:border-ink resize-none"></textarea>
+      <button type="submit" class="w-full bg-accent text-paper py-4 text-sm font-semibold hover:bg-ink transition flex items-center justify-center gap-2">
+        Send my brief
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </button>
+      <p class="text-sm text-stone">By submitting, you agree to our privacy policy. We&rsquo;ll never share your details.</p>
+    </form>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+
+  <!-- MAIN: full-bleed 50/50 bg, content constrained to container -->
+  <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%);">
+    <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
+
+      <!-- LEFT: white, link columns -->
+      <div class="bg-paper px-6 py-14 lg:px-16 lg:py-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+          <div>
+            <h4 class="text-base font-bold mb-6 text-ink">Shop</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Bags</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Drinkware</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Eco Products</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Stationery</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Lifestyle</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-bold mb-6 invisible">.</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Themes</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Technology</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Clothing</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Brands</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">View Everything</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-bold mb-6 text-ink">Useful Links</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">About Us</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Contact Us</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">News</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Terms &amp; Conditions</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Sustainability</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-base font-bold mb-6 invisible">.</h4>
+            <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Our Values</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">FAQ&rsquo;s</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Compliance</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Modern Slavery</a></li>
+              <li><a href="#" class="text-ink/60 hover:text-accent transition">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: black, newsletter -->
+      <div class="bg-black text-paper px-6 py-14 lg:px-16 lg:py-20">
+        <div class="w-full max-w-md">
+          <h4 class="text-base font-bold mb-6">Get Newsletter Updates</h4>
+          <form class="flex mb-6">
+            <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 text-ink text-base bg-paper focus:outline-none placeholder:text-stone" />
+            <button type="submit" class="bg-accent text-paper px-6 py-3 text-base font-bold hover:bg-paper hover:text-ink transition">Sign Up</button>
+          </form>
+          <div class="bg-paper text-ink px-4 py-3 flex items-center gap-3 max-w-xs">
+            <div class="w-6 h-6 border-2 border-stone bg-paper shrink-0"></div>
+            <span class="text-base flex-1">I&rsquo;m not a robot</span>
+            <div class="text-center text-stone">
+              <svg class="w-7 h-7 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M21 12a9 9 0 1 1-3-6.7" stroke-linecap="round"/>
+                <path d="M21 4v5h-5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="text-[8px] tracking-wider">reCAPTCHA</p>
+              <p class="text-[7px] text-stone/70">Privacy &middot; Terms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM STRIP: full-bleed 50/50 bg, content in container -->
+  <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%); border-top: 1px solid #E5E5E5; position: relative;">
+    <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
+      <div class="bg-paper px-6 py-6 lg:px-16 text-xs lg:text-sm text-stone flex items-center">
+        &copy; 2026 &ndash; Promo Brand &ndash; Site Designed By Elsner
+      </div>
+      <div class="bg-black px-6 py-6 lg:px-16 flex items-center justify-end">
+        <div class="flex gap-1">
+          <a href="#" aria-label="YouTube" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+          <a href="#" aria-label="Facebook" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="X" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 flex items-center justify-center text-paper/50 hover:text-accent transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.2 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.5-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.5.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.5.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.2 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-2a1.2 1.2 0 110 2.3 1.2 1.2 0 010-2.3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <!-- Back to top: outside container, right edge -->
+    <a href="#top" aria-label="Back to top" class="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-accent text-paper items-center justify-center hover:bg-paper hover:text-accent transition">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/></svg>
+    </a>
+  </div>
+
+</footer>
+
+<!-- =================== MOBILE NAV DRAWER =================== -->
+<div id="mobile-nav" class="fixed inset-0 z-50 hidden lg:hidden">
+  <!-- Backdrop -->
+  <div id="mobile-nav-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+  <!-- Drawer panel -->
+  <div class="absolute top-0 left-0 h-full w-72 max-w-[85vw] bg-paper flex flex-col shadow-2xl">
+    <!-- Header -->
+    <div class="h-20 flex items-center justify-between px-6 border-b border-line shrink-0">
+      <img src="images/logo.svg" alt="Promo Brand" class="h-9 w-auto" />
+      <button id="close-mobile-nav" aria-label="Close menu" class="w-9 h-9 flex items-center justify-center hover:text-accent transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <!-- Nav links -->
+    <nav class="flex-1 overflow-y-auto px-6 py-2 divide-y divide-line">
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Bags</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Drinkware</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Tech</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Clothing</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Pens</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Notebooks</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Office</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Outdoors</a>
+      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Giveaways</a>
+    </nav>
+    <!-- CTA -->
+    <div class="p-6 border-t border-line shrink-0">
+      <a href="#" class="flex items-center justify-center gap-2 bg-accent text-paper px-5 py-3 text-base font-bold hover:bg-black transition">
+        Get a Quote
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var nav     = document.getElementById('mobile-nav');
+    var overlay = document.getElementById('mobile-nav-overlay');
+    var openBtn = document.getElementById('mobile-nav-toggle');
+    var closeBtn= document.getElementById('close-mobile-nav');
+
+    function openNav()  { nav.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { nav.classList.add('hidden');    document.body.style.overflow = ''; }
+
+    openBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    overlay.addEventListener('click', closeNav);
+
+    // Close on ESC
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNav(); });
+  })();
+
+  (function() {
+    var track = document.getElementById('picks-track');
+    var prev  = document.getElementById('picks-prev');
+    var next  = document.getElementById('picks-next');
+    function scrollAmt() {
+      var card = track.querySelector('article');
+      return card ? card.offsetWidth + 20 : 300;
+    }
+    prev.addEventListener('click', function() { track.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }); });
+    next.addEventListener('click', function() { track.scrollBy({ left:  scrollAmt(), behavior: 'smooth' }); });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,479 @@
+<?php
+/**
+ * Hyvä-compatible product detail page template (PDP).
+ *
+ * Place at:
+ *   app/design/frontend/PromoBrand/hyva/Magento_Catalog/templates/product/view.phtml
+ *
+ * Wired up via:
+ *   Magento_Catalog/layout/catalog_product_view.xml
+ *
+ * @var \Magento\Catalog\Block\Product\View           $block
+ * @var \Magento\Framework\Escaper                    $escaper
+ * @var \Hyva\Theme\Model\ViewModelRegistry           $viewModels
+ */
+
+/** @var \Hyva\Theme\ViewModel\ProductPage $productViewModel */
+$productViewModel = $viewModels->require(\Hyva\Theme\ViewModel\ProductPage::class);
+
+/** @var \Hyva\Theme\ViewModel\ProductPrice $priceViewModel */
+$priceViewModel = $viewModels->require(\Hyva\Theme\ViewModel\ProductPrice::class);
+
+/** @var \Hyva\Theme\ViewModel\ProductImages $productImages */
+$productImages = $viewModels->require(\Hyva\Theme\ViewModel\ProductImages::class);
+
+$product     = $block->getProduct();
+$productName = $escaper->escapeHtml($product->getName());
+$productSku  = $escaper->escapeHtml($product->getSku());
+$productUrl  = $escaper->escapeUrl($product->getProductUrl());
+
+// ── Price ──────────────────────────────────────────────────────────────────
+$finalPrice   = $priceViewModel->getPriceValue(
+    $product,
+    \Magento\Catalog\Pricing\Price\FinalPrice::PRICE_CODE
+);
+$regularPrice = $priceViewModel->getPriceValue(
+    $product,
+    \Magento\Catalog\Pricing\Price\RegularPrice::PRICE_CODE
+);
+$isOnSale = $regularPrice && $finalPrice < $regularPrice;
+
+// ── Custom B2B attributes ──────────────────────────────────────────────────
+$moq         = (int) ($product->getData('moq') ?: 50);
+$isNew       = (bool) $product->getData('is_new');
+$isEco       = (bool) $product->getData('is_eco');
+$badge       = '';
+$badgeClass  = '';
+if ($isEco) {
+    $badge = __('Eco'); $badgeClass = 'bg-black text-paper';
+} elseif ($isNew) {
+    $badge = __('New'); $badgeClass = 'bg-accent text-paper';
+} elseif ($isOnSale) {
+    $badge = __('Sale'); $badgeClass = 'bg-ink text-paper';
+}
+
+// Short description (sanitised — Magento stores it as HTML)
+$shortDescription = $productViewModel->getShortDescription($product);
+
+// Full description
+$description = $product->getData('description')
+    ? $productViewModel->getDescription($product)
+    : '';
+
+// Colour options from a multiselect / swatch attribute
+$colourOptions = [];
+try {
+    $colourAttr = $product->getResource()->getAttribute('colour_options');
+    if ($colourAttr) {
+        foreach ($colourAttr->getSource()->getAllOptions(false) as $opt) {
+            $colourOptions[] = [
+                'label' => $escaper->escapeHtmlAttr($opt['label']),
+                'value' => $escaper->escapeHtmlAttr($opt['value']),
+                'hex'   => $escaper->escapeHtmlAttr($opt['swatch_value'] ?? '#363A36'),
+            ];
+        }
+    }
+} catch (\Exception $e) {
+    // Attribute not present — swatches section will be skipped
+}
+
+// Branding methods from a multiselect attribute
+$brandingMethods = [];
+try {
+    $methodAttr = $product->getResource()->getAttribute('branding_methods');
+    if ($methodAttr) {
+        foreach ($methodAttr->getSource()->getAllOptions(false) as $opt) {
+            $brandingMethods[] = [
+                'label' => $escaper->escapeHtmlAttr($opt['label']),
+                'value' => $escaper->escapeHtmlAttr($opt['value']),
+            ];
+        }
+    }
+} catch (\Exception $e) {
+    // Attribute not present — branding section will be skipped
+}
+
+// ── Gallery images ─────────────────────────────────────────────────────────
+$galleryImages = [];
+$mediaGallery  = $product->getMediaGalleryImages();
+if ($mediaGallery) {
+    foreach ($mediaGallery as $image) {
+        $galleryImages[] = [
+            'src'   => $escaper->escapeUrl($image->getUrl()),
+            'thumb' => $escaper->escapeUrl($image->getData('small_image_url') ?: $image->getUrl()),
+            'alt'   => $escaper->escapeHtmlAttr($image->getData('label') ?: $product->getName()),
+        ];
+    }
+}
+// Fallback: use the base product image
+if (empty($galleryImages)) {
+    $baseUrl = $block->getImage($product, 'product_base_image')->getImageUrl();
+    if ($baseUrl) {
+        $galleryImages[] = [
+            'src'   => $escaper->escapeUrl($baseUrl),
+            'thumb' => $escaper->escapeUrl($baseUrl),
+            'alt'   => $escaper->escapeHtmlAttr($product->getName()),
+        ];
+    }
+}
+$galleryJson = /* @noEscape */ json_encode($galleryImages);
+
+// ── Stock status ────────────────────────────────────────────────────────────
+$stockItem  = $product->getExtensionAttributes()->getStockItem();
+$isInStock  = $stockItem ? $stockItem->getIsInStock() : true;
+
+// ── Additional attributes for the specs table ───────────────────────────────
+$specAttributes = [
+    'capacity'       => __('Capacity'),
+    'material'       => __('Material'),
+    'dimensions'     => __('Dimensions'),
+    'weight'         => __('Weight'),
+    'finish'         => __('Finish'),
+    'keep_cold_hrs'  => __('Keeps Cold'),
+    'keep_hot_hrs'   => __('Keeps Hot'),
+    'bpa_free'       => __('BPA Free'),
+    'dishwasher_safe'=> __('Dishwasher Safe'),
+];
+?>
+
+<!-- =================== BREADCRUMB =================== -->
+<nav class="bg-paper border-b border-line" aria-label="<?= $escaper->escapeHtmlAttr(__('Breadcrumb')) ?>">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-3">
+        <ol class="flex items-center gap-1.5 text-sm flex-wrap">
+            <li><a href="<?= $escaper->escapeUrl($block->getUrl('')) ?>" class="text-stone hover:text-accent transition"><?= $escaper->escapeHtml(__('Home')) ?></a></li>
+            <li class="text-stone/40" aria-hidden="true">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
+            </li>
+            <?php
+            $categoryCollection = $product->getCategoryCollection()->addAttributeToSelect('name')->addAttributeToSelect('url_key');
+            $breadcrumbCategory = $categoryCollection->getFirstItem();
+            if ($breadcrumbCategory && $breadcrumbCategory->getId()):
+            ?>
+                <li><a href="<?= $escaper->escapeUrl($breadcrumbCategory->getUrl()) ?>" class="text-stone hover:text-accent transition"><?= $escaper->escapeHtml($breadcrumbCategory->getName()) ?></a></li>
+                <li class="text-stone/40" aria-hidden="true">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
+                </li>
+            <?php endif; ?>
+            <li class="text-ink font-medium" aria-current="page"><?= $productName ?></li>
+        </ol>
+    </div>
+</nav>
+
+<!-- =================== PRODUCT SECTION =================== -->
+<div class="bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-10 lg:py-[70px]">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16 items-start">
+
+            <!-- ===== GALLERY ===== -->
+            <div class="lg:sticky lg:top-28 mb-10 lg:mb-0"
+                 x-data='{ active: 0, images: <?= $galleryJson ?> }'
+                 x-id="['pdp-gallery']">
+
+                <!-- Main image -->
+                <div class="relative aspect-square overflow-hidden bg-stone/5 border border-line flex items-center justify-center"
+                     aria-live="polite"
+                     aria-atomic="true">
+                    <img :src="images[active].src"
+                         :alt="images[active].alt"
+                         class="w-full h-full object-contain p-6 transition duration-300"
+                         loading="eager" />
+                    <?php if ($badge): ?>
+                        <span class="absolute top-4 left-4 <?= $escaper->escapeHtmlAttr($badgeClass) ?> text-[10px] uppercase tracking-widest px-2 py-1">
+                            <?= $escaper->escapeHtml($badge) ?>
+                        </span>
+                    <?php endif; ?>
+                </div>
+
+                <!-- Thumbnails -->
+                <?php if (count($galleryImages) > 1): ?>
+                    <nav class="grid grid-cols-4 gap-3 mt-3"
+                         aria-label="<?= $escaper->escapeHtmlAttr(__('Product image thumbnails')) ?>">
+                        <template x-for="(img, i) in images" :key="i">
+                            <button @click="active = i"
+                                    :class="active === i
+                                        ? 'border-ink'
+                                        : 'border-line hover:border-stone'"
+                                    class="aspect-square border-2 overflow-hidden bg-stone/5 flex items-center justify-center p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition"
+                                    :aria-pressed="active === i"
+                                    :aria-label="'<?= $escaper->escapeHtmlAttr(__('View image')) ?> ' + (i + 1)">
+                                <img :src="img.thumb"
+                                     :alt="img.alt"
+                                     class="w-full h-full object-contain"
+                                     loading="lazy" />
+                            </button>
+                        </template>
+                    </nav>
+                <?php endif; ?>
+
+            </div>
+            <!-- /GALLERY -->
+
+            <!-- ===== PRODUCT INFO ===== -->
+            <div x-data="{ qty: <?= (int) $moq ?> }">
+
+                <!-- Title -->
+                <h1 class="display text-2xl sm:text-3xl lg:text-4xl mb-4"
+                    itemprop="name"><?= $productName ?></h1>
+
+                <!-- Price -->
+                <div class="mb-4" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="GBP" />
+                    <meta itemprop="price" content="<?= number_format((float) $finalPrice, 2) ?>" />
+                    <p class="text-2xl font-bold">
+                        <?= $escaper->escapeHtml(__('From')) ?>
+                        <?= $block->getCurrencySymbol() ?><?= number_format((float) $finalPrice, 2) ?>
+                        <span class="text-base font-normal text-stone">/ MOQ <?= (int) $moq ?> <?= $escaper->escapeHtml(__('units')) ?></span>
+                    </p>
+                    <?php if ($isOnSale): ?>
+                        <p class="text-sm text-stone line-through mt-0.5">
+                            <?= $block->getCurrencySymbol() ?><?= number_format((float) $regularPrice, 2) ?>
+                        </p>
+                    <?php endif; ?>
+                    <p class="text-sm text-stone mt-1"><?= $escaper->escapeHtml(__('Price breaks available — enquire for volume pricing')) ?></p>
+                </div>
+
+                <!-- Stock status -->
+                <div class="flex items-center gap-2 mb-5">
+                    <?php if ($isInStock): ?>
+                        <span class="w-2 h-2 rounded-full bg-green-500 shrink-0" aria-hidden="true"></span>
+                        <span class="text-sm font-medium"><?= $escaper->escapeHtml(__('In Stock')) ?></span>
+                    <?php else: ?>
+                        <span class="w-2 h-2 rounded-full bg-stone shrink-0" aria-hidden="true"></span>
+                        <span class="text-sm font-medium text-stone"><?= $escaper->escapeHtml(__('Out of Stock — contact us for availability')) ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <hr class="border-line mb-6" />
+
+                <!-- Short description -->
+                <?php if ($shortDescription): ?>
+                    <div class="text-base text-stone leading-relaxed mb-6" itemprop="description">
+                        <?= /* @noEscape */ $shortDescription ?>
+                    </div>
+                    <hr class="border-line mb-6" />
+                <?php endif; ?>
+
+                <!-- ── Colour options ── -->
+                <?php if (!empty($colourOptions)): ?>
+                    <div class="mb-6">
+                        <p class="text-sm font-bold mb-3">
+                            <?= $escaper->escapeHtml(__('Colour')) ?>
+                            <span class="font-normal text-stone" x-text="'— ' + selectedColour"
+                                  x-data="{ selectedColour: '<?= $escaper->escapeHtmlAttr($colourOptions[0]['label'] ?? '') ?>' }"></span>
+                        </p>
+                        <div class="flex flex-wrap gap-2.5"
+                             role="radiogroup"
+                             aria-label="<?= $escaper->escapeHtmlAttr(__('Select colour')) ?>">
+                            <?php foreach ($colourOptions as $i => $colour): ?>
+                                <div>
+                                    <input type="radio"
+                                           name="colour"
+                                           id="col-<?= $escaper->escapeHtmlAttr($colour['value']) ?>"
+                                           value="<?= $escaper->escapeHtmlAttr($colour['label']) ?>"
+                                           class="sr-only peer"
+                                           <?= $i === 0 ? 'checked' : '' ?>>
+                                    <label for="col-<?= $escaper->escapeHtmlAttr($colour['value']) ?>"
+                                           class="block w-7 h-7 rounded-full cursor-pointer ring-1 ring-line peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-ink transition <?= $colour['hex'] === '#FFFFFF' ? 'border border-stone/20' : '' ?>"
+                                           style="background:<?= $escaper->escapeHtmlAttr($colour['hex']) ?>"
+                                           title="<?= $escaper->escapeHtmlAttr($colour['label']) ?>">
+                                        <span class="sr-only"><?= $escaper->escapeHtml($colour['label']) ?></span>
+                                    </label>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <!-- ── Branding Method ── -->
+                <?php if (!empty($brandingMethods)): ?>
+                    <div class="mb-6">
+                        <p class="text-sm font-bold mb-3"><?= $escaper->escapeHtml(__('Branding Method')) ?></p>
+                        <div class="flex flex-wrap gap-2"
+                             role="radiogroup"
+                             aria-label="<?= $escaper->escapeHtmlAttr(__('Select branding method')) ?>">
+                            <?php foreach ($brandingMethods as $i => $method): ?>
+                                <div>
+                                    <input type="radio"
+                                           name="branding_method"
+                                           id="method-<?= $escaper->escapeHtmlAttr($method['value']) ?>"
+                                           value="<?= $escaper->escapeHtmlAttr($method['value']) ?>"
+                                           class="sr-only peer"
+                                           <?= $i === 0 ? 'checked' : '' ?>>
+                                    <label for="method-<?= $escaper->escapeHtmlAttr($method['value']) ?>"
+                                           class="block px-4 py-2 text-sm font-medium border border-line cursor-pointer select-none peer-checked:border-ink peer-checked:bg-ink peer-checked:text-paper hover:border-stone transition">
+                                        <?= $escaper->escapeHtml($method['label']) ?>
+                                    </label>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <!-- ── Quantity ── -->
+                <div class="mb-6">
+                    <label class="block text-sm font-bold mb-3">
+                        <?= $escaper->escapeHtml(__('Quantity')) ?>
+                        <span class="font-normal text-stone">(<?= $escaper->escapeHtml(__('min.')) ?> <?= (int) $moq ?>)</span>
+                    </label>
+                    <div class="flex items-center border border-line w-fit">
+                        <button type="button"
+                                @click="qty = Math.max(<?= (int) $moq ?>, qty - 1)"
+                                class="w-11 h-11 flex items-center justify-center text-stone hover:text-ink hover:bg-stone/5 transition select-none border-r border-line text-xl leading-none"
+                                aria-label="<?= $escaper->escapeHtmlAttr(__('Decrease quantity')) ?>">
+                            &minus;
+                        </button>
+                        <input type="number"
+                               x-model.number="qty"
+                               min="<?= (int) $moq ?>"
+                               class="w-20 h-11 text-center text-base font-medium focus:outline-none focus:bg-stone/5 transition"
+                               aria-label="<?= $escaper->escapeHtmlAttr(__('Quantity')) ?>" />
+                        <button type="button"
+                                @click="qty++"
+                                class="w-11 h-11 flex items-center justify-center text-stone hover:text-ink hover:bg-stone/5 transition select-none border-l border-line text-xl leading-none"
+                                aria-label="<?= $escaper->escapeHtmlAttr(__('Increase quantity')) ?>">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── CTA ── -->
+                <div class="flex flex-col sm:flex-row gap-3 mb-5">
+                    <a href="<?= $escaper->escapeUrl($block->getUrl('contact')) ?>"
+                       class="flex items-center justify-center gap-2 flex-1 bg-accent text-paper py-3.5 text-base font-bold hover:bg-ink transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+                        <?= $escaper->escapeHtml(__('Enquire Now')) ?>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                    </a>
+                    <button type="button"
+                            class="flex items-center justify-center gap-2 px-6 py-3.5 text-base font-bold border border-line hover:border-ink transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                            @click.prevent="$dispatch('add-to-wishlist', { productId: <?= (int) $product->getId() ?> })"
+                            aria-label="<?= $escaper->escapeHtmlAttr(__('Save %1 to wishlist', $productName)) ?>">
+                        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                        <?= $escaper->escapeHtml(__('Save')) ?>
+                    </button>
+                </div>
+
+                <!-- Sample request -->
+                <p class="text-sm text-stone mb-6">
+                    <?= $escaper->escapeHtml(__("Not sure yet?")) ?>
+                    <a href="<?= $escaper->escapeUrl($block->getUrl('contact', ['_query' => ['subject' => 'Sample Request']])) ?>"
+                       class="text-ink underline underline-offset-2 hover:text-accent transition font-medium">
+                        <?= $escaper->escapeHtml(__('Request a free sample')) ?>
+                    </a>
+                </p>
+
+                <hr class="border-line mb-6" />
+
+                <!-- Product meta -->
+                <dl class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+                    <div class="col-span-2 sm:col-span-1">
+                        <dt class="text-stone mb-0.5"><?= $escaper->escapeHtml(__('Product Code')) ?></dt>
+                        <dd class="font-medium"><?= $productSku ?></dd>
+                    </div>
+                    <?php foreach ($specAttributes as $attrCode => $attrLabel): ?>
+                        <?php $attrValue = $product->getAttributeText($attrCode) ?: $product->getData($attrCode); ?>
+                        <?php if ($attrValue): ?>
+                            <div class="col-span-2 sm:col-span-1">
+                                <dt class="text-stone mb-0.5"><?= $escaper->escapeHtml($attrLabel) ?></dt>
+                                <dd class="font-medium"><?= $escaper->escapeHtml($attrValue) ?></dd>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <div class="col-span-2 sm:col-span-1">
+                        <dt class="text-stone mb-0.5"><?= $escaper->escapeHtml(__('Lead Time')) ?></dt>
+                        <dd class="font-medium"><?= $escaper->escapeHtml(__('10–14 business days')) ?></dd>
+                    </div>
+                </dl>
+
+            </div>
+            <!-- /PRODUCT INFO -->
+
+        </div>
+    </div>
+</div>
+
+<!-- =================== PRODUCT DETAILS ACCORDION =================== -->
+<div id="product-description" class="border-t border-line bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-10 lg:py-[70px]">
+
+        <!-- Description -->
+        <?php if ($description): ?>
+            <details open class="border-b border-line">
+                <summary class="flex items-center justify-between py-5 text-base font-bold text-ink select-none -mt-5">
+                    <?= $escaper->escapeHtml(__('Description')) ?>
+                    <svg class="w-5 h-5 text-stone chevron shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+                </summary>
+                <div class="pb-6 text-base text-stone leading-relaxed space-y-4 max-w-3xl prose">
+                    <?= /* @noEscape */ $description ?>
+                </div>
+            </details>
+        <?php endif; ?>
+
+        <!-- Specifications -->
+        <details class="border-b border-line">
+            <summary class="flex items-center justify-between py-5 text-base font-bold text-ink select-none">
+                <?= $escaper->escapeHtml(__('Specifications')) ?>
+                <svg class="w-5 h-5 text-stone chevron shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+            </summary>
+            <div class="pb-6">
+                <table class="w-full text-sm max-w-2xl" aria-label="<?= $escaper->escapeHtmlAttr(__('Product specifications')) ?>">
+                    <tbody class="divide-y divide-line">
+                        <tr>
+                            <th class="text-left py-3 pr-8 text-stone font-normal w-1/2"><?= $escaper->escapeHtml(__('SKU')) ?></th>
+                            <td class="py-3 font-medium"><?= $productSku ?></td>
+                        </tr>
+                        <?php
+                        $additionalData = $block->getChildHtml('product.attributes');
+                        $allAttributes  = $product->getAttributes();
+                        $skipAttributes = ['name', 'description', 'short_description', 'status', 'visibility',
+                                           'price', 'special_price', 'image', 'small_image', 'thumbnail',
+                                           'media_gallery', 'url_key', 'url_path', 'category_ids'];
+                        foreach ($allAttributes as $attribute):
+                            if (in_array($attribute->getAttributeCode(), $skipAttributes, true)) continue;
+                            if (!$attribute->getIsVisibleOnFront()) continue;
+                            $value = $attribute->getFrontend()->getValue($product);
+                            if (!$value || $value === 'N/A') continue;
+                        ?>
+                            <tr>
+                                <th class="text-left py-3 pr-8 text-stone font-normal"><?= $escaper->escapeHtml($attribute->getDefaultFrontendLabel()) ?></th>
+                                <td class="py-3 font-medium"><?= $escaper->escapeHtml($value) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <!-- Branding Information — custom static section (shown for all products) -->
+        <details class="border-b border-line">
+            <summary class="flex items-center justify-between py-5 text-base font-bold text-ink select-none">
+                <?= $escaper->escapeHtml(__('Branding Information')) ?>
+                <svg class="w-5 h-5 text-stone chevron shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+            </summary>
+            <div class="pb-6">
+                <?php
+                $brandingInfoAttr = $product->getData('branding_information');
+                if ($brandingInfoAttr):
+                ?>
+                    <div class="text-base text-stone leading-relaxed max-w-3xl">
+                        <?= /* @noEscape */ nl2br($escaper->escapeHtml($brandingInfoAttr)) ?>
+                    </div>
+                <?php else: ?>
+                    <p class="text-sm text-stone max-w-3xl leading-relaxed">
+                        <?= $escaper->escapeHtml(__('Artwork formats accepted: AI, EPS, PDF (vector preferred). A free mock-up will be produced within 24 hours of enquiry. Contact our team for exact print area dimensions for this product.')) ?>
+                    </p>
+                <?php endif; ?>
+            </div>
+        </details>
+
+    </div>
+</div>
+
+<style>
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chevron { transform: rotate(180deg); }
+    .chevron { transition: transform 0.2s ease; }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+</style>
