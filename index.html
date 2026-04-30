@@ -92,21 +92,56 @@
 
 <!-- =================== HEADER =================== -->
 <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
-  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-8">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-6">
+
+    <!-- Logo -->
     <a href="/" class="flex items-center shrink-0">
       <img src="images/logo.svg" alt="Promo Brand" class="h-9 lg:h-10 w-auto" />
     </a>
-    <nav class="hidden lg:flex items-center gap-7 text-base font-medium">
-      <a href="#" class="hover:text-accent">Bags</a>
-      <a href="#" class="hover:text-accent">Drinkware</a>
-      <a href="#" class="hover:text-accent">Tech</a>
-      <a href="#" class="hover:text-accent">Clothing</a>
-      <a href="#" class="hover:text-accent">Pens</a>
-      <a href="#" class="hover:text-accent">Notebooks</a>
-      <a href="#" class="hover:text-accent">Office</a>
-      <a href="#" class="hover:text-accent">Outdoors</a>
-      <a href="#" class="hover:text-accent">Giveaways</a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-base font-medium" aria-label="Main navigation">
+
+      <!-- Bags — megamenu trigger -->
+      <div class="relative h-20 flex items-center" id="nav-bags">
+        <button class="flex items-center gap-1 hover:text-accent transition"
+                aria-haspopup="true" aria-expanded="false" aria-controls="mega-bags">
+          Bags
+          <svg id="bags-chevron" class="w-3.5 h-3.5 text-stone transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Other nav items — arrow only, no dropdown content yet -->
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Drinkware
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Tech
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Clothing
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Pens
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Notebooks
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Office
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Outdoors
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Giveaways
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+
     </nav>
+
+    <!-- Right actions -->
     <div class="flex items-center gap-4">
       <button aria-label="Search" class="w-9 h-9 flex items-center justify-center hover:text-accent">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
@@ -122,7 +157,108 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
       </button>
     </div>
+
   </div>
+
+  <!-- ══════════ BAGS MEGAMENU ══════════ -->
+  <div id="mega-bags"
+       class="absolute top-full left-0 right-0 bg-paper border-t-2 border-accent shadow-xl z-50 hidden"
+       role="region" aria-label="Bags categories">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-8 pb-10">
+
+      <!-- 7-column grid — collapses to 4 on narrow desktop, 3 on tablet (megamenu only shows lg+) -->
+      <div class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-y-8 gap-x-4 xl:gap-x-6">
+
+        <!-- Shopping Bags -->
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Shopping Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Canvas Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Cotton Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Foldable Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Jute Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Non Woven Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Paper Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Shopper Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Tote Bags</a></li>
+          </ul>
+        </div>
+
+        <!-- Business Bags -->
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Business Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Anti Theft Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Conference Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Document Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Exhibition Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Laptop Bags</a></li>
+          </ul>
+        </div>
+
+        <!-- Leisure Bags -->
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Leisure Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Beach Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Cooler Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Picnic Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Suitcases &amp; Trolleys</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Toiletry Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Travel Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Weekend Holdalls</a></li>
+          </ul>
+        </div>
+
+        <!-- Backpacks -->
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Backpacks</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Backpacks</a></li>
+          </ul>
+        </div>
+
+        <!-- Drawstring Bags -->
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Drawstring Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Drawstring Bags</a></li>
+          </ul>
+        </div>
+
+        <!-- Sports Bags -->
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Sports Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Gym Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Sports Backpacks</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Sports Duffel Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Sports Holdalls</a></li>
+          </ul>
+        </div>
+
+        <!-- Eco-friendly Bags -->
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Eco-friendly Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Eco-friendly Bags</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer: view all link -->
+      <div class="mt-7 pt-5 border-t border-line flex items-center justify-between">
+        <a href="#" class="arrow-link text-sm font-bold hover:text-accent transition">
+          View All Bags
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="category.html" class="text-sm text-stone hover:text-accent transition">Browse all categories &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
 </header>
 
 <!-- =================== 1. HERO =================== -->
@@ -907,16 +1043,106 @@
       </button>
     </div>
     <!-- Nav links -->
-    <nav class="flex-1 overflow-y-auto px-6 py-2 divide-y divide-line">
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Bags</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Drinkware</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Tech</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Clothing</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Pens</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Notebooks</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Office</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Outdoors</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Giveaways</a>
+    <nav class="flex-1 overflow-y-auto px-6 py-2 divide-y divide-line" aria-label="Mobile navigation">
+
+      <!-- Bags accordion -->
+      <div>
+        <button id="mobile-bags-toggle"
+                class="flex items-center justify-between w-full py-4 text-base font-medium hover:text-accent transition"
+                aria-expanded="false" aria-controls="mobile-bags-sub">
+          Bags
+          <svg id="mobile-bags-chevron" class="w-4 h-4 text-stone transition-transform duration-200 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="mobile-bags-sub" class="hidden pb-5 space-y-5">
+
+          <div>
+            <p class="text-[11px] font-bold text-stone uppercase tracking-widest mb-2">Shopping Bags</p>
+            <ul class="space-y-2.5 pl-1">
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Canvas Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Cotton Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Foldable Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Jute Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Non Woven Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Paper Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Shopper Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Tote Bags</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-[11px] font-bold text-stone uppercase tracking-widest mb-2">Business Bags</p>
+            <ul class="space-y-2.5 pl-1">
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Anti Theft Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Conference Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Document Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Exhibition Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Laptop Bags</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-[11px] font-bold text-stone uppercase tracking-widest mb-2">Leisure Bags</p>
+            <ul class="space-y-2.5 pl-1">
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Beach Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Cooler Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Picnic Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Suitcases &amp; Trolleys</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Toiletry Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Travel Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Weekend Holdalls</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-[11px] font-bold text-stone uppercase tracking-widest mb-2">Sports Bags</p>
+            <ul class="space-y-2.5 pl-1">
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Gym Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Sports Backpacks</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Sports Duffel Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Sports Holdalls</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-[11px] font-bold text-stone uppercase tracking-widest mb-2">More</p>
+            <ul class="space-y-2.5 pl-1">
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Backpacks</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Drawstring Bags</a></li>
+              <li><a href="#" class="text-sm text-ink hover:text-accent transition">Eco-friendly Bags</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Other nav items with chevron -->
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Drinkware
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Tech
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Clothing
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Pens
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Notebooks
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Office
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Outdoors
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center justify-between py-4 text-base font-medium hover:text-accent transition">Giveaways
+        <svg class="w-4 h-4 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+
     </nav>
     <!-- CTA -->
     <div class="p-6 border-t border-line shrink-0">
@@ -944,6 +1170,54 @@
 
     // Close on ESC
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNav(); });
+  })();
+
+  /* ── Bags megamenu (desktop hover) ── */
+  (function () {
+    var trigger  = document.getElementById('nav-bags');
+    var mega     = document.getElementById('mega-bags');
+    var chevron  = document.getElementById('bags-chevron');
+    var btn      = trigger ? trigger.querySelector('button') : null;
+    var timer;
+
+    function open() {
+      clearTimeout(timer);
+      mega.classList.remove('hidden');
+      if (chevron) chevron.style.transform = 'rotate(180deg)';
+      if (btn)     btn.setAttribute('aria-expanded', 'true');
+    }
+    function close() {
+      timer = setTimeout(function () {
+        mega.classList.add('hidden');
+        if (chevron) chevron.style.transform = '';
+        if (btn)     btn.setAttribute('aria-expanded', 'false');
+      }, 140);
+    }
+
+    if (trigger && mega) {
+      trigger.addEventListener('mouseenter', open);
+      trigger.addEventListener('mouseleave', close);
+      mega.addEventListener('mouseenter', function () { clearTimeout(timer); });
+      mega.addEventListener('mouseleave', close);
+      // Close on Escape
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    }
+  })();
+
+  /* ── Mobile Bags accordion ── */
+  (function () {
+    var toggle  = document.getElementById('mobile-bags-toggle');
+    var sub     = document.getElementById('mobile-bags-sub');
+    var chevron = document.getElementById('mobile-bags-chevron');
+
+    if (toggle && sub) {
+      toggle.addEventListener('click', function () {
+        var isOpen = !sub.classList.contains('hidden');
+        sub.classList.toggle('hidden', isOpen);
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+      });
+    }
   })();
 
   (function() {
