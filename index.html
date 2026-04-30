@@ -572,45 +572,86 @@
 <!-- =================== 6. HOW IT WORKS =================== -->
 <section class="py-[70px] bg-black text-paper">
   <div class="max-w-8xl mx-auto px-4 lg:px-8">
-    <div class="grid lg:grid-cols-12 gap-10 mb-14">
+
+    <!-- Heading row -->
+    <div class="grid lg:grid-cols-12 gap-10 mb-16">
       <div class="lg:col-span-5">
         <h2 class="display text-3xl lg:text-4xl leading-tight">From Idea to Delivery in 4 Easy Steps</h2>
       </div>
-      <p class="lg:col-span-5 lg:col-start-8 text-paper/80 text-lg leading-relaxed self-end">
+      <p class="lg:col-span-5 lg:col-start-8 text-paper/70 text-lg leading-relaxed self-end">
         We&rsquo;ve refined the process over a decade of branding the world&rsquo;s most-loved companies. Here&rsquo;s what working with us looks like.
       </p>
     </div>
-    <div class="relative grid md:grid-cols-2 lg:grid-cols-4">
-      <!-- Equal-length horizontal connecting lines through icon centers (desktop only) -->
-      <div class="hidden lg:block absolute h-px bg-white/50 pointer-events-none z-0" style="top: 72px; left: 12.5%; right: 12.5%;"></div>
-      <div class="bg-black p-8 lg:p-10 text-center">
-        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="1.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1M9 11l1.5 1.5L13 10M9 16l1.5 1.5L13 15"/></svg>
+
+    <!-- Steps grid -->
+    <div class="relative grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+
+      <!-- Connector line through icon centres — desktop only.
+           Calculation: 40px (pt-10) + 22px (step number + mb-3) + 32px (½ icon) = ~94px -->
+      <div class="hidden lg:block absolute h-px bg-white/25 pointer-events-none z-0"
+           style="top:94px; left:12.5%; right:12.5%;"></div>
+
+      <!-- ── Step 1 ── -->
+      <div class="bg-black px-8 lg:px-10 pt-10 pb-10 flex flex-col items-center text-center">
+        <!-- Step number -->
+        <span class="text-accent text-sm font-bold tracking-[0.2em] uppercase mb-3" aria-label="Step 1">01</span>
+        <!-- Icon circle -->
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10" aria-hidden="true">
+          <!-- Cloud upload -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16V9m0 0-3 3m3-3 3 3"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 17.5a4.5 4.5 0 1 1 .45-8.981 5.25 5.25 0 0 1 10.11 1.481A3.5 3.5 0 0 1 17.5 17.5H6.5z"/>
+          </svg>
         </div>
-        <h3 class="text-lg font-bold mb-3">Choose</h3>
-        <p class="text-base text-paper/80 leading-relaxed">Browse 5,000+ products or send your spec &mdash; we&rsquo;ll source it.</p>
+        <h3 class="text-lg font-bold mb-3 leading-snug">Enquire &amp; Upload<br class="hidden lg:block"/> Your Artwork</h3>
+        <p class="text-base text-paper/70 leading-relaxed">Browse 5,000+ products, submit your brief and upload your artwork &mdash; we&rsquo;ll take it from there.</p>
       </div>
-      <div class="bg-black p-8 lg:p-10 text-center">
-        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21l4-1 11-11-3-3L4 17l-1 4zM14 6l3 3"/></svg>
+
+      <!-- ── Step 2 ── -->
+      <div class="bg-black px-8 lg:px-10 pt-10 pb-10 flex flex-col items-center text-center">
+        <span class="text-accent text-sm font-bold tracking-[0.2em] uppercase mb-3" aria-label="Step 2">02</span>
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10" aria-hidden="true">
+          <!-- Quote / clipboard checklist -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h.01M9 15h.01M12 12h3M12 15h3"/>
+          </svg>
         </div>
-        <h3 class="text-lg font-bold mb-3">Brand</h3>
-        <p class="text-base text-paper/80 leading-relaxed">Send artwork &mdash; we mock it up free in 24 hours.</p>
+        <h3 class="text-lg font-bold mb-3 leading-snug">Receive a Quote<br class="hidden lg:block"/> &amp; Visual</h3>
+        <p class="text-base text-paper/70 leading-relaxed">Get a tailored quote and a free visual mock-up within 24 hours &mdash; no commitment required.</p>
       </div>
-      <div class="bg-black p-8 lg:p-10 text-center">
-        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2.5 2.5L16 9"/></svg>
+
+      <!-- ── Step 3 ── -->
+      <div class="bg-black px-8 lg:px-10 pt-10 pb-10 flex flex-col items-center text-center">
+        <span class="text-accent text-sm font-bold tracking-[0.2em] uppercase mb-3" aria-label="Step 3">03</span>
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10" aria-hidden="true">
+          <!-- Monitor / screen approval -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4m-4 4h4m-4 0H9m4 0v-4"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12l2 2 5-5"/>
+          </svg>
         </div>
-        <h3 class="text-lg font-bold mb-3">Approve</h3>
-        <p class="text-base text-paper/80 leading-relaxed">Sign off the visual, lock the spec &mdash; we go to print.</p>
+        <h3 class="text-lg font-bold mb-3 leading-snug">Approve Artwork<br class="hidden lg:block"/> for Production</h3>
+        <p class="text-base text-paper/70 leading-relaxed">Review your visual proof, request any tweaks, then sign off &mdash; and we&rsquo;ll go to print.</p>
       </div>
-      <div class="bg-black p-8 lg:p-10 text-center">
-        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7h11v10H3zM14 11h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+
+      <!-- ── Step 4 ── -->
+      <div class="bg-black px-8 lg:px-10 pt-10 pb-10 flex flex-col items-center text-center">
+        <span class="text-accent text-sm font-bold tracking-[0.2em] uppercase mb-3" aria-label="Step 4">04</span>
+        <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-black border-2 border-accent text-accent mb-6 z-10" aria-hidden="true">
+          <!-- Delivery truck -->
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h11v10H3z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 10.5h3.5l2.5 3V17h-6v-6.5z"/>
+            <circle cx="7" cy="18" r="1.5"/>
+            <circle cx="17.5" cy="18" r="1.5"/>
+          </svg>
         </div>
-        <h3 class="text-lg font-bold mb-3">Delivered</h3>
-        <p class="text-base text-paper/80 leading-relaxed">Worldwide despatch in days, fully tracked &amp; insured.</p>
+        <h3 class="text-lg font-bold mb-3 leading-snug">Receive<br class="hidden lg:block"/> Your Order</h3>
+        <p class="text-base text-paper/70 leading-relaxed">Worldwide despatch in days, fully tracked &amp; insured &mdash; straight to your door.</p>
       </div>
+
     </div>
   </div>
 </section>
