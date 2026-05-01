@@ -552,5 +552,38 @@
   })();
 </script>
 
+
+<script>
+  /* Bags megamenu — desktop hover */
+  (function () {
+    var trigger = document.getElementById('nav-bags');
+    var mega    = document.getElementById('mega-bags');
+    var chevron = document.getElementById('bags-chevron');
+    var btn     = trigger ? trigger.querySelector('button') : null;
+    var timer;
+
+    function open() {
+      clearTimeout(timer);
+      mega.classList.remove('hidden');
+      if (chevron) chevron.style.transform = 'rotate(180deg)';
+      if (btn)     btn.setAttribute('aria-expanded', 'true');
+    }
+    function close() {
+      timer = setTimeout(function () {
+        mega.classList.add('hidden');
+        if (chevron) chevron.style.transform = '';
+        if (btn)     btn.setAttribute('aria-expanded', 'false');
+      }, 140);
+    }
+
+    if (trigger && mega) {
+      trigger.addEventListener('mouseenter', open);
+      trigger.addEventListener('mouseleave', close);
+      mega.addEventListener('mouseenter', function () { clearTimeout(timer); });
+      mega.addEventListener('mouseleave', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    }
+  })();
+</script>
 </body>
 </html>
