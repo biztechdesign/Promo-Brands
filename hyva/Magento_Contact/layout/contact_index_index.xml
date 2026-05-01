@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+    Layout override for the Magento Contact Us page (route: contact/index/index).
+
+    Place at:
+      app/design/frontend/PromoBrand/hyva/Magento_Contact/layout/contact_index_index.xml
+
+    The handle name `contact_index_index` is the standard Magento route
+    handle for the contact form page. This file:
+      - removes the default `page.main.title` block (the hero prints its own H1)
+      - swaps the default contactForm block to use our custom form template
+        which contains the full Contact Us page (header, info cards, form,
+        map, CTA — all in one template for tighter layout control)
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <head>
+        <title>Contact Us — Promo Brand</title>
+        <meta name="description"
+              content="Get in touch with the Promo Brand team for branded merchandise quotes, artwork mock-ups, sustainable product advice and account support — call, email or send us a brief."/>
+        <meta name="robots" content="INDEX,FOLLOW"/>
+    </head>
+
+    <body>
+        <referenceBlock name="page.main.title" remove="true"/>
+
+        <!-- Override Magento's default contact form block to point at our
+             full-page template. The block class stays the same so the
+             standard form_action / formkey behaviour is preserved. -->
+        <referenceBlock name="contactForm">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Contact::form.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+
+</page>

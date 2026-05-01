@@ -1,0 +1,391 @@
+<?php
+/**
+ * Hyvä-compatible "Contact Us" page template for Promo Brand theme.
+ *
+ * Place at:
+ *   app/design/frontend/PromoBrand/hyva/Magento_Contact/templates/form.phtml
+ *
+ * Wired up via:
+ *   app/design/frontend/PromoBrand/hyva/Magento_Contact/layout/contact_index_index.xml
+ *
+ * Overrides Magento's default contact form template
+ * (vendor/magento/module-contact/view/frontend/templates/form.phtml).
+ *
+ * Page sections:
+ *   1. Page header (H1 + lead)
+ *   2. Form + Contact details (2-col card layout — form left, addresses + Get In Touch right)
+ *   3. Map (Google Maps iframe embed)
+ *   4. FAQ (native <details> accordion, no Alpine needed)
+ *   5. CTA (boxed dark panel)
+ *
+ * Form integration:
+ *   - Posts to Magento_Contact's standard endpoint via $block->getFormAction()
+ *     (resolves to /contact/index/post). No controller changes needed.
+ *   - Required Magento fields preserved with their canonical names: name,
+ *     email, telephone, comment + the `hideit` honeypot.
+ *   - The current screenshot/spec dropped the `company` field — it is no
+ *     longer rendered. If you re-add it, Magento_Contact ignores unknown
+ *     POST fields by default; capture options:
+ *       (a) prepend it into `comment` client-side, OR
+ *       (b) plugin Magento\Contact\Controller\Index\Post::execute, OR
+ *       (c) use a form-builder module (Mageplaza/Hyvä FormBuilder).
+ *
+ * Tailwind tokens required in `web/tailwind/tailwind.config.js`:
+ *   colors:    ink #363A36, paper #FFFFFF, stone #6B6B6B, line #E5E5E5, accent #EC1C51
+ *   fontFamily: sans / display → "Open Sans", system fallbacks
+ *   maxWidth:  '8xl' => '88rem'
+ *
+ * Alpine.js: not required.
+ *
+ * @var \Magento\Contact\Block\ContactForm $block
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Hyva\Theme\Model\ViewModelRegistry $viewModels
+ */
+
+$mediaUrl   = $block->getViewFileUrl('images/contact/');
+$telE164    = '+442083189603';
+$telLabel   = '+44 (0) 208 318 9603';
+$telDisplay = '020 8318 9603';
+$emailHello = 'hello@promo-brand.com';
+$emailSales = 'sales@promo-brand.co.uk';
+
+// Map embed: replace with your actual office postcode / Maps Embed API URL.
+$mapQuery   = 'Unit 18 Clyde Terrace, Forest Hill, London, SE23 3BA';
+$mapEmbed   = 'https://maps.google.com/maps?q=' . rawurlencode($mapQuery) . '&output=embed';
+$mapDirect  = 'https://maps.google.com/?q=' . rawurlencode($mapQuery);
+
+$offices = [
+    [
+        'name'  => __('Bounce Creative Designs'),
+        'lines' => ['Unit 18 Clyde Terrace,', 'Forest Hill, London,', 'SE23 3BA'],
+    ],
+    [
+        'name'  => __('Leicester'),
+        'lines' => ['Rutland House,', '23-25 Friar Lane, Leicester', 'LE1 5QQ'],
+    ],
+    [
+        'name'  => __('Leeds'),
+        'lines' => ['Sovereign Chambers,', '46 Park Place, Leeds', 'LS1 2RY'],
+    ],
+    [
+        'name'  => __('Fulfilment & Distribution Centre'),
+        'lines' => ['22 Parkside, Potters Way', 'Southend on Sea', 'SS2 5SJ'],
+    ],
+];
+
+$socials = [
+    [
+        'label' => __('Instagram'),
+        'href'  => '#',
+        'svgClass' => 'w-4 h-4',
+        'path'  => 'M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.2 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.5-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.5.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.5.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.2 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-2a1.2 1.2 0 110 2.3 1.2 1.2 0 010-2.3z',
+    ],
+    [
+        'label' => __('Pinterest'),
+        'href'  => '#',
+        'svgClass' => 'w-4 h-4',
+        'path'  => 'M12 0C5.4 0 0 5.4 0 12c0 5.1 3.2 9.4 7.6 11.2-.1-1-.2-2.4 0-3.5.2-.9 1.4-5.9 1.4-5.9s-.4-.7-.4-1.8c0-1.7 1-3 2.2-3 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1 4.1-.3 1.2.6 2.2 1.8 2.2 2.2 0 3.8-2.3 3.8-5.5 0-2.9-2.1-4.9-5-4.9-3.4 0-5.4 2.6-5.4 5.2 0 1 .4 2.1.9 2.7.1.1.1.2.1.3-.1.4-.3 1.2-.4 1.4-.1.2-.2.3-.4.2-1.5-.7-2.4-2.8-2.4-4.6 0-3.7 2.7-7.1 7.8-7.1 4.1 0 7.3 2.9 7.3 6.8 0 4.1-2.6 7.4-6.2 7.4-1.2 0-2.4-.6-2.7-1.4l-.7 2.8c-.3 1-1 2.4-1.4 3.2.9.3 1.9.4 2.9.4 6.6 0 12-5.4 12-12C24 5.4 18.6 0 12 0z',
+    ],
+    [
+        'label' => __('X (Twitter)'),
+        'href'  => '#',
+        'svgClass' => 'w-3.5 h-3.5',
+        'path'  => 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+    ],
+    [
+        'label' => __('Facebook'),
+        'href'  => '#',
+        'svgClass' => 'w-4 h-4',
+        'path'  => 'M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z',
+    ],
+];
+
+$faqs = [
+    [
+        'q' => __('What’s the minimum order quantity?'),
+        'a' => __('MOQs vary by product — some start as low as 25 units (notebooks, badges, USB drives), others from 100 (totes, drinkware) or 250 (apparel). Tell us what you’re after and we’ll quote on the lowest viable quantity.'),
+    ],
+    [
+        'q' => __('How long does production take?'),
+        'a' => __('Standard turnaround is 10–15 working days from artwork sign-off, including UK delivery. Express options are available for most products at 5–7 working days for an additional charge.'),
+    ],
+    [
+        'q' => __('Can I order a sample before committing?'),
+        'a' => __('Absolutely — we offer plain samples of most products for the cost of postage. Branded pre-production samples are available on larger orders to confirm print position and colour before the full run.'),
+    ],
+    [
+        'q' => __('Do you ship internationally?'),
+        'a' => __('Yes — we ship worldwide via fully tracked, insured couriers. Multi-destination orders (e.g. one delivery per regional office) are quoted at the same time as the production cost.'),
+    ],
+    [
+        'q' => __('What artwork formats do you accept?'),
+        'a' => __('Vector files preferred (AI, EPS, PDF with editable type). High-resolution PNG or JPEG (300dpi+) work for full-colour digital prints. If you only have a low-res file, our studio can re-draw your logo at no charge for orders over £500.'),
+    ],
+    [
+        'q' => __('Do you offer eco-friendly products?'),
+        'a' => null, // rendered with inline link below
+    ],
+];
+?>
+
+<?php /* ===================== 1. PAGE HEADER ===================== */ ?>
+<section class="py-[70px] bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div class="lg:col-span-5">
+                <h1 class="display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mb-5 lg:mb-6">
+                    <?= $escaper->escapeHtml(__('Contact Us')) ?>
+                </h1>
+                <p class="text-xl lg:text-2xl text-ink leading-snug">
+                    <?= $escaper->escapeHtml(__('Briefs, quotes, sample requests — or just an idea you want to talk through.')) ?>
+                </p>
+            </div>
+            <div class="lg:col-span-7 text-stone text-lg leading-relaxed space-y-5">
+                <p><?= $escaper->escapeHtml(__('Our team replies to every enquiry within one working hour, Monday to Friday. Whether you need a single sample sent over for a board meeting or a quote for ten thousand branded jackets in time for next quarter’s conference — the same team handles both.')) ?></p>
+                <p>
+                    <?= $escaper->escapeHtml(__('Prefer to skip the form? Call us on')) ?>
+                    <a href="<?= $escaper->escapeUrl('tel:' . $telE164) ?>" class="text-accent font-semibold hover:underline"><?= $escaper->escapeHtml($telLabel) ?></a>
+                    <?= $escaper->escapeHtml(__('or email')) ?>
+                    <a href="<?= $escaper->escapeUrl('mailto:' . $emailHello) ?>" class="text-accent font-semibold hover:underline"><?= $escaper->escapeHtml($emailHello) ?></a>
+                    &mdash; <?= $escaper->escapeHtml(__('whichever’s easier.')) ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php /* ===================== 2. FORM + CONTACT DETAILS ===================== */ ?>
+<section class="pb-[70px] bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+
+            <?php /* LEFT: Form card */ ?>
+            <div class="border border-line p-5 sm:p-8 lg:p-10">
+                <header class="text-center mb-8 lg:mb-10">
+                    <h2 class="display text-2xl lg:text-3xl mb-3"><?= $escaper->escapeHtml(__('Contact Us')) ?></h2>
+                    <p class="text-stone text-base lg:text-lg leading-relaxed">
+                        <?= $escaper->escapeHtml(__('Send us a message and we’ll get back to you as quickly as possible.')) ?>
+                    </p>
+                </header>
+
+                <form class="form contact space-y-5"
+                      action="<?= $escaper->escapeUrl($block->getFormAction()) ?>"
+                      id="contact-form"
+                      method="post"
+                      data-mage-init='{"validation":{}}'
+                      aria-labelledby="contact-form-title"
+                      novalidate>
+                    <span id="contact-form-title" class="sr-only"><?= $escaper->escapeHtml(__('Contact form')) ?></span>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="name" class="block text-base font-bold mb-2">
+                                <?= $escaper->escapeHtml(__('Name')) ?>
+                                <span class="text-accent" aria-hidden="true">*</span>
+                            </label>
+                            <input name="name" id="name"
+                                   title="<?= $escaper->escapeHtmlAttr(__('Name')) ?>"
+                                   value=""
+                                   autocomplete="name"
+                                   class="w-full border border-line px-4 py-3 text-base text-ink placeholder:text-stone/60 focus:outline-none focus:border-ink transition"
+                                   type="text"
+                                   data-validate="{required:true}"
+                                   placeholder="<?= $escaper->escapeHtmlAttr(__('Name')) ?>"
+                                   required/>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-base font-bold mb-2">
+                                <?= $escaper->escapeHtml(__('Email')) ?>
+                                <span class="text-accent" aria-hidden="true">*</span>
+                            </label>
+                            <input name="email" id="email"
+                                   title="<?= $escaper->escapeHtmlAttr(__('Email')) ?>"
+                                   value=""
+                                   autocomplete="email"
+                                   class="w-full border border-line px-4 py-3 text-base text-ink placeholder:text-stone/60 focus:outline-none focus:border-ink transition"
+                                   type="email"
+                                   data-validate="{required:true, 'validate-email':true}"
+                                   placeholder="<?= $escaper->escapeHtmlAttr(__('Email')) ?>"
+                                   required/>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="telephone" class="block text-base font-bold mb-2">
+                                <?= $escaper->escapeHtml(__('Phone Number')) ?>
+                            </label>
+                            <input name="telephone" id="telephone"
+                                   title="<?= $escaper->escapeHtmlAttr(__('Phone Number')) ?>"
+                                   value=""
+                                   autocomplete="tel"
+                                   class="w-full border border-line px-4 py-3 text-base text-ink placeholder:text-stone/60 focus:outline-none focus:border-ink transition"
+                                   type="tel"
+                                   placeholder="<?= $escaper->escapeHtmlAttr(__('Phone Number')) ?>"/>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="comment" class="block text-base font-bold mb-2">
+                            <?= $escaper->escapeHtml(__('What’s on your mind?')) ?>
+                            <span class="text-accent" aria-hidden="true">*</span>
+                        </label>
+                        <textarea name="comment" id="comment"
+                                  title="<?= $escaper->escapeHtmlAttr(__('What’s on your mind?')) ?>"
+                                  class="w-full border border-line px-4 py-3 text-base text-ink placeholder:text-stone/60 focus:outline-none focus:border-ink transition resize-none"
+                                  cols="5" rows="6"
+                                  data-validate="{required:true}"
+                                  required></textarea>
+                    </div>
+
+                    <?php /* Magento honeypot — must stay visually hidden but in DOM */ ?>
+                    <input name="hideit" type="text" value="" tabindex="-1" autocomplete="off"
+                           class="absolute -left-[9999px] w-px h-px overflow-hidden"
+                           aria-hidden="true"/>
+
+                    <?= $block->getBlockHtml('formkey') ?>
+
+                    <div>
+                        <button type="submit"
+                                title="<?= $escaper->escapeHtmlAttr(__('Submit')) ?>"
+                                class="action submit primary inline-flex items-center justify-center gap-2 bg-accent text-paper px-8 py-3 text-base font-bold hover:bg-black transition">
+                            <span><?= $escaper->escapeHtml(__('Submit')) ?></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <?php /* RIGHT: Contact details card */ ?>
+            <div class="border border-line p-5 sm:p-8 lg:p-10">
+                <div class="grid sm:grid-cols-2 gap-8 lg:gap-10">
+
+                    <?php /* Our Address */ ?>
+                    <div>
+                        <h2 class="display text-xl lg:text-2xl mb-6"><?= $escaper->escapeHtml(__('Our Address')) ?></h2>
+                        <ul class="space-y-6">
+                            <?php foreach ($offices as $office): ?>
+                                <li>
+                                    <p class="text-accent font-bold text-base mb-2"><?= $escaper->escapeHtml($office['name']) ?></p>
+                                    <address class="not-italic text-base text-ink leading-relaxed">
+                                        <?php foreach ($office['lines'] as $i => $line): ?>
+                                            <?= $escaper->escapeHtml($line) ?><?php if ($i < count($office['lines']) - 1): ?><br/><?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </address>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <?php /* Get In Touch */ ?>
+                    <div>
+                        <h2 class="display text-xl lg:text-2xl mb-6"><?= $escaper->escapeHtml(__('Get In Touch')) ?></h2>
+                        <ul class="space-y-3 mb-7">
+                            <li>
+                                <a href="<?= $escaper->escapeUrl('mailto:' . $emailSales) ?>"
+                                   class="text-base text-ink hover:text-accent transition break-all">
+                                    <?= $escaper->escapeHtml($emailSales) ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= $escaper->escapeUrl('tel:' . $telE164) ?>"
+                                   class="text-base text-ink hover:text-accent transition">
+                                    <?= $escaper->escapeHtml($telDisplay) ?>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="flex flex-wrap gap-3">
+                            <?php foreach ($socials as $social): ?>
+                                <a href="<?= $escaper->escapeUrl($social['href']) ?>"
+                                   aria-label="<?= $escaper->escapeHtmlAttr($social['label']) ?>"
+                                   class="w-9 h-9 rounded-full bg-line text-ink hover:bg-accent hover:text-paper transition flex items-center justify-center">
+                                    <svg class="<?= $escaper->escapeHtmlAttr($social['svgClass']) ?>" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="<?= $escaper->escapeHtmlAttr($social['path']) ?>"/>
+                                    </svg>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<?php /* ===================== 3. MAP ===================== */ ?>
+<section class="bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+        <div class="flex items-end justify-between mb-8 flex-wrap gap-4">
+            <h2 class="display text-3xl lg:text-4xl leading-tight">
+                <?= $escaper->escapeHtml(__('Find us in West London.')) ?>
+            </h2>
+            <a href="<?= $escaper->escapeUrl($mapDirect) ?>"
+               target="_blank" rel="noopener"
+               class="arrow-link text-base font-bold border-b border-ink pb-1 hover:text-accent hover:border-accent">
+                <?= $escaper->escapeHtml(__('Get directions')) ?>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="relative aspect-[16/7] overflow-hidden border border-line bg-stone/5">
+            <iframe
+                title="<?= $escaper->escapeHtmlAttr(__('Map showing Bounce Creative Designs at Unit 18 Clyde Terrace, Forest Hill, London, SE23 3BA')) ?>"
+                src="<?= $escaper->escapeUrl($mapEmbed) ?>"
+                class="absolute inset-0 w-full h-full"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<?php /* ===================== 4. FAQ ===================== */ ?>
+<section class="py-[70px] bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+            <div class="lg:col-span-4">
+                <h2 class="display text-3xl lg:text-4xl leading-tight">
+                    <?= $escaper->escapeHtml(__('Frequently asked questions.')) ?>
+                </h2>
+                <p class="text-stone text-lg leading-relaxed mt-5">
+                    <?= $escaper->escapeHtml(__('Quick answers to the questions we hear most often. Can’t find what you’re looking for?')) ?>
+                    <a href="#contact-form-title" class="text-accent font-semibold hover:underline">
+                        <?= $escaper->escapeHtml(__('Drop us a line')) ?>
+                    </a>.
+                </p>
+            </div>
+
+            <div class="lg:col-span-8 border-b border-line">
+                <?php foreach ($faqs as $faq): ?>
+                    <details class="group border-b border-line last:border-b-0 py-6">
+                        <summary class="flex items-center justify-between gap-4 cursor-pointer text-base lg:text-lg font-bold text-ink hover:text-accent transition">
+                            <span><?= $escaper->escapeHtml($faq['q']) ?></span>
+                            <svg class="w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-stone text-base leading-relaxed">
+                            <?php if ($faq['a'] !== null): ?>
+                                <?= $escaper->escapeHtml($faq['a']) ?>
+                            <?php else: ?>
+                                <?= $escaper->escapeHtml(__('Yes — most catalogue lines have a verified eco alternative. See our')) ?>
+                                <a href="<?= $escaper->escapeUrl($block->getUrl('sustainability')) ?>"
+                                   class="text-accent font-semibold hover:underline">
+                                    <?= $escaper->escapeHtml(__('Sustainability page')) ?>
+                                </a>
+                                <?= $escaper->escapeHtml(__('for our approach to materials, sourcing and packaging.')) ?>
+                            <?php endif; ?>
+                        </p>
+                    </details>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+    </div>
+</section>
+

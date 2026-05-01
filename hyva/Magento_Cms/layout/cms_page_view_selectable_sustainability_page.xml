@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+    Layout override for the "Sustainability" CMS page.
+
+    Place at:
+      app/design/frontend/PromoBrand/hyva/Magento_Cms/layout/cms_page_view_selectable_sustainability_page.xml
+
+    The handle name pattern is:
+      cms_page_view_selectable_<URL_KEY>_<PAGE_LAYOUT>
+
+    Set in admin (Content > Pages > Sustainability):
+      - URL Key:     sustainability
+      - Page Layout: 1 column            (this resolves to handle suffix `_page`)
+
+    If you choose a different page layout (e.g. "Empty"), rename this file accordingly,
+    or simplify by using `cms_page_view_selectable_sustainability.xml` and selecting
+    `Use Default` for layout in admin.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <head>
+        <title>Sustainability — Promo Brand</title>
+        <meta name="description"
+              content="Our commitment to sustainable, responsibly sourced and ethically produced promotional merchandise — eco materials, low-impact production and reusable products built to last."/>
+        <meta name="robots" content="INDEX,FOLLOW"/>
+    </head>
+
+    <body>
+        <!-- Hide the default CMS page title block: the Hero section in our template
+             prints its own H1, so the standard <h1 class="page-title">Sustainability</h1>
+             would duplicate it. -->
+        <referenceBlock name="page.main.title" remove="true"/>
+
+        <!-- Inject the Sustainability template into the CMS page content area.
+             The CMS page's WYSIWYG content can be left empty (or used for a short
+             admin-editable lede) — our template handles the full layout. -->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="cms.sustainability.content"
+                   template="Magento_Cms::page/sustainability.phtml"
+                   before="-"/>
+        </referenceContainer>
+    </body>
+
+</page>

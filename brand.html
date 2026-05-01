@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Brand &mdash; Promo Brand</title>
-<meta name="description" content="Explore all brand collections at Promo Brand — premium branded merchandise for leading companies, sourced ethically and delivered globally." />
+<title>Brands &mdash; Promo Brand</title>
+<meta name="description" content="Browse our trusted promotional brand partners — from Adidas and Stanley to Moleskine and Yeti. Premium-grade merchandise customised for campaigns, events, staff merch and corporate gifting." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +53,7 @@
 <body class="bg-paper text-ink font-sans">
 
 <!-- =================== UTILITY BAR =================== -->
-<div class="text-paper text-xs lg:text-sm" style="background-color:#EC1C51;">
+<div class="bg-accent text-paper text-xs lg:text-sm">
   <div class="max-w-8xl mx-auto px-4 lg:px-8 h-9 flex items-center justify-between">
     <p class="hidden md:block">A brand: evolved. <a href="#" class="underline underline-offset-2 hover:no-underline">Find out more about the new look for Promo Brand &rarr;</a></p>
     <p class="md:hidden">Free UK delivery on orders over &pound;500</p>
@@ -131,26 +131,43 @@
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-sm text-stone">
       <a href="index.html" class="hover:text-accent transition">Home</a>
       <svg class="w-3 h-3 shrink-0 text-stone/50" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
-      <span class="text-ink font-medium">Brand</span>
+      <span class="text-ink font-medium">Brands</span>
     </nav>
   </div>
 </div>
 
-<!-- =================== PAGE HEADER + LISTING =================== -->
-<main class="bg-paper">
-  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-8 sm:py-10 lg:py-[70px]">
+<!-- =================== 1. PAGE HEADER + INTRO =================== -->
+<section class="bg-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-[70px]">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div class="lg:col-span-5">
+        <h1 class="display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mb-5 lg:mb-6">Brands</h1>
+        <p class="text-xl lg:text-2xl text-ink leading-snug">
+          The names your audience already trusts &mdash; with your logo on them.
+        </p>
+      </div>
+      <div class="lg:col-span-7 text-stone text-lg leading-relaxed space-y-5">
+        <p>
+          Branded merchandise from a name people already recognise carries weight your in-house design can&rsquo;t always borrow. Whether you&rsquo;re kitting out a sales conference, fulfilling a corporate gifting brief or building staff merch that lasts well beyond the launch event, our partner brands give you a head-start.
+        </p>
+        <p>
+          Browse our trusted brand partners below &mdash; each available with your own logo applied, in quantities from a hundred to a hundred thousand.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Title + Search -->
-    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8 lg:mb-10">
-      <h1 class="display text-2xl sm:text-3xl lg:text-4xl shrink-0">Brand</h1>
+<!-- =================== 2. SEARCH + ALPHABETICAL FILTER =================== -->
+<section class="hidden bg-paper border-y border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-5 lg:py-6">
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
       <!-- Search box -->
-      <div class="relative w-full sm:w-72 lg:w-80">
-        <label for="category-search" class="sr-only">Search brands</label>
+      <div class="relative w-full lg:w-80 shrink-0">
+        <label for="brand-search" class="sr-only">Search brands</label>
         <input
-          type="search"
-          id="category-search"
-          placeholder="Search brands&hellip;"
+          type="search" id="brand-search" placeholder="Search brands&hellip;"
           autocomplete="off"
           class="w-full border border-line pl-4 pr-10 py-3 text-base text-ink placeholder:text-stone/60 focus:outline-none focus:border-ink transition"
         />
@@ -158,283 +175,288 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
         </span>
       </div>
+
+      <!-- Alphabetical filter (letters with no brands are visually disabled) -->
+      <nav aria-label="Filter brands by letter" class="flex flex-wrap gap-1">
+        <button type="button" data-filter="all" class="alpha-btn px-3 h-9 text-sm font-bold border border-ink bg-ink text-paper transition" aria-pressed="true">All</button>
+        <button type="button" data-filter="A" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">A</button>
+        <button type="button" data-filter="B" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">B</button>
+        <button type="button" data-filter="C" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">C</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">D</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">E</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">F</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">G</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">H</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">I</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">J</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">K</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">L</button>
+        <button type="button" data-filter="M" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">M</button>
+        <button type="button" data-filter="N" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">N</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">O</button>
+        <button type="button" data-filter="P" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">P</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">Q</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">R</button>
+        <button type="button" data-filter="S" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">S</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">T</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">U</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">V</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">W</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">X</button>
+        <button type="button" data-filter="Y" class="alpha-btn w-9 h-9 text-sm font-bold border border-line text-ink hover:border-ink hover:bg-ink hover:text-paper transition" aria-pressed="false">Y</button>
+        <button type="button" disabled class="w-9 h-9 text-sm font-bold border border-line text-stone/30 cursor-not-allowed">Z</button>
+      </nav>
+
     </div>
+  </div>
+</section>
+
+<!-- =================== 3. BRAND LISTING =================== -->
+<main class="bg-paper">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 pb-10 lg:pb-[70px]">
 
     <!-- Cards grid -->
-    <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+    <div id="brand-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 
-      <!-- Card: Bags -->
-      <article class="category-card group border border-line" data-name="Bags">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/bags.jpg"
-              alt="Bags category — branded bags and totes"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Bags</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Custom branded bags, totes and backpacks for every occasion. From lightweight shoppers to premium conference bags.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Bags">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Aladdin -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Aladdin">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_Aladdin_Promotional_Merchandise_Brands_Bounce_Creative_Designs-30.png" alt="Aladdin" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Drinkware -->
-      <article class="category-card group border border-line" data-name="Drinkware">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image1.jpg"
-              alt="Drinkware category — branded bottles and mugs"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Drinkware</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Branded bottles, mugs and travel cups built to keep your brand visible all day, every day, wherever your customers go.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Drinkware">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: BIC -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="BIC">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_BIC_Promotional_Merchandise_Brands_Bounce_Creative_Designs-22.png" alt="BIC" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Tech -->
-      <article class="category-card group border border-line" data-name="Tech">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image2.png"
-              alt="Tech category — branded USB drives and wireless accessories"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Tech</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              USB drives, wireless chargers, earbuds and branded tech accessories for the modern workforce and savvy event attendee.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Tech">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Bobble Bottle -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Bobble Bottle">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_Bobble_Bottle_Promotional_Merchandise_Brands_Bounce_Creative_Designs-08.png" alt="Bobble Bottle" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Clothing -->
-      <article class="category-card group border border-line" data-name="Clothing">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/clothing.jpg"
-              alt="Clothing category — branded workwear and T-shirts"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Clothing</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Embroidered and printed workwear, T-shirts, hoodies and polos — branded with precision for teams of all sizes.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Clothing">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: CamelBak -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="CamelBak">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_Camelbak_Promotional_Merchandise_Brands_Bounce_Creative_Designs-10.png" alt="CamelBak" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Pens -->
-      <article class="category-card group border border-line" data-name="Pens">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image3.jpg"
-              alt="Pens category — branded ballpoints and rollerballs"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Pens</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Ballpoints, rollerballs and stylus pens designed for everyday corporate gifting, desk use and event giveaways.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Pens">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Castelli -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Castelli">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Castelli_Promotional_Merchandise_Brands_Bounce_Creative_Designs-24.jpg" alt="Castelli" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Notebooks -->
-      <article class="category-card group border border-line" data-name="Notebooks">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/notepads.jpg"
-              alt="Notebooks category — branded notebooks and journals"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Notebooks</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Premium branded notebooks, A5 journals and notepads to keep your brand on every desk and in every meeting.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Notebooks">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Chilly's -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Chilly's">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Chillys_Bottle_Promotional_Merchandise_Brands_Bounce_Creative_Designs-01.jpg" alt="Chilly's" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Office -->
-      <article class="category-card group border border-line" data-name="Office">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image4.jpg"
-              alt="Office category — branded desk accessories and stationery"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Office</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Desk accessories, organisers and branded stationery sets to keep your team productive and consistently on-brand.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Office">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Corkcicle -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Corkcicle">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Corkcicle_Promotional_Merchandise_Brands_Bounce_Creative_Designs-09.jpg" alt="Corkcicle" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Outdoors -->
-      <article class="category-card group border border-line" data-name="Outdoors">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image5.jpg"
-              alt="Outdoors category — branded outdoor gear and umbrellas"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Outdoors</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Branded outdoor gear, umbrellas, picnic sets and leisure products for corporate events and team away-days.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Outdoors">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Cross Pens -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Cross Pens">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Cross_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-25.jpg" alt="Cross Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Giveaways -->
-      <article class="category-card group border border-line" data-name="Giveaways">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/themes.jpg"
-              alt="Giveaways category — low-cost branded items for events"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Giveaways</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-4">
-              Low-cost, high-impact branded items perfect for exhibitions, conferences, trade shows and promotional events.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Giveaways">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Ecoffee -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Ecoffee">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_ecoffee_cup_Promotional_Merchandise_Brands_Bounce_Creative_Designs-14.png" alt="Ecoffee" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Eco Products -->
-      <article class="category-card group border border-line" data-name="Eco Products">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image6.jpg"
-              alt="Eco Products category — sustainable branded merchandise"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Eco Products</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-3">
-              Sustainably sourced and recycled branded merchandise for businesses committed to reducing their environmental impact.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Eco Products">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Fitbit -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Fitbit">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_fibit_Promotional_Merchandise_Brands_Bounce_Creative_Designs-13.png" alt="Fitbit" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Lifestyle -->
-      <article class="category-card group border border-line" data-name="Lifestyle">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image7.jpg"
-              alt="Lifestyle category — branded lifestyle and wellness products"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Lifestyle</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-3">
-              Branded wellness, travel and leisure products that keep your logo front of mind in everyday life.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Lifestyle">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+      <!-- Card: Fruit of the Loom -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Fruit of the Loom">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Fruit_of_the_Loom_Promotional_Merchandise_Brands_Bounce_Creative_Designs-19.png" alt="Fruit of the Loom" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
 
-      <!-- Card: Stationery -->
-      <article class="category-card group border border-line" data-name="Stationery">
-        <a href="#" class="block" tabindex="0">
-          <div class="overflow-hidden aspect-[4/3] bg-stone/5">
-            <img
-              src="images/image4.jpg"
-              alt="Stationery category — branded stationery sets and desk accessories"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-            />
+      <!-- Card: Jamie Oliver -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Jamie Oliver">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Jamie_Oliver_Promotional_Merchandise_Brands_Bounce_Creative_Designs-15.jpg" alt="Jamie Oliver" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
-          <div class="p-4">
-            <h2 class="text-lg font-bold text-ink mb-2">Stationery</h2>
-            <p class="text-sm text-stone leading-relaxed line-clamp-2 mb-3">
-              Branded pads, folders, sticky notes and stationery sets that put your identity on every desk in the office.
-            </p>
-            <span class="arrow-link text-sm font-bold text-accent group-hover:text-ink transition" aria-label="Read more about Stationery">
-              Read More
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </span>
+        </a>
+      </article>
+
+      <!-- Card: Mighty Mug -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Mighty Mug">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Mighty_Mug_Promotional_Merchandise_Brands_Bounce_Creative_Designs-27.jpg" alt="Mighty Mug" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Moleskine -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Moleskine">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Moleskine_Promotional_Merchandise_Brands_Bounce_Creative_Designs-11.jpg" alt="Moleskine" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Parker Pens -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Parker Pens">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Parker_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-06.jpg" alt="Parker Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Prodir Pens -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Prodir Pens">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Prodir_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-17.jpg" alt="Prodir Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Regatta -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Regatta">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Regatta_Promotional_Merchandise_Brands_Bounce_Creative_Designs-21.jpg" alt="Regatta" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Root7 -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Root7">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Root7_Promotional_Merchandise_Brands_Bounce_Creative_Designs-23.jpg" alt="Root7" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Rubik's -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Rubik's">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Rubiks_Promotional_Merchandise_Brands_Bounce_Creative_Designs-18.jpg" alt="Rubik's" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Skross -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Skross">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Skross_Promotional_Merchandise_Brands_Bounce_Creative_Designs-04.jpg" alt="Skross" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Slazenger -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Slazenger">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Slazenger_Promotional_Merchandise_Brands_Bounce_Creative_Designs-12.png" alt="Slazenger" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Stojo -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Stojo">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Stojo_Promotional_Merchandise_Brands_Bounce_Creative_Designs-05.jpg" alt="Stojo" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Swiss Peak -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Swiss Peak">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Swiss_Peak_Promotional_Merchandise_Brands_Bounce_Creative_Designs-33.jpg" alt="Swiss Peak" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Victorinox -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Victorinox">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Victorinox_Promotional_Merchandise_Brands_Bounce_Creative_Designs-03.jpg" alt="Victorinox" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: W10 -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="W10">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_W10_Drinkware_Promotional_Merchandise_Brands_Bounce_Creative_Designs-02.jpg" alt="W10" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Waterman Pens -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Waterman Pens">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Waterman_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-07.jpg" alt="Waterman Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+        </a>
+      </article>
+
+      <!-- Card: Bobby Bag -->
+      <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Bobby Bag">
+        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+          <div class="relative aspect-[4/3] overflow-hidden bg-ink">
+            <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/bounce-creative-designs-bobby-bags.jpg" alt="Bobby Bag" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
         </a>
       </article>
@@ -462,41 +484,41 @@
           <div>
             <h4 class="text-base font-bold mb-6 text-ink">Shop</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Bags</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Drinkware</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Eco Products</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Stationery</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Lifestyle</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Bags</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Drinkware</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Eco Products</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Stationery</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Lifestyle</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-base font-bold mb-6 invisible">.</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Themes</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Technology</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Clothing</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Brands</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">View Everything</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Themes</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Technology</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Clothing</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Brands</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">View Everything</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-base font-bold mb-6 text-ink">Useful Links</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">About Us</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Contact Us</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">News</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Terms &amp; Conditions</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Sustainability</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">About Us</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Contact Us</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">News</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Terms &amp; Conditions</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Sustainability</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-base font-bold mb-6 invisible">.</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Our Values</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">FAQ&rsquo;s</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Compliance</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Modern Slavery</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Privacy Policy</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Our Values</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">FAQ&rsquo;s</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Compliance</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Modern Slavery</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
@@ -589,21 +611,30 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
   })();
 
-  // Category search filter
+  // Brand search + alphabetical filter (both apply together)
   (function () {
-    var input      = document.getElementById('category-search');
-    var cards      = document.querySelectorAll('.category-card');
-    var countEl    = document.getElementById('count-number');
-    var emptyState = document.getElementById('empty-state');
-    var grid       = document.getElementById('category-grid');
+    var input       = document.getElementById('brand-search');
+    var cards       = document.querySelectorAll('.brand-card');
+    var countEl     = document.getElementById('count-number');
+    var emptyState  = document.getElementById('empty-state');
+    var grid        = document.getElementById('brand-grid');
+    var alphaButtons = document.querySelectorAll('.alpha-btn');
 
-    input.addEventListener('input', function () {
-      var query   = this.value.trim().toLowerCase();
+    var activeLetter = 'all';
+
+    function applyFilters() {
+      var query   = (input.value || '').trim().toLowerCase();
       var visible = 0;
 
       cards.forEach(function (card) {
-        var name = card.getAttribute('data-name').toLowerCase();
-        var show = !query || name.includes(query);
+        var name        = card.getAttribute('data-name');
+        var nameLower   = name.toLowerCase();
+        var firstLetter = name.charAt(0).toUpperCase();
+
+        var matchesSearch = !query || nameLower.includes(query);
+        var matchesAlpha  = activeLetter === 'all' || firstLetter === activeLetter;
+        var show          = matchesSearch && matchesAlpha;
+
         card.style.display = show ? '' : 'none';
         if (show) visible++;
       });
@@ -611,6 +642,24 @@
       countEl.textContent = visible;
       emptyState.classList.toggle('hidden', visible > 0);
       grid.classList.toggle('hidden', visible === 0);
+    }
+
+    function setActiveLetter(btn) {
+      activeLetter = btn.getAttribute('data-filter');
+      alphaButtons.forEach(function (b) {
+        b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+        b.classList.add('bg-paper', 'text-ink', 'border-line');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.remove('bg-paper', 'text-ink', 'border-line');
+      btn.classList.add('bg-ink', 'text-paper', 'border-ink');
+      btn.setAttribute('aria-pressed', 'true');
+      applyFilters();
+    }
+
+    input.addEventListener('input', applyFilters);
+    alphaButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () { setActiveLetter(btn); });
     });
   })();
 </script>

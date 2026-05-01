@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -39,7 +39,7 @@
   .arrow-link { display:inline-flex; align-items:center; gap:.5rem; }
   .arrow-link svg { transition: transform .25s ease; }
   .arrow-link:hover svg { transform: translateX(4px); }
-  .marquee { animation: marquee 40s linear infinite; }
+  .marquee { animation: marquee 60s linear infinite; }
   @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
   .product-card .product-img { transition: transform .45s ease; }
   .product-card:hover .product-img { transform: scale(1.06); }
@@ -53,7 +53,7 @@
 <body class="bg-paper text-ink font-sans">
 
 <!-- =================== UTILITY BAR =================== -->
-<div class="text-paper text-xs lg:text-sm" style="background-color:#EC1C51;">
+<div class="bg-accent text-paper text-xs lg:text-sm">
   <div class="max-w-8xl mx-auto px-4 lg:px-8 h-9 flex items-center justify-between">
     <p class="hidden md:block">A brand: evolved. <a href="#" class="underline underline-offset-2 hover:no-underline">Find out more about the new look for Promo Brand &rarr;</a></p>
     <p class="md:hidden">Free UK delivery on orders over &pound;500</p>
@@ -65,9 +65,11 @@
       <span class="hidden lg:inline opacity-50">|</span>
       <a href="mailto:hello@promo-brand.com" class="hidden lg:inline hover:opacity-80">hello@promo-brand.com</a>
       <span class="opacity-50">|</span>
+
+      <!-- Language / Currency dropdown -->
       <details class="relative">
         <summary class="hover:opacity-80 cursor-pointer">EN / GBP</summary>
-        <div class="absolute right-0 top-6 z-50 bg-paper text-ink border border-line shadow-lg rounded-sm p-3 w-40 text-[11px]">
+        <div class="absolute right-0 top-6 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
           <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Language</p>
           <ul class="space-y-1 mb-3">
             <li><a href="#" class="hover:text-accent">English</a></li>
@@ -82,7 +84,7 @@
             <li><a href="#" class="hover:text-accent">GBP &pound;</a></li>
             <li><a href="#" class="hover:text-accent">EUR &euro;</a></li>
             <li><a href="#" class="hover:text-accent">USD $</a></li>
-            <li><a href="#" class="hover:text-accent">AED د.إ</a></li>
+            <li><a href="#" class="hover:text-accent">AED &#1583;.&#1573;</a></li>
           </ul>
         </div>
       </details>
@@ -682,15 +684,31 @@
 
 <!-- =================== 5. BRAND LOGOS =================== -->
 <section class="py-10 border-y border-line bg-paper">
-  <div class="overflow-hidden">
-    <div class="marquee flex gap-0 items-center whitespace-nowrap">
-      <img src="images/clients-01.png" alt="Coca-Cola, Savills, Amazon, Google Nest" class="h-20 w-auto shrink-0" loading="lazy" />
-      <img src="images/clients-02.png" alt="Virgin Atlantic, BP, boohoo, EasyJet" class="h-20 w-auto shrink-0" loading="lazy" />
-      <img src="images/clients-03.png" alt="British Airways, Superdrug, American Airlines" class="h-20 w-auto shrink-0" loading="lazy" />
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 overflow-hidden">
+    <div class="marquee flex gap-16 items-center whitespace-nowrap">
+      <img src="images/logo-coca-cola.png"        alt="Coca-Cola"        class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-savills.png"           alt="Savills"          class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-amazon.png"            alt="Amazon"           class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-google-nest.png"       alt="Google Nest"      class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-virgin-atlantic.png"   alt="Virgin Atlantic"  class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-bp.png"                alt="BP"               class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-boohoo.png"            alt="boohoo"           class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-easyjet.png"           alt="easyJet"          class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-british-airways.png"   alt="British Airways"  class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-superdrug.png"         alt="Superdrug"        class="h-[75px] w-auto shrink-0" loading="lazy" />
+      <img src="images/logo-american-airlines.png" alt="American Airlines" class="h-[75px] w-auto shrink-0" loading="lazy" />
       <!-- duplicate for seamless marquee -->
-      <img src="images/clients-01.png" alt="" class="h-20 w-auto shrink-0" loading="lazy" aria-hidden="true" />
-      <img src="images/clients-02.png" alt="" class="h-20 w-auto shrink-0" loading="lazy" aria-hidden="true" />
-      <img src="images/clients-03.png" alt="" class="h-20 w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-coca-cola.png"        alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-savills.png"           alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-amazon.png"            alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-google-nest.png"       alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-virgin-atlantic.png"   alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-bp.png"                alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-boohoo.png"            alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-easyjet.png"           alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-british-airways.png"   alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-superdrug.png"         alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
+      <img src="images/logo-american-airlines.png" alt="" class="h-[75px] w-auto shrink-0" loading="lazy" aria-hidden="true" />
     </div>
   </div>
 </section>
@@ -789,7 +807,7 @@
 
     <!-- Image column -->
     <div class="relative aspect-[4/3] overflow-hidden">
-      <img src="images/image1.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Branded merchandise for every occasion" loading="lazy" />
+      <img src="images/branding.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Branded merchandise for every occasion" loading="lazy" />
     </div>
 
     <!-- Text column -->
@@ -959,6 +977,25 @@
   </div>
 </section>
 
+<!-- =================== AWARDS =================== -->
+<section class="py-[70px] bg-paper border-t border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 text-center">
+    <h2 class="display text-3xl lg:text-4xl text-ink mb-14">Award-Winning Service</h2>
+    <!-- Sourcing City 5 badges -->
+    <div class="mb-6">
+      <img src="images/award-sourcing-city.png" alt="Sourcing City Distributor of the Year Awards 2016–2020" class="w-full mx-auto" loading="lazy" />
+    </div>
+    <!-- BPMA Winner badge -->
+    <div class="mb-6">
+      <img src="images/award-bpma.png" alt="BPMA Winner — Distributor of the Year" class="h-40 w-auto mx-auto" loading="lazy" />
+    </div>
+    <!-- BPMA Accredited + PSI -->
+    <div>
+      <img src="images/award-psi.png" alt="BPMA Accredited Member &amp; PSI Member No. 17366" class="w-full mx-auto" loading="lazy" />
+    </div>
+  </div>
+</section>
+
 <!-- =================== FOOTER =================== -->
 <footer>
 
@@ -972,41 +1009,41 @@
           <div>
             <h4 class="text-base font-bold mb-6 text-ink">Shop</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Bags</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Drinkware</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Eco Products</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Stationery</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Lifestyle</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Bags</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Drinkware</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Eco Products</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Stationery</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Lifestyle</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-base font-bold mb-6 invisible">.</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Themes</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Technology</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Clothing</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Brands</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">View Everything</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Themes</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Technology</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Clothing</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Brands</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">View Everything</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-base font-bold mb-6 text-ink">Useful Links</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">About Us</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Contact Us</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">News</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Terms &amp; Conditions</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Sustainability</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">About Us</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Contact Us</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">News</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Terms &amp; Conditions</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Sustainability</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-base font-bold mb-6 invisible">.</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Our Values</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">FAQ&rsquo;s</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Compliance</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Modern Slavery</a></li>
-              <li><a href="#" class="text-ink/60 hover:text-accent transition">Privacy Policy</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Our Values</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">FAQ&rsquo;s</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Compliance</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Modern Slavery</a></li>
+              <li><a href="#" class="text-stone hover:text-accent transition">Privacy Policy</a></li>
             </ul>
           </div>
         </div>

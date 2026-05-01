@@ -1,0 +1,180 @@
+<?php
+/**
+ * Hyvä-compatible "Sustainability" CMS page template for Promo Brand theme.
+ *
+ * Place at:
+ *   app/design/frontend/PromoBrand/hyva/Magento_Cms/templates/page/sustainability.phtml
+ *
+ * Wired up via:
+ *   app/design/frontend/PromoBrand/hyva/Magento_Cms/layout/cms_page_view_selectable_sustainability_page.xml
+ *
+ * Requires the following custom Tailwind tokens in `web/tailwind/tailwind.config.js`:
+ *   colors:    ink #363A36, paper #FFFFFF, stone #6B6B6B, line #E5E5E5, accent #EC1C51
+ *   fontFamily: sans / display → "Open Sans", system fallbacks
+ *   maxWidth:  '8xl' => '88rem'
+ *
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Hyva\Theme\Model\ViewModelRegistry $viewModels
+ */
+
+$mediaUrl  = $block->getViewFileUrl('images/sustainability/');
+$contactUrl = $block->getUrl('contact');
+
+// Optional: drop a YouTube video ID into the CMS page's WYSIWYG content area
+// or wire it via a layout XML argument. Leave empty to render the poster + play
+// button placeholder shown below.
+$videoEmbedUrl = ''; // e.g. 'https://www.youtube.com/embed/XXXXXXXXXXX?rel=0'
+?>
+
+<?php /* ===================== 1. INTRODUCTION ===================== */ ?>
+<section class="py-[70px] bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div class="lg:col-span-5">
+                <h1 class="display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mb-5 lg:mb-6">
+                    <?= $escaper->escapeHtml(__('Sustainability')) ?>
+                </h1>
+                <p class="text-xl lg:text-2xl text-ink leading-snug">
+                    <?= $escaper->escapeHtml(__('Sustainability isn’t a range — it’s a default.')) ?>
+                </p>
+            </div>
+            <div class="lg:col-span-7 text-stone text-lg leading-relaxed space-y-5">
+                <p><?= $escaper->escapeHtml(__('For most promotional merchandise, the lifetime is measured in weeks. We’re building a different kind of catalogue — products designed to be kept, used, and noticed long after the launch event has packed up.')) ?></p>
+                <p><?= $escaper->escapeHtml(__('That means recycled and organic materials wherever possible, suppliers we’ve audited in person, and an account team trained to recommend the lower-impact option first — not the cheapest one. We don’t greenwash. If a product can’t back up its eco-claim with evidence, we don’t list it as one.')) ?></p>
+                <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 pt-2 text-base text-ink">
+                    <?php
+                    $bullets = [
+                        __('GOTS, GRS & FSC certified ranges'),
+                        __('BPMA Charter member since 2014'),
+                        __('Carbon-balanced UK delivery'),
+                        __('Plastic-free packaging by default'),
+                    ];
+                    foreach ($bullets as $bullet): ?>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <?= $escaper->escapeHtml($bullet) ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php /* ===================== 2. KEY PILLARS ===================== */ ?>
+<?php
+$pillars = [
+    [
+        'title' => __('Eco-Friendly Materials'),
+        'body'  => __('Recycled PET, organic cotton, FSC-certified paper, plant-based bioplastics — sourced from suppliers we’ve verified.'),
+        'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M21 3c-7 0-13 5-13 12 0 2 .6 4 1.7 5.5"/>'
+                 . '<path stroke-linecap="round" stroke-linejoin="round" d="M3 21c4-1 8-3 11-7"/>',
+    ],
+    [
+        'title' => __('Responsible Sourcing'),
+        'body'  => __('Audited supply chains, traceable origins and long-term partner relationships — never anonymous middlemen.'),
+        'icon'  => '<circle cx="12" cy="12" r="9"/>'
+                 . '<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/>',
+    ],
+    [
+        'title' => __('Reusable Products'),
+        'body'  => __('Bottles, cups, totes and notebooks built to last — replacing single-use giveaways with lasting brand impressions.'),
+        'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0114-5.3L21 9"/>'
+                 . '<path stroke-linecap="round" stroke-linejoin="round" d="M21 4v5h-5"/>'
+                 . '<path stroke-linecap="round" stroke-linejoin="round" d="M20 12a8 8 0 01-14 5.3L3 15"/>'
+                 . '<path stroke-linecap="round" stroke-linejoin="round" d="M3 20v-5h5"/>',
+    ],
+    [
+        'title' => __('Ethical Production'),
+        'body'  => __('Fair-wage factories, safe working conditions and Sedex-monitored partners across our European and overseas supply base.'),
+        'icon'  => '<path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.5-7-11a7 7 0 0114 0c0 6.5-7 11-7 11z"/>'
+                 . '<circle cx="12" cy="10" r="2.5"/>',
+    ],
+];
+?>
+<section id="pillars" class="py-[70px] bg-black text-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+        <div class="text-center mb-14 lg:mb-16">
+            <h2 class="display text-3xl lg:text-4xl leading-tight max-w-2xl mx-auto">
+                <?= $escaper->escapeHtml(__('Four principles behind every product we list.')) ?>
+            </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            <?php foreach ($pillars as $pillar): ?>
+                <article class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 rounded-full bg-accent/15 text-accent flex items-center justify-center mb-6 shrink-0" aria-hidden="true">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                            <?= /* @noEscape — inline SVG path data, defined locally above, not user input */ $pillar['icon'] ?>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 leading-snug"><?= $escaper->escapeHtml($pillar['title']) ?></h3>
+                    <p class="text-base text-paper/70 leading-relaxed"><?= $escaper->escapeHtml($pillar['body']) ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<?php /* ===================== 3. VIDEO + TEXT ===================== */ ?>
+<section class="py-[70px] bg-paper">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            <?php /* Video column */ ?>
+            <div class="relative aspect-video overflow-hidden bg-black group">
+                <?php if ($videoEmbedUrl !== ''): ?>
+                    <iframe class="absolute inset-0 w-full h-full"
+                            src="<?= $escaper->escapeUrl($videoEmbedUrl) ?>"
+                            title="<?= $escaper->escapeHtmlAttr(__('Promo Brand sustainability story')) ?>"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                <?php else: ?>
+                    <img src="<?= $escaper->escapeUrl($mediaUrl . 'video-poster.jpg') ?>"
+                         alt="<?= $escaper->escapeHtmlAttr(__('Inside our supply chain — sustainability story video')) ?>"
+                         class="absolute inset-0 w-full h-full object-cover opacity-80 transition duration-500 group-hover:opacity-70"
+                         loading="lazy"/>
+                    <button type="button"
+                            aria-label="<?= $escaper->escapeHtmlAttr(__('Play sustainability story video')) ?>"
+                            class="absolute inset-0 flex items-center justify-center focus:outline-none">
+                        <span class="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-accent text-paper flex items-center justify-center shadow-2xl transition group-hover:scale-110 group-hover:bg-paper group-hover:text-accent">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8 5v14l11-7L8 5z"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <span class="absolute bottom-4 left-4 bg-black/70 text-paper text-xs font-medium tracking-widest uppercase px-3 py-1.5">
+                        <?= $escaper->escapeHtml(__('2 min watch')) ?>
+                    </span>
+                <?php endif; ?>
+            </div>
+
+            <?php /* Text column */ ?>
+            <div class="flex flex-col justify-center">
+                <h2 class="display text-3xl lg:text-4xl leading-tight text-ink mb-6">
+                    <?= $escaper->escapeHtml(__('See sustainability, in practice.')) ?>
+                </h2>
+                <p class="text-stone text-lg leading-relaxed mb-6">
+                    <?= $escaper->escapeHtml(__('Walk through our supply chain in two minutes — from the recycled PET reaching the loom in Portugal, to the kraft despatch line in our UK warehouse, to a finished order arriving on a customer’s desk in central London.')) ?>
+                </p>
+                <p class="text-stone text-lg leading-relaxed mb-8">
+                    <?= $escaper->escapeHtml(__('You’ll meet the people behind the products and see why our partner relationships have lasted ten years and counting.')) ?>
+                </p>
+                <div>
+                    <a href="<?= $escaper->escapeUrl($contactUrl) ?>"
+                       class="inline-flex items-center gap-2 bg-accent text-paper px-7 py-3.5 text-base font-bold hover:bg-ink transition">
+                        <?= $escaper->escapeHtml(__('Get a Quote')) ?>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
