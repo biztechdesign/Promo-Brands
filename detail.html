@@ -65,24 +65,39 @@
       <span class="hidden lg:inline opacity-50">|</span>
       <a href="mailto:hello@promo-brand.com" class="hidden lg:inline hover:opacity-80">hello@promo-brand.com</a>
       <span class="opacity-50">|</span>
+            <!-- Language dropdown -->
       <details class="relative">
-        <summary class="hover:opacity-80 cursor-pointer">EN / GBP</summary>
-        <div class="absolute right-0 top-6 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
-          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Language</p>
-          <ul class="space-y-1 mb-3">
-            <li><a href="#" class="hover:text-accent">English</a></li>
+        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          EN
+          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <div class="absolute left-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
+          <ul class="space-y-1.5">
+            <li><a href="#" class="font-semibold text-accent">English</a></li>
             <li><a href="#" class="hover:text-accent">Fran&ccedil;ais</a></li>
             <li><a href="#" class="hover:text-accent">Deutsch</a></li>
             <li><a href="#" class="hover:text-accent">Nederlands</a></li>
             <li><a href="#" class="hover:text-accent">Espa&ntilde;ol</a></li>
             <li><a href="#" class="hover:text-accent">Italiano</a></li>
           </ul>
-          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Currency</p>
-          <ul class="space-y-1">
-            <li><a href="#" class="hover:text-accent">GBP &pound;</a></li>
-            <li><a href="#" class="hover:text-accent">EUR &euro;</a></li>
-            <li><a href="#" class="hover:text-accent">USD $</a></li>
-            <li><a href="#" class="hover:text-accent">AED &#1583;.&#1573;</a></li>
+        </div>
+      </details>
+
+      <span class="opacity-50">|</span>
+
+      <!-- Currency dropdown -->
+      <details class="relative">
+        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
+          GBP &pound;
+          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <div class="absolute right-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-44 text-[11px]">
+          <ul class="space-y-1.5">
+            <li><a href="#" class="flex items-center justify-between font-semibold text-accent">GBP <span>&pound; British Pound</span></a></li>
+            <li><a href="#" class="flex items-center justify-between hover:text-accent">EUR <span>&euro; Euro</span></a></li>
+            <li><a href="#" class="flex items-center justify-between hover:text-accent">USD <span>$ US Dollar</span></a></li>
+            <li><a href="#" class="flex items-center justify-between hover:text-accent">AED <span>&#1583;.&#1573; Dirham</span></a></li>
           </ul>
         </div>
       </details>
@@ -92,21 +107,50 @@
 
 <!-- =================== HEADER =================== -->
 <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
-  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-8">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-6">
+
+    <!-- Logo -->
     <a href="index.html" class="flex items-center shrink-0">
       <img src="images/logo.svg" alt="Promo Brand" class="h-9 lg:h-10 w-auto" />
     </a>
-    <nav class="hidden lg:flex items-center gap-7 text-base font-medium">
-      <a href="#" class="hover:text-accent">Bags</a>
-      <a href="category.html" class="text-accent font-bold">Drinkware</a>
-      <a href="#" class="hover:text-accent">Tech</a>
-      <a href="#" class="hover:text-accent">Clothing</a>
-      <a href="#" class="hover:text-accent">Pens</a>
-      <a href="#" class="hover:text-accent">Notebooks</a>
-      <a href="#" class="hover:text-accent">Office</a>
-      <a href="#" class="hover:text-accent">Outdoors</a>
-      <a href="#" class="hover:text-accent">Giveaways</a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-base font-medium" aria-label="Main navigation">
+
+      <!-- Bags — megamenu trigger -->
+      <div class="relative h-20 flex items-center" id="nav-bags">
+        <button class="flex items-center gap-1 hover:text-accent transition"
+                aria-haspopup="true" aria-expanded="false" aria-controls="mega-bags">
+          Bags
+          <svg id="bags-chevron" class="w-3.5 h-3.5 text-stone transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/>
+          </svg>
+        </button>
+      </div>
+
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Drinkware
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Tech
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Clothing
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Pens
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Notebooks
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="flex items-center gap-1 hover:text-accent transition">Office
+        <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+      </a>
+      <a href="#" class="hover:text-accent transition">Online Ordering</a>
+
     </nav>
+
+    <!-- Right actions -->
     <div class="flex items-center gap-4">
       <button aria-label="Search" class="w-9 h-9 flex items-center justify-center hover:text-accent">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
@@ -122,7 +166,99 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
       </button>
     </div>
+
   </div>
+
+  <!-- ══════════ BAGS MEGAMENU ══════════ -->
+  <div id="mega-bags"
+       class="absolute top-full left-0 right-0 bg-paper border-t-2 border-accent shadow-xl z-50 hidden"
+       role="region" aria-label="Bags categories">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 py-8 pb-10">
+
+      <div class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-y-8 gap-x-4 xl:gap-x-6">
+
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Shopping Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Canvas Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Cotton Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Foldable Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Jute Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Non Woven Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Paper Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Shopper Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Tote Bags</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Business Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Anti Theft Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Conference Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Document Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Exhibition Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Laptop Bags</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Leisure Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Beach Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Cooler Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Picnic Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Suitcases &amp; Trolleys</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Toiletry Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Travel Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Weekend Holdalls</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Backpacks</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Backpacks</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Drawstring Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Drawstring Bags</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Sports Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Gym Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Sports Backpacks</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Sports Duffel Bags</a></li>
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Sports Holdalls</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Eco-friendly Bags</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Eco-friendly Bags</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-7 pt-5 border-t border-line flex items-center justify-between">
+        <a href="#" class="arrow-link text-sm font-bold hover:text-accent transition">
+          View All Bags
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="category.html" class="text-sm text-stone hover:text-accent transition">Browse all categories &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
 </header>
 
 <!-- =================== BREADCRUMB =================== -->
