@@ -66,25 +66,39 @@
       <a href="mailto:hello@promo-brand.com" class="hidden lg:inline hover:opacity-80">hello@promo-brand.com</a>
       <span class="opacity-50">|</span>
 
-      <!-- Language / Currency dropdown -->
+      <!-- Language dropdown -->
       <details class="relative">
-        <summary class="hover:opacity-80 cursor-pointer">EN / GBP</summary>
-        <div class="absolute right-0 top-6 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
-          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Language</p>
-          <ul class="space-y-1 mb-3">
-            <li><a href="#" class="hover:text-accent">English</a></li>
+        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+          EN
+          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <div class="absolute left-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
+          <ul class="space-y-1.5">
+            <li><a href="#" class="font-semibold text-accent">English</a></li>
             <li><a href="#" class="hover:text-accent">Fran&ccedil;ais</a></li>
             <li><a href="#" class="hover:text-accent">Deutsch</a></li>
             <li><a href="#" class="hover:text-accent">Nederlands</a></li>
             <li><a href="#" class="hover:text-accent">Espa&ntilde;ol</a></li>
             <li><a href="#" class="hover:text-accent">Italiano</a></li>
           </ul>
-          <p class="font-medium mb-1.5 text-stone uppercase tracking-wider">Currency</p>
-          <ul class="space-y-1">
-            <li><a href="#" class="hover:text-accent">GBP &pound;</a></li>
-            <li><a href="#" class="hover:text-accent">EUR &euro;</a></li>
-            <li><a href="#" class="hover:text-accent">USD $</a></li>
-            <li><a href="#" class="hover:text-accent">AED &#1583;.&#1573;</a></li>
+        </div>
+      </details>
+
+      <span class="opacity-50">|</span>
+
+      <!-- Currency dropdown -->
+      <details class="relative">
+        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
+          GBP &pound;
+          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
+        </summary>
+        <div class="absolute right-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-44 text-[11px]">
+          <ul class="space-y-1.5">
+            <li><a href="#" class="flex items-center justify-between font-semibold text-accent">GBP <span>&pound; British Pound</span></a></li>
+            <li><a href="#" class="flex items-center justify-between hover:text-accent">EUR <span>&euro; Euro</span></a></li>
+            <li><a href="#" class="flex items-center justify-between hover:text-accent">USD <span>$ US Dollar</span></a></li>
+            <li><a href="#" class="flex items-center justify-between hover:text-accent">AED <span>&#1583;.&#1573; Dirham</span></a></li>
           </ul>
         </div>
       </details>
