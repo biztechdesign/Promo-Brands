@@ -246,26 +246,20 @@
 <!-- =================== MAIN =================== -->
 <main id="main-content">
 
-  <!-- =================== 1. PAGE HEADER / HERO =================== -->
-  <section class="bg-paper border-b border-line py-12 lg:py-16" aria-labelledby="blog-page-title">
-    <div class="max-w-8xl mx-auto px-4 lg:px-8">
-
-      <!-- Breadcrumb -->
-      <nav aria-label="Breadcrumb" class="mb-6">
-        <ol class="flex items-center gap-2 text-sm text-stone">
-          <li><a href="index.html" class="hover:text-accent transition">Home</a></li>
-          <li aria-hidden="true"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg></li>
-          <li class="text-ink font-medium" aria-current="page">Blog</li>
-        </ol>
-      </nav>
-
-      <h1 id="blog-page-title" class="display text-4xl sm:text-5xl lg:text-6xl mb-4">Blog</h1>
-      <p class="text-stone text-lg max-w-xl">Read our latest news, ideas, guides, and inspiration from the world of branded merchandise.</p>
-
+  <!-- =================== BREADCRUMB =================== -->
+  <nav class="bg-paper border-b border-line" aria-label="Breadcrumb">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8 h-11 flex items-center">
+      <ol class="flex items-center gap-1.5 text-sm">
+        <li><a href="index.html" class="text-stone hover:text-accent transition">Home</a></li>
+        <li class="text-stone/40" aria-hidden="true">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
+        </li>
+        <li class="text-ink font-medium" aria-current="page">Blog</li>
+      </ol>
     </div>
-  </section>
+  </nav>
 
-  <!-- =================== 2. SEARCH & FILTER =================== -->
+  <!-- =================== SEARCH & FILTER =================== -->
   <section class="bg-paper border-b border-line py-6" aria-label="Search and filter blog posts">
     <div class="max-w-8xl mx-auto px-4 lg:px-8">
       <div class="flex flex-col sm:flex-row gap-3 lg:gap-4" x-data="blogFilter()" x-init="init()">
@@ -312,55 +306,12 @@
     </div>
   </section>
 
-  <!-- =================== 3. FEATURED POST =================== -->
-  <section class="py-[70px] bg-paper" aria-labelledby="featured-post-label">
+  <!-- =================== BLOG CARD GRID =================== -->
+  <section class="py-[70px] bg-paper" aria-label="Blog listing">
     <div class="max-w-8xl mx-auto px-4 lg:px-8">
-
-      <p id="featured-post-label" class="text-[11px] font-bold text-stone uppercase tracking-widest mb-6">Featured</p>
-
-      <article class="grid lg:grid-cols-2 gap-0 border border-line overflow-hidden group" aria-label="Featured blog post">
-
-        <!-- Image -->
-        <a href="#" class="relative block aspect-[4/3] lg:aspect-auto overflow-hidden bg-line" tabindex="0" aria-label="Read: How to Choose the Right Branded Merchandise for Your Event">
-          <img src="images/image1.jpg"
-               alt="A selection of branded tote bags and merchandise arranged on a conference table"
-               class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
-          <!-- Category badge -->
-          <span class="absolute top-4 left-4 bg-accent text-paper text-[11px] font-bold uppercase tracking-widest px-3 py-1">Guides &amp; How-To</span>
-        </a>
-
-        <!-- Content -->
-        <div class="flex flex-col justify-center px-8 py-10 lg:px-12 lg:py-14">
-          <time datetime="2026-04-22" class="text-sm text-stone mb-4 block">22 April 2026</time>
-          <h2 class="display text-2xl sm:text-3xl lg:text-4xl leading-tight mb-4">
-            <a href="#" class="hover:text-accent transition focus:outline-none focus-visible:underline">
-              How to Choose the Right Branded Merchandise for Your Next Event
-            </a>
-          </h2>
-          <p class="text-stone text-base leading-relaxed mb-8 line-clamp-3">
-            Whether you&rsquo;re planning a trade show, conference, or corporate away-day, the branded merchandise you choose says everything about your company. We&rsquo;ve put together this guide to help you make the right call every time.
-          </p>
-          <div>
-            <a href="#" class="arrow-link text-base font-bold border-b border-ink pb-1 hover:text-accent hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              Read More
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-            </a>
-          </div>
-        </div>
-
-      </article>
-
-    </div>
-  </section>
-
-  <!-- =================== 4. BLOG CARD GRID =================== -->
-  <section class="pb-[70px] bg-paper" aria-labelledby="blog-listing-label">
-    <div class="max-w-8xl mx-auto px-4 lg:px-8">
-
-      <h2 id="blog-listing-label" class="display text-2xl lg:text-3xl mb-10">Latest Articles</h2>
 
       <!-- Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="blog-grid">
 
         <!-- Card 1 -->
         <article class="blog-card flex flex-col border border-line overflow-hidden group focus-within:ring-2 focus-within:ring-accent">
@@ -541,7 +492,7 @@
     </div>
   </section>
 
-  <!-- =================== 5. PAGINATION =================== -->
+  <!-- =================== PAGINATION =================== -->
   <section class="pb-[70px] bg-paper" aria-label="Blog pagination">
     <div class="max-w-8xl mx-auto px-4 lg:px-8">
       <nav aria-label="Pagination" class="flex items-center justify-center gap-1">
