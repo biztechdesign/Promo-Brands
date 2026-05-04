@@ -259,10 +259,12 @@
     </div>
   </nav>
 
-  <!-- =================== SEARCH & FILTER =================== -->
-  <section class="bg-paper py-6" aria-label="Search and filter blog posts">
+  <!-- =================== SEARCH, FILTER & LISTING =================== -->
+  <section class="py-[70px] bg-paper" aria-label="Blog search and listing">
     <div class="max-w-8xl mx-auto px-4 lg:px-8">
-      <div class="flex flex-col sm:flex-row gap-3 lg:gap-4" x-data="blogFilter()" x-init="init()">
+
+      <!-- Search & Filter -->
+      <div class="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-8">
 
         <!-- Search -->
         <div class="relative flex-1">
@@ -270,16 +272,14 @@
           <svg class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
           <input id="blog-search" type="search"
                  placeholder="Search blog posts&hellip;"
-                 class="w-full border border-line pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-ink transition bg-paper placeholder:text-stone"
-                 x-model="search" @input="filter()" />
+                 class="w-full border border-line pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-ink transition bg-paper placeholder:text-stone" />
         </div>
 
         <!-- Category filter -->
         <div class="relative">
           <label for="blog-category" class="sr-only">Filter by category</label>
           <select id="blog-category"
-                  class="border border-line px-4 py-3 pr-10 text-sm focus:outline-none focus:border-ink transition appearance-none bg-paper text-ink w-full sm:w-48"
-                  x-model="category" @change="filter()">
+                  class="border border-line px-4 py-3 pr-10 text-sm focus:outline-none focus:border-ink transition appearance-none bg-paper text-ink w-full sm:w-48">
             <option value="">All Categories</option>
             <option value="guides">Guides &amp; How-To</option>
             <option value="news">News &amp; Updates</option>
@@ -294,8 +294,7 @@
         <div class="relative">
           <label for="blog-sort" class="sr-only">Sort posts</label>
           <select id="blog-sort"
-                  class="border border-line px-4 py-3 pr-10 text-sm focus:outline-none focus:border-ink transition appearance-none bg-paper text-ink w-full sm:w-40"
-                  x-model="sort" @change="filter()">
+                  class="border border-line px-4 py-3 pr-10 text-sm focus:outline-none focus:border-ink transition appearance-none bg-paper text-ink w-full sm:w-40">
             <option value="latest">Latest</option>
             <option value="popular">Most Popular</option>
           </select>
@@ -303,12 +302,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- =================== BLOG CARD GRID =================== -->
-  <section class="pt-2 pb-[70px] bg-paper" aria-label="Blog listing">
-    <div class="max-w-8xl mx-auto px-4 lg:px-8">
 
       <!-- Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
