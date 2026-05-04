@@ -199,9 +199,13 @@
   <!-- =================== ARTICLE =================== -->
   <article aria-labelledby="article-title">
 
-    <!-- ── Blog Header ── -->
-    <header class="py-[70px] pb-10 bg-paper">
-      <div class="max-w-8xl mx-auto px-4 lg:px-8">
+  <!-- ── Article Section ── -->
+  <section class="py-[70px] bg-paper" aria-label="Article">
+    <div class="max-w-8xl mx-auto px-4 lg:px-8">
+
+    <!-- Blog Header -->
+    <header class="mb-10">
+      <div>
 
         <!-- Back to blog -->
         <a href="blog.html"
@@ -233,24 +237,18 @@
       </div>
     </header>
 
-    <!-- ── Featured Image ── -->
-    <div class="bg-paper pb-10">
-      <div class="max-w-8xl mx-auto px-4 lg:px-8">
-        <figure>
-          <img src="images/image1.jpg"
-               alt="A selection of branded tote bags, notebooks, and drinkware arranged on a conference table ready for a corporate event"
-               class="w-full aspect-[16/7] object-cover" />
-          <figcaption class="text-xs text-stone mt-2 text-center">
-            Branded merchandise displayed at a recent corporate event — curated and fulfilled by Promo Brand.
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+    <!-- Featured Image -->
+    <figure class="mb-10">
+      <img src="images/image1.jpg"
+           alt="A selection of branded tote bags, notebooks, and drinkware arranged on a conference table ready for a corporate event"
+           class="w-full aspect-[16/7] object-cover" />
+      <figcaption class="text-xs text-stone mt-2 text-center">
+        Branded merchandise displayed at a recent corporate event — curated and fulfilled by Promo Brand.
+      </figcaption>
+    </figure>
 
-    <!-- ── Article Body ── -->
-    <section class="bg-paper pb-[70px]" aria-label="Article content">
-      <div class="max-w-8xl mx-auto px-4 lg:px-8">
-
+    <!-- Article Body -->
+    <div aria-label="Article content">
         <div class="prose">
 
           <p>
@@ -356,8 +354,10 @@
 
         </div><!-- /prose -->
 
-      </div>
-    </section>
+    </div><!-- /article body -->
+
+    </div><!-- /container -->
+  </section><!-- /article section -->
 
   </article>
 
