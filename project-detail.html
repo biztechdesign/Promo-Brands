@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Customer Login &mdash; Promo Brand</title>
-<meta name="description" content="Sign in to your Promo Brand account or create a new one to track orders, manage your details and access exclusive pricing." />
+<title>Recycled Aluminium Ballpen Campaign &mdash; Projects &mdash; Promo Brand</title>
+<meta name="description" content="5,000 recycled aluminium ballpens screen-printed for a national retail client — delivered in custom kraft boxes, reducing plastic use by 94%. See how it was done." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,11 +36,14 @@
   html { scroll-behavior: smooth; }
   body { -webkit-font-smoothing: antialiased; }
   .display { font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; letter-spacing: -0.025em; font-weight: 700; }
-  .arrow-link { display:inline-flex; align-items:center; gap:.5rem; }
+  .arrow-link { display: inline-flex; align-items: center; gap: .5rem; }
   .arrow-link svg { transition: transform .25s ease; }
   .arrow-link:hover svg { transform: translateX(4px); }
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
+  .project-card .project-img { transition: transform .65s ease; }
+  .project-card:hover .project-img { transform: scale(1.07); }
+  .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 </style>
 </head>
 <body class="bg-paper text-ink font-sans">
@@ -72,8 +75,6 @@
 
     <!-- Desktop nav -->
     <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-base font-medium" aria-label="Main navigation">
-
-      <!-- Bags — megamenu trigger -->
       <div class="relative h-20 flex items-center" id="nav-bags">
         <button class="flex items-center gap-1 hover:text-accent transition"
                 aria-haspopup="true" aria-expanded="false" aria-controls="mega-bags">
@@ -83,7 +84,6 @@
           </svg>
         </button>
       </div>
-
       <a href="#" class="flex items-center gap-1 hover:text-accent transition">Drinkware
         <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
       </a>
@@ -102,7 +102,6 @@
       <a href="#" class="flex items-center gap-1 hover:text-accent transition">Office
         <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
       </a>
-
     </nav>
 
     <!-- Right actions -->
@@ -128,9 +127,7 @@
        class="absolute top-full left-0 right-0 bg-paper border-t-2 border-accent shadow-xl z-50 hidden"
        role="region" aria-label="Bags categories">
     <div class="max-w-8xl mx-auto px-4 lg:px-8 py-8 pb-10">
-
       <div class="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-y-8 gap-x-4 xl:gap-x-6">
-
         <div>
           <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Shopping Bags</h3>
           <ul class="space-y-2">
@@ -144,7 +141,6 @@
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Tote Bags</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Business Bags</h3>
           <ul class="space-y-2">
@@ -155,7 +151,6 @@
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Laptop Bags</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Leisure Bags</h3>
           <ul class="space-y-2">
@@ -163,26 +158,18 @@
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Cooler Bags</a></li>
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Picnic Bags</a></li>
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Suitcases &amp; Trolleys</a></li>
-            <li><a href="#" class="text-sm text-stone hover:text-accent transition">Toiletry Bags</a></li>
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Travel Bags</a></li>
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Weekend Holdalls</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Backpacks</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Backpacks</a></li>
-          </ul>
+          <ul class="space-y-2"><li><a href="#" class="text-sm text-stone hover:text-accent transition">All Backpacks</a></li></ul>
         </div>
-
         <div>
           <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Drawstring Bags</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Drawstring Bags</a></li>
-          </ul>
+          <ul class="space-y-2"><li><a href="#" class="text-sm text-stone hover:text-accent transition">All Drawstring Bags</a></li></ul>
         </div>
-
         <div>
           <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Sports Bags</h3>
           <ul class="space-y-2">
@@ -192,16 +179,11 @@
             <li><a href="#" class="text-sm text-stone hover:text-accent transition">Sports Holdalls</a></li>
           </ul>
         </div>
-
         <div>
           <h3 class="text-sm font-bold text-ink mb-3 pb-2 border-b border-line">Eco-friendly Bags</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-sm text-stone hover:text-accent transition">All Eco-friendly Bags</a></li>
-          </ul>
+          <ul class="space-y-2"><li><a href="#" class="text-sm text-stone hover:text-accent transition">All Eco-friendly Bags</a></li></ul>
         </div>
-
       </div>
-
       <div class="mt-7 pt-5 border-t border-line flex items-center justify-between">
         <a href="#" class="arrow-link text-sm font-bold hover:text-accent transition">
           View All Bags
@@ -209,7 +191,6 @@
         </a>
         <a href="category.html" class="text-sm text-stone hover:text-accent transition">Browse all categories &rarr;</a>
       </div>
-
     </div>
   </div>
 
@@ -219,152 +200,313 @@
 <div class="bg-paper border-b border-line">
   <div class="max-w-8xl mx-auto px-4 lg:px-8 h-11 flex items-center">
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-sm text-stone">
-      <a href="/" class="hover:text-accent transition">Home</a>
+      <a href="index.html" class="hover:text-accent transition">Home</a>
       <svg class="w-3 h-3 shrink-0 text-stone/50" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
-      <span class="text-ink font-medium">Customer Login</span>
+      <a href="projects.html" class="hover:text-accent transition">Projects</a>
+      <svg class="w-3 h-3 shrink-0 text-stone/50" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg>
+      <span class="text-ink font-medium truncate max-w-[200px] sm:max-w-none">Recycled Aluminium Ballpen</span>
     </nav>
   </div>
 </div>
 
-<!-- =================== PAGE TITLE + CONTENT =================== -->
-<div class="bg-paper">
-  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-[70px]">
-    <h1 class="display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mb-6 sm:mb-8 lg:mb-12">Customer Login</h1>
-    <div class="grid md:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
+<!-- =================== IMAGE + DETAILS =================== -->
+<section class="bg-paper border-b border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-10">
+    <div class="grid lg:grid-cols-12 gap-8 xl:gap-12 items-start">
 
-      <!-- ========== LEFT: REGISTERED CUSTOMERS / LOGIN ========== -->
-      <div class="border border-line p-5 sm:p-8 lg:p-10">
-
-        <h2 class="display text-xl lg:text-2xl mb-2">Registered Customers</h2>
-        <p class="text-stone text-sm sm:text-base leading-relaxed mb-5 sm:mb-8">
-          If you have an account, sign in with your email address.
-        </p>
-
-        <form method="post" action="#" novalidate>
-
-          <!-- Email Address -->
-          <div class="mb-5">
-            <label for="email" class="block text-base font-bold mb-2">
-              Email Address <span class="text-accent" aria-hidden="true">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="login[username]"
-              autocomplete="email"
-              required
-              class="w-full border border-line px-4 py-3 text-base text-ink placeholder:text-stone/60 focus:outline-none focus:border-ink transition"
-              placeholder="you@example.com"
-            />
-          </div>
-
-          <!-- Password -->
-          <div class="mb-4">
-            <label for="password" class="block text-base font-bold mb-2">
-              Password <span class="text-accent" aria-hidden="true">*</span>
-            </label>
-            <div class="relative">
-              <input
-                type="password"
-                id="password"
-                name="login[password]"
-                autocomplete="current-password"
-                required
-                class="w-full border border-line px-4 py-3 text-base text-ink placeholder:text-stone/60 focus:outline-none focus:border-ink transition pr-12"
-                placeholder="Enter your password"
-              />
-              <!-- Password visibility toggle (no Alpine.js — plain JS for standalone preview) -->
-              <button
-                type="button"
-                id="toggle-password"
-                aria-label="Show password"
-                class="absolute inset-y-0 right-0 w-12 flex items-center justify-center text-stone hover:text-ink transition"
-              >
-                <!-- Eye icon (password hidden) -->
-                <svg id="icon-eye" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                </svg>
-                <!-- Eye-slash icon (password visible) — hidden by default -->
-                <svg id="icon-eye-slash" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Forgot password -->
-          <div class="mb-8 flex justify-end">
-            <a href="#" class="text-sm text-stone hover:text-accent transition underline underline-offset-2">
-              Forgot Your Password?
-            </a>
-          </div>
-
-          <!-- Submit button -->
-          <button
-            type="submit"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent text-paper px-8 py-3.5 text-base font-bold hover:bg-ink transition"
-          >
-            Sign In
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-          </button>
-
-        </form>
+      <!-- LEFT: Gallery -->
+      <div class="lg:col-span-7"
+           x-data="{
+             active: 0,
+             images: [
+               { src: 'https://promo-brands.elsnermage.com/media/previousprojects/images/kids_activities_blog_header_2023.jpeg', alt: 'Recycled aluminium ballpen — main product shot' },
+               { src: 'https://promo-brands.elsnermage.com/media/previousprojects/images/G518508_1.jpg',                        alt: 'Ballpen with custom kraft packaging' },
+               { src: 'https://promo-brands.elsnermage.com/media/previousprojects/images/G598707-BIO001_1.jpg',                 alt: 'Close-up of screen-printed logo detail' },
+               { src: 'https://promo-brands.elsnermage.com/media/previousprojects/images/g589902_1.png',                       alt: 'Colour variants and stationery pack presentation' }
+             ]
+           }">
+        <!-- Main image -->
+        <div class="relative aspect-[4/3] overflow-hidden bg-stone/5 mb-3">
+          <template x-for="(img, i) in images" :key="i">
+            <img :src="img.src" :alt="img.alt" x-show="active === i"
+                 class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300" loading="lazy" />
+          </template>
+        </div>
+        <!-- Thumbnails -->
+        <div class="grid grid-cols-4 gap-2 lg:gap-3">
+          <template x-for="(img, i) in images" :key="i">
+            <button @click="active = i"
+                    :class="active === i ? 'ring-2 ring-accent ring-offset-1' : 'ring-1 ring-line hover:ring-ink'"
+                    class="relative aspect-square overflow-hidden bg-stone/5 transition focus:outline-none"
+                    :aria-label="'View image ' + (i + 1)">
+              <img :src="img.src" :alt="img.alt" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            </button>
+          </template>
+        </div>
       </div>
 
-      <!-- ========== RIGHT: NEW CUSTOMERS ========== -->
-      <div class="border border-line p-5 sm:p-8 lg:p-10">
+      <!-- RIGHT: Title + Tags + Description -->
+      <div class="lg:col-span-5">
+        <h1 class="display text-2xl sm:text-3xl lg:text-4xl mb-5">Recycled Aluminium Ballpen</h1>
 
-        <h2 class="display text-xl lg:text-2xl mb-2">New Customers</h2>
-        <p class="text-stone text-sm sm:text-base leading-relaxed mb-5 sm:mb-8">
-          Create a free account to manage your orders, save your details, and enjoy a faster checkout experience.
-        </p>
+        <!-- Product Tags -->
+        <div class="mb-6 pb-6 border-b border-line">
+          <p class="text-xs font-bold uppercase tracking-widest text-stone mb-2">Product Tags</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="projects.html" class="text-xs font-semibold border border-line text-stone px-3 py-1 uppercase tracking-wider hover:border-ink hover:text-ink transition">Ballpen</a>
+          </div>
+        </div>
 
-        <ul class="space-y-3 sm:space-y-4 mb-7 sm:mb-10" aria-label="Account benefits">
-          <li class="flex items-start gap-3">
-            <span class="shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent mt-0.5" aria-hidden="true">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
-            </span>
-            <span class="text-base text-stone leading-relaxed">View and track all your orders in one place</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent mt-0.5" aria-hidden="true">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
-            </span>
-            <span class="text-base text-stone leading-relaxed">Save billing and delivery addresses for faster checkout</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent mt-0.5" aria-hidden="true">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
-            </span>
-            <span class="text-base text-stone leading-relaxed">Access your artwork approvals and order history</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent mt-0.5" aria-hidden="true">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
-            </span>
-            <span class="text-base text-stone leading-relaxed">Receive exclusive pricing and early access to promotions</span>
-          </li>
-        </ul>
-
-        <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-ink text-paper px-8 py-3 text-base font-bold hover:bg-accent transition">
-          Create an Account
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-        </a>
-
+        <!-- Description -->
+        <div class="space-y-6 text-stone text-sm leading-relaxed">
+          <div>
+            <h2 class="display text-base text-ink mb-2">The Brief</h2>
+            <p>Our client &mdash; a national retail chain with sustainability at the heart of their 2025 corporate strategy &mdash; needed 5,000 branded ballpens for an employee appreciation campaign. The hard requirement: zero single-use plastic.</p>
+          </div>
+          <div>
+            <h2 class="display text-base text-ink mb-2">Our Approach</h2>
+            <p>We proposed the Recycled Aluminium Ballpen from our Eco range &mdash; made from post-consumer recycled aluminium with a premium weight and smooth, consistent write. Pens were packed into custom-printed FSC-certified kraft sleeves, then bulk-packed in recycled corrugated shippers.</p>
+          </div>
+          <div>
+            <h2 class="display text-base text-ink mb-2">The Result</h2>
+            <p>All 5,000 units despatched within 12 working days &mdash; three days ahead of the client&rsquo;s deadline. The client reported a 94% reduction in plastic versus their previous campaign.</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
-</div>
+</section>
+
+<!-- =================== GET A BESPOKE QUOTE =================== -->
+<section class="bg-stone/5 border-b border-line" id="get-quote">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-[70px]"
+       x-data="{
+         form: { name: '', email: '', company: '', message: '', fileName: '' },
+         errors: {},
+         submitted: false,
+         submitting: false,
+         validate() {
+           this.errors = {};
+           if (!this.form.name.trim())  this.errors.name    = 'Full name is required.';
+           if (!this.form.email.trim()) this.errors.email   = 'Email address is required.';
+           else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email))
+                                        this.errors.email   = 'Please enter a valid email address.';
+           if (!this.form.message.trim()) this.errors.message = 'Please tell us about your project.';
+           return Object.keys(this.errors).length === 0;
+         },
+         handleFile(e) {
+           const file = e.target.files[0];
+           if (!file) return;
+           if (file.size > 10 * 1024 * 1024) { this.errors.file = 'File must be under 10 MB.'; e.target.value = ''; return; }
+           delete this.errors.file;
+           this.form.fileName = file.name;
+         },
+         submit() {
+           if (!this.validate()) return;
+           this.submitting = true;
+           setTimeout(() => { this.submitting = false; this.submitted = true; }, 900);
+         }
+       }">
+
+    <!-- Section heading -->
+    <div class="mb-10">
+      <h2 class="display text-2xl lg:text-3xl text-ink mb-2">Get a Bespoke Quote</h2>
+      <p class="text-stone">We&rsquo;ll respond within 24&ndash;48 hours with ideas &amp; pricing.</p>
+    </div>
+
+    <!-- Success state -->
+    <div x-show="submitted" class="py-16 text-center bg-paper border border-line max-w-lg mx-auto">
+      <div class="w-12 h-12 bg-accent/10 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+      </div>
+      <h3 class="display text-lg mb-2">Thank you!</h3>
+      <p class="text-stone text-sm leading-relaxed px-8">Quote request sent successfully! We will get back to you within 24&ndash;48 hours.</p>
+      <button @click="submitted = false; form = { name:'', email:'', company:'', message:'', fileName:'' }"
+              class="mt-5 text-accent text-sm underline underline-offset-2 hover:no-underline">Submit another enquiry</button>
+    </div>
+
+    <!-- Form -->
+    <form @submit.prevent="submit()" x-show="!submitted" novalidate class="space-y-5">
+
+      <!-- Row 1: Name + Email -->
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="q-name" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Full name <span class="text-accent">*</span></label>
+          <input id="q-name" type="text" x-model="form.name"
+                 :class="errors.name ? 'border-accent' : 'border-line focus:border-ink'"
+                 class="w-full border px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper"
+                 placeholder="Jane Smith" />
+          <p x-show="errors.name" x-text="errors.name" class="text-accent text-xs mt-1"></p>
+        </div>
+        <div>
+          <label for="q-email" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Email address <span class="text-accent">*</span></label>
+          <input id="q-email" type="email" x-model="form.email"
+                 :class="errors.email ? 'border-accent' : 'border-line focus:border-ink'"
+                 class="w-full border px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper"
+                 placeholder="jane@company.com" />
+          <p x-show="errors.email" x-text="errors.email" class="text-accent text-xs mt-1"></p>
+        </div>
+      </div>
+
+      <!-- Row 2: Company -->
+      <div>
+        <label for="q-company" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Company</label>
+        <input id="q-company" type="text" x-model="form.company"
+               class="w-full border border-line focus:border-ink px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper"
+               placeholder="Acme Ltd" />
+      </div>
+
+      <!-- Row 3: Message -->
+      <div>
+        <label for="q-message" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Message <span class="text-accent">*</span></label>
+        <textarea id="q-message" x-model="form.message" rows="5"
+                  :class="errors.message ? 'border-accent' : 'border-line focus:border-ink'"
+                  class="w-full border px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper resize-none"
+                  placeholder="Tell us about your project — product ideas, colours, event date, any specific requirements..."></textarea>
+        <p x-show="errors.message" x-text="errors.message" class="text-accent text-xs mt-1"></p>
+      </div>
+
+      <!-- Row 4: Quantity + File upload -->
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Please TYPE the quantity you need <span class="text-accent">*</span></label>
+          <div x-data="{ qty: 1 }" class="flex items-center border border-line bg-paper w-full">
+            <button type="button" @click="qty = Math.max(1, qty - 1)"
+                    class="w-12 h-12 flex items-center justify-center text-stone hover:bg-line transition text-xl select-none shrink-0">&minus;</button>
+            <input type="number" x-model="qty" min="1" name="quantity"
+                   class="flex-1 text-center border-x border-line h-12 focus:outline-none text-sm text-ink bg-paper" />
+            <button type="button" @click="qty++"
+                    class="w-12 h-12 flex items-center justify-center text-stone hover:bg-line transition text-xl select-none shrink-0">+</button>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Please UPLOAD artwork for a visual</label>
+          <label for="q-file"
+                 class="flex items-center gap-3 border border-dashed border-line bg-paper px-4 h-12 cursor-pointer hover:border-ink transition group">
+            <svg class="w-4 h-4 text-stone shrink-0 group-hover:text-ink transition" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/></svg>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs text-ink truncate" x-text="form.fileName || 'Click here or drag file to upload'"></p>
+              <p class="text-[10px] text-stone">PDF, DOC, JPG, PNG, AI, PSD, EPS (Max 10MB)</p>
+            </div>
+            <input id="q-file" type="file" class="sr-only" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.ai,.psd,.eps" @change="handleFile($event)" />
+          </label>
+          <p x-show="errors.file" x-text="errors.file" class="text-accent text-xs mt-1"></p>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit"
+              :disabled="submitting"
+              :class="submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-ink'"
+              class="w-full flex items-center justify-center gap-2 bg-accent text-paper py-4 text-base font-bold tracking-widest transition">
+        <span x-text="submitting ? 'Sending…' : 'SEND QUOTE REQUEST'"></span>
+        <svg x-show="!submitting" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        <svg x-show="submitting" class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
+      </button>
+
+      <p class="text-xs text-stone/70 text-center">By submitting you agree to our <a href="#" class="underline hover:text-ink">Privacy Policy</a>.</p>
+
+    </form>
+
+  </div>
+</section>
+
+
+
+<!-- =================== RELATED PROJECTS =================== -->
+<section class="bg-paper border-t border-line py-[70px]">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8">
+
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <h2 class="display text-2xl lg:text-3xl text-ink">Related Projects</h2>
+      </div>
+      <a href="projects.html" class="arrow-link text-sm font-bold hover:text-accent transition hidden sm:inline-flex">
+        View All
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1: Sustainable Travel Essentials -->
+      <article class="project-card group border border-line flex flex-col">
+        <a href="project-detail.html" class="block relative overflow-hidden aspect-[4/3] bg-stone/5" tabindex="-1">
+          <img src="https://promo-brands.elsnermage.com/media/previousprojects/images/ECOMM-LEDE20Eco-friendly20Travel20Essentials20Our20Editors20Love.png"
+               alt="Sustainable Travel Essentials" class="project-img w-full h-full object-cover" loading="lazy" />
+        </a>
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="text-[10px] font-bold border border-line text-stone px-2.5 py-0.5 uppercase tracking-wider">Travel</span>
+            <span class="text-[10px] font-bold border border-line text-stone px-2.5 py-0.5 uppercase tracking-wider">Sustainability</span>
+            <span class="text-[10px] font-bold border border-line text-stone px-2.5 py-0.5 uppercase tracking-wider">Eco-Friendly</span>
+          </div>
+          <h3 class="display text-xl mb-3">
+            <a href="project-detail.html" class="hover:text-accent transition">Sustainable Travel Essentials</a>
+          </h3>
+          <p class="text-stone text-sm leading-relaxed line-clamp-3 flex-1 mb-5">Travel opens our minds, broadens our experiences, and creates memories that last a lifetime. We&rsquo;ve curated a collection of reusable, eco-conscious products designed&hellip;</p>
+          <a href="project-detail.html" class="arrow-link text-sm font-bold hover:text-accent transition mt-auto">
+            Read More
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: Wellness Starter Kit -->
+      <article class="project-card group border border-line flex flex-col">
+        <a href="project-detail.html" class="block relative overflow-hidden aspect-[4/3] bg-stone/5" tabindex="-1">
+          <img src="https://promo-brands.elsnermage.com/media/previousprojects/images/shopping.png"
+               alt="Wellness Starter Kit" class="project-img w-full h-full object-cover" loading="lazy" />
+        </a>
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="text-[10px] font-bold border border-line text-stone px-2.5 py-0.5 uppercase tracking-wider">Wellness</span>
+            <span class="text-[10px] font-bold border border-line text-stone px-2.5 py-0.5 uppercase tracking-wider">Self Care</span>
+            <span class="text-[10px] font-bold border border-line text-stone px-2.5 py-0.5 uppercase tracking-wider">Health</span>
+          </div>
+          <h3 class="display text-xl mb-3">
+            <a href="project-detail.html" class="hover:text-accent transition">Wellness Starter Kit</a>
+          </h3>
+          <p class="text-stone text-sm leading-relaxed line-clamp-3 flex-1 mb-5">We all have moments where life feels a little too fast. Wellness isn&rsquo;t a luxury &mdash; it&rsquo;s a necessity. Our Wellness Starter Kit is designed to help create calm, intentional&hellip;</p>
+          <a href="project-detail.html" class="arrow-link text-sm font-bold hover:text-accent transition mt-auto">
+            Read More
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Recycled Aluminium Ballpen -->
+      <article class="project-card group border border-line flex flex-col">
+        <a href="project-detail.html" class="block relative overflow-hidden aspect-[4/3] bg-stone/5" tabindex="-1">
+          <img src="https://promo-brands.elsnermage.com/media/previousprojects/images/kids_activities_blog_header_2023.jpeg"
+               alt="Recycled Aluminium Ballpen" class="project-img w-full h-full object-cover" loading="lazy" />
+        </a>
+        <div class="p-6 flex flex-col flex-1">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="text-[10px] font-bold border border-line text-stone px-2.5 py-0.5 uppercase tracking-wider">Ballpen</span>
+          </div>
+          <h3 class="display text-xl mb-3">
+            <a href="project-detail.html" class="hover:text-accent transition">Recycled Aluminium Ballpen</a>
+          </h3>
+          <p class="text-stone text-sm leading-relaxed line-clamp-3 flex-1 mb-5">A practical, everyday essential &mdash; reimagined sustainably. Our Recycled Aluminium Ballpen is crafted from post-consumer recycled aluminium, delivering a premium&hellip;</p>
+          <a href="project-detail.html" class="arrow-link text-sm font-bold hover:text-accent transition mt-auto">
+            Read More
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
 <!-- =================== FOOTER =================== -->
 <footer>
 
-  <!-- MAIN: full-bleed 50/50 bg, content constrained to container -->
   <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%);">
     <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
 
-      <!-- LEFT: white, link columns -->
       <div class="bg-paper px-6 py-14 lg:px-16 lg:py-20">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
           <div>
@@ -383,7 +525,7 @@
               <li><a href="#" class="text-stone hover:text-accent transition">Themes</a></li>
               <li><a href="#" class="text-stone hover:text-accent transition">Technology</a></li>
               <li><a href="#" class="text-stone hover:text-accent transition">Clothing</a></li>
-              <li><a href="#" class="text-stone hover:text-accent transition">Brands</a></li>
+              <li><a href="brand.html" class="text-stone hover:text-accent transition">Brands</a></li>
               <li><a href="#" class="text-stone hover:text-accent transition">View Everything</a></li>
             </ul>
           </div>
@@ -391,10 +533,10 @@
             <h4 class="text-base font-bold mb-6 text-ink">Useful Links</h4>
             <ul class="space-y-3 text-xs sm:text-sm lg:text-base font-normal">
               <li><a href="#" class="text-stone hover:text-accent transition">About Us</a></li>
-              <li><a href="#" class="text-stone hover:text-accent transition">Contact Us</a></li>
-              <li><a href="#" class="text-stone hover:text-accent transition">News</a></li>
+              <li><a href="contact.html" class="text-stone hover:text-accent transition">Contact Us</a></li>
+              <li><a href="blog.html" class="text-stone hover:text-accent transition">News</a></li>
               <li><a href="#" class="text-stone hover:text-accent transition">Terms &amp; Conditions</a></li>
-              <li><a href="#" class="text-stone hover:text-accent transition">Sustainability</a></li>
+              <li><a href="sustainability.html" class="text-stone hover:text-accent transition">Sustainability</a></li>
             </ul>
           </div>
           <div>
@@ -410,7 +552,6 @@
         </div>
       </div>
 
-      <!-- RIGHT: black, newsletter -->
       <div class="bg-black text-paper px-6 py-14 lg:px-16 lg:py-20">
         <div class="w-full max-w-md">
           <h4 class="text-base font-bold mb-6">Get Newsletter Updates</h4>
@@ -422,10 +563,7 @@
             <div class="w-6 h-6 border-2 border-stone bg-paper shrink-0"></div>
             <span class="text-base flex-1">I&rsquo;m not a robot</span>
             <div class="text-center text-stone">
-              <svg class="w-7 h-7 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                <path d="M21 12a9 9 0 1 1-3-6.7" stroke-linecap="round"/>
-                <path d="M21 4v5h-5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <svg class="w-7 h-7 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 12a9 9 0 1 1-3-6.7" stroke-linecap="round"/><path d="M21 4v5h-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <p class="text-[8px] tracking-wider">reCAPTCHA</p>
               <p class="text-[7px] text-stone/70">Privacy &middot; Terms</p>
             </div>
@@ -435,7 +573,6 @@
     </div>
   </div>
 
-  <!-- BOTTOM STRIP -->
   <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%); border-top: 1px solid #E5E5E5; position: relative;">
     <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
       <div class="bg-paper px-6 py-6 lg:px-16 text-xs lg:text-sm text-stone flex items-center">
@@ -467,7 +604,7 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
-    <nav class="flex-1 overflow-y-auto px-6 py-2 divide-y divide-line">
+    <nav class="flex-1 overflow-y-auto px-6 py-2 divide-y divide-line" aria-label="Mobile navigation">
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Bags</a>
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Drinkware</a>
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Tech</a>
@@ -475,48 +612,28 @@
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Pens</a>
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Notebooks</a>
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Office</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Outdoors</a>
-      <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Giveaways</a>
     </nav>
   </div>
 </div>
 
-<script>
-  // Mobile nav
-  (function () {
-    var nav     = document.getElementById('mobile-nav');
-    var overlay = document.getElementById('mobile-nav-overlay');
-    var openBtn = document.getElementById('mobile-nav-toggle');
-    var closeBtn= document.getElementById('close-mobile-nav');
+<!-- =================== SCRIPTS =================== -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+<script>
+  /* Mobile nav */
+  (function () {
+    var nav      = document.getElementById('mobile-nav');
+    var overlay  = document.getElementById('mobile-nav-overlay');
+    var openBtn  = document.getElementById('mobile-nav-toggle');
+    var closeBtn = document.getElementById('close-mobile-nav');
     function openNav()  { nav.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
     function closeNav() { nav.classList.add('hidden');    document.body.style.overflow = ''; }
-
     openBtn.addEventListener('click', openNav);
     closeBtn.addEventListener('click', closeNav);
     overlay.addEventListener('click', closeNav);
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeNav(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
   })();
 
-  // Password visibility toggle
-  (function () {
-    var btn      = document.getElementById('toggle-password');
-    var input    = document.getElementById('password');
-    var iconEye  = document.getElementById('icon-eye');
-    var iconSlash= document.getElementById('icon-eye-slash');
-
-    btn.addEventListener('click', function () {
-      var isHidden = input.type === 'password';
-      input.type = isHidden ? 'text' : 'password';
-      btn.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
-      iconEye.classList.toggle('hidden', isHidden);
-      iconSlash.classList.toggle('hidden', !isHidden);
-    });
-  })();
-</script>
-
-
-<script>
   /* Bags megamenu — desktop hover */
   (function () {
     var trigger = document.getElementById('nav-bags');
@@ -524,7 +641,6 @@
     var chevron = document.getElementById('bags-chevron');
     var btn     = trigger ? trigger.querySelector('button') : null;
     var timer;
-
     function open() {
       clearTimeout(timer);
       mega.classList.remove('hidden');
@@ -538,7 +654,6 @@
         if (btn)     btn.setAttribute('aria-expanded', 'false');
       }, 140);
     }
-
     if (trigger && mega) {
       trigger.addEventListener('mouseenter', open);
       trigger.addEventListener('mouseleave', close);
@@ -548,5 +663,6 @@
     }
   })();
 </script>
+
 </body>
 </html>

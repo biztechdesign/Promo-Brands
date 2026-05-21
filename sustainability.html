@@ -57,43 +57,6 @@
       </a>
       <span class="hidden lg:inline opacity-50">|</span>
       <a href="mailto:hello@promo-brand.com" class="hidden lg:inline hover:opacity-80">hello@promo-brand.com</a>
-      <span class="opacity-50">|</span>
-            <!-- Language dropdown -->
-      <details class="relative">
-        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
-          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
-          EN
-          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
-        </summary>
-        <div class="absolute left-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
-          <ul class="space-y-1.5">
-            <li><a href="#" class="font-semibold text-accent">English</a></li>
-            <li><a href="#" class="hover:text-accent">Fran&ccedil;ais</a></li>
-            <li><a href="#" class="hover:text-accent">Deutsch</a></li>
-            <li><a href="#" class="hover:text-accent">Nederlands</a></li>
-            <li><a href="#" class="hover:text-accent">Espa&ntilde;ol</a></li>
-            <li><a href="#" class="hover:text-accent">Italiano</a></li>
-          </ul>
-        </div>
-      </details>
-
-      <span class="opacity-50">|</span>
-
-      <!-- Currency dropdown -->
-      <details class="relative">
-        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
-          GBP &pound;
-          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
-        </summary>
-        <div class="absolute right-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-44 text-[11px]">
-          <ul class="space-y-1.5">
-            <li><a href="#" class="flex items-center justify-between font-semibold text-accent">GBP <span>&pound; British Pound</span></a></li>
-            <li><a href="#" class="flex items-center justify-between hover:text-accent">EUR <span>&euro; Euro</span></a></li>
-            <li><a href="#" class="flex items-center justify-between hover:text-accent">USD <span>$ US Dollar</span></a></li>
-            <li><a href="#" class="flex items-center justify-between hover:text-accent">AED <span>&#1583;.&#1573; Dirham</span></a></li>
-          </ul>
-        </div>
-      </details>
     </div>
   </div>
 </div>
@@ -139,7 +102,6 @@
       <a href="#" class="flex items-center gap-1 hover:text-accent transition">Office
         <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
       </a>
-      <a href="#" class="hover:text-accent transition">Online Ordering</a>
 
     </nav>
 
@@ -151,10 +113,9 @@
       <a href="accounts.html" aria-label="Account" class="w-9 h-9 flex items-center justify-center hover:text-accent">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
       </a>
-      <a href="#" class="hidden sm:inline-flex items-center gap-2 bg-accent text-paper px-5 py-2.5 text-base font-bold hover:bg-black transition">
-        Get a Quote
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-      </a>
+      <button aria-label="Shopping cart" class="w-9 h-9 flex items-center justify-center hover:text-accent relative">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z"/></svg>
+      </button>
       <button id="mobile-nav-toggle" class="lg:hidden w-9 h-9 flex items-center justify-center" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
       </button>
@@ -488,7 +449,7 @@
   <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%); border-top: 1px solid #E5E5E5; position: relative;">
     <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
       <div class="bg-paper px-6 py-6 lg:px-16 text-xs lg:text-sm text-stone flex items-center">
-        &copy; 2026 &ndash; Promo Brand &ndash; Site Designed By Elsner
+        &copy; 2026 &ndash; Promo Brand. All rights reserved.
       </div>
       <div class="bg-black px-6 py-6 lg:px-16 flex items-center justify-end">
         <div class="flex gap-1">
@@ -527,12 +488,6 @@
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Outdoors</a>
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Giveaways</a>
     </nav>
-    <div class="p-6 border-t border-line shrink-0">
-      <a href="#" class="flex items-center justify-center gap-2 bg-accent text-paper px-5 py-3 text-base font-bold hover:bg-black transition">
-        Get a Quote
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-      </a>
-    </div>
   </div>
 </div>
 

@@ -64,43 +64,6 @@
       </a>
       <span class="hidden lg:inline opacity-50">|</span>
       <a href="mailto:hello@promo-brand.com" class="hidden lg:inline hover:opacity-80">hello@promo-brand.com</a>
-      <span class="opacity-50">|</span>
-            <!-- Language dropdown -->
-      <details class="relative">
-        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
-          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
-          EN
-          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
-        </summary>
-        <div class="absolute left-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-40 text-[11px]">
-          <ul class="space-y-1.5">
-            <li><a href="#" class="font-semibold text-accent">English</a></li>
-            <li><a href="#" class="hover:text-accent">Fran&ccedil;ais</a></li>
-            <li><a href="#" class="hover:text-accent">Deutsch</a></li>
-            <li><a href="#" class="hover:text-accent">Nederlands</a></li>
-            <li><a href="#" class="hover:text-accent">Espa&ntilde;ol</a></li>
-            <li><a href="#" class="hover:text-accent">Italiano</a></li>
-          </ul>
-        </div>
-      </details>
-
-      <span class="opacity-50">|</span>
-
-      <!-- Currency dropdown -->
-      <details class="relative">
-        <summary class="flex items-center gap-1 hover:opacity-80 cursor-pointer">
-          GBP &pound;
-          <svg class="w-3 h-3 opacity-50 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
-        </summary>
-        <div class="absolute right-0 top-7 z-50 bg-paper text-ink border border-line shadow-lg p-3 w-44 text-[11px]">
-          <ul class="space-y-1.5">
-            <li><a href="#" class="flex items-center justify-between font-semibold text-accent">GBP <span>&pound; British Pound</span></a></li>
-            <li><a href="#" class="flex items-center justify-between hover:text-accent">EUR <span>&euro; Euro</span></a></li>
-            <li><a href="#" class="flex items-center justify-between hover:text-accent">USD <span>$ US Dollar</span></a></li>
-            <li><a href="#" class="flex items-center justify-between hover:text-accent">AED <span>&#1583;.&#1573; Dirham</span></a></li>
-          </ul>
-        </div>
-      </details>
     </div>
   </div>
 </div>
@@ -146,7 +109,6 @@
       <a href="#" class="flex items-center gap-1 hover:text-accent transition">Office
         <svg class="w-3.5 h-3.5 text-stone shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg>
       </a>
-      <a href="#" class="hover:text-accent transition">Online Ordering</a>
 
     </nav>
 
@@ -158,10 +120,9 @@
       <a href="accounts.html" aria-label="Account" class="w-9 h-9 flex items-center justify-center hover:text-accent">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
       </a>
-      <a href="#" class="hidden sm:inline-flex items-center gap-2 bg-accent text-paper px-5 py-2.5 text-base font-bold hover:bg-black transition">
-        Get a Quote
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-      </a>
+      <button aria-label="Shopping cart" class="w-9 h-9 flex items-center justify-center hover:text-accent relative">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z"/></svg>
+      </button>
       <button id="mobile-nav-toggle" class="lg:hidden w-9 h-9 flex items-center justify-center" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
       </button>
@@ -356,7 +317,7 @@
 
       <!-- Card: Aladdin -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Aladdin">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_Aladdin_Promotional_Merchandise_Brands_Bounce_Creative_Designs-30.png" alt="Aladdin" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -365,7 +326,7 @@
 
       <!-- Card: BIC -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="BIC">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_BIC_Promotional_Merchandise_Brands_Bounce_Creative_Designs-22.png" alt="BIC" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -374,7 +335,7 @@
 
       <!-- Card: Bobble Bottle -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Bobble Bottle">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_Bobble_Bottle_Promotional_Merchandise_Brands_Bounce_Creative_Designs-08.png" alt="Bobble Bottle" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -383,7 +344,7 @@
 
       <!-- Card: CamelBak -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="CamelBak">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00_Trending/01trend/PromoBrand_Camelbak_Promotional_Merchandise_Brands_Bounce_Creative_Designs-10.png" alt="CamelBak" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -392,7 +353,7 @@
 
       <!-- Card: Castelli -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Castelli">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Castelli_Promotional_Merchandise_Brands_Bounce_Creative_Designs-24.jpg" alt="Castelli" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -401,7 +362,7 @@
 
       <!-- Card: Chilly's -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Chilly's">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Chillys_Bottle_Promotional_Merchandise_Brands_Bounce_Creative_Designs-01.jpg" alt="Chilly's" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -410,7 +371,7 @@
 
       <!-- Card: Corkcicle -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Corkcicle">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Corkcicle_Promotional_Merchandise_Brands_Bounce_Creative_Designs-09.jpg" alt="Corkcicle" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -419,7 +380,7 @@
 
       <!-- Card: Cross Pens -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Cross Pens">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Cross_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-25.jpg" alt="Cross Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -428,7 +389,7 @@
 
       <!-- Card: Ecoffee -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Ecoffee">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_ecoffee_cup_Promotional_Merchandise_Brands_Bounce_Creative_Designs-14.png" alt="Ecoffee" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -437,7 +398,7 @@
 
       <!-- Card: Fitbit -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Fitbit">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_fibit_Promotional_Merchandise_Brands_Bounce_Creative_Designs-13.png" alt="Fitbit" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -446,7 +407,7 @@
 
       <!-- Card: Fruit of the Loom -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Fruit of the Loom">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Fruit_of_the_Loom_Promotional_Merchandise_Brands_Bounce_Creative_Designs-19.png" alt="Fruit of the Loom" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -455,7 +416,7 @@
 
       <!-- Card: Jamie Oliver -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Jamie Oliver">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Jamie_Oliver_Promotional_Merchandise_Brands_Bounce_Creative_Designs-15.jpg" alt="Jamie Oliver" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -464,7 +425,7 @@
 
       <!-- Card: Mighty Mug -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Mighty Mug">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Mighty_Mug_Promotional_Merchandise_Brands_Bounce_Creative_Designs-27.jpg" alt="Mighty Mug" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -473,7 +434,7 @@
 
       <!-- Card: Moleskine -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Moleskine">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Moleskine_Promotional_Merchandise_Brands_Bounce_Creative_Designs-11.jpg" alt="Moleskine" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -482,7 +443,7 @@
 
       <!-- Card: Parker Pens -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Parker Pens">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Parker_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-06.jpg" alt="Parker Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -491,7 +452,7 @@
 
       <!-- Card: Prodir Pens -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Prodir Pens">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Prodir_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-17.jpg" alt="Prodir Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -500,7 +461,7 @@
 
       <!-- Card: Regatta -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Regatta">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Regatta_Promotional_Merchandise_Brands_Bounce_Creative_Designs-21.jpg" alt="Regatta" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -509,7 +470,7 @@
 
       <!-- Card: Root7 -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Root7">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Root7_Promotional_Merchandise_Brands_Bounce_Creative_Designs-23.jpg" alt="Root7" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -518,7 +479,7 @@
 
       <!-- Card: Rubik's -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Rubik's">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Rubiks_Promotional_Merchandise_Brands_Bounce_Creative_Designs-18.jpg" alt="Rubik's" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -527,7 +488,7 @@
 
       <!-- Card: Skross -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Skross">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Skross_Promotional_Merchandise_Brands_Bounce_Creative_Designs-04.jpg" alt="Skross" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -536,7 +497,7 @@
 
       <!-- Card: Slazenger -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Slazenger">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Slazenger_Promotional_Merchandise_Brands_Bounce_Creative_Designs-12.png" alt="Slazenger" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -545,7 +506,7 @@
 
       <!-- Card: Stojo -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Stojo">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Stojo_Promotional_Merchandise_Brands_Bounce_Creative_Designs-05.jpg" alt="Stojo" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -554,7 +515,7 @@
 
       <!-- Card: Swiss Peak -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Swiss Peak">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Swiss_Peak_Promotional_Merchandise_Brands_Bounce_Creative_Designs-33.jpg" alt="Swiss Peak" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -563,7 +524,7 @@
 
       <!-- Card: Victorinox -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Victorinox">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Victorinox_Promotional_Merchandise_Brands_Bounce_Creative_Designs-03.jpg" alt="Victorinox" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -572,7 +533,7 @@
 
       <!-- Card: W10 -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="W10">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_W10_Drinkware_Promotional_Merchandise_Brands_Bounce_Creative_Designs-02.jpg" alt="W10" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -581,7 +542,7 @@
 
       <!-- Card: Waterman Pens -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Waterman Pens">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/PromoBrand_Waterman_Pens_Promotional_Merchandise_Brands_Bounce_Creative_Designs-07.jpg" alt="Waterman Pens" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -590,7 +551,7 @@
 
       <!-- Card: Bobby Bag -->
       <article class="brand-card group border border-line hover:border-ink hover:shadow-md transition" data-name="Bobby Bag">
-        <a href="#" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+        <a href="brand-detail.html" class="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
           <div class="relative aspect-[4/3] overflow-hidden bg-ink">
             <img src="https://www.promo-brand.co.uk/images/d_200/00Brands/bounce-creative-designs-bobby-bags.jpg" alt="Bobby Bag" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -684,7 +645,7 @@
   <div style="background: linear-gradient(to right, #FFFFFF 50%, #000000 50%); border-top: 1px solid #E5E5E5; position: relative;">
     <div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2">
       <div class="bg-paper px-6 py-6 lg:px-16 text-xs lg:text-sm text-stone flex items-center">
-        &copy; 2026 &ndash; Promo Brand &ndash; Site Designed By Elsner
+        &copy; 2026 &ndash; Promo Brand. All rights reserved.
       </div>
       <div class="bg-black px-6 py-6 lg:px-16 flex items-center justify-end">
         <div class="flex gap-1">
@@ -723,12 +684,6 @@
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Outdoors</a>
       <a href="#" class="flex items-center py-4 text-base font-medium hover:text-accent transition">Giveaways</a>
     </nav>
-    <div class="p-6 border-t border-line shrink-0">
-      <a href="#" class="flex items-center justify-center gap-2 bg-accent text-paper px-5 py-3 text-base font-bold hover:bg-black transition">
-        Get a Quote
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-      </a>
-    </div>
   </div>
 </div>
 
