@@ -44,6 +44,9 @@
   .project-card .project-img { transition: transform .65s ease; }
   .project-card:hover .project-img { transform: scale(1.07); }
   .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type=number] { -moz-appearance: textfield; }
 </style>
 </head>
 <body class="bg-paper text-ink font-sans">
@@ -210,7 +213,7 @@
 </div>
 
 <!-- =================== IMAGE + DETAILS =================== -->
-<section class="bg-paper border-b border-line">
+<section class="bg-paper">
   <div class="max-w-8xl mx-auto px-4 lg:px-8 py-10">
     <div class="grid lg:grid-cols-12 gap-8 xl:gap-12 items-start">
 
@@ -272,145 +275,123 @@
             <p>All 5,000 units despatched within 12 working days &mdash; three days ahead of the client&rsquo;s deadline. The client reported a 94% reduction in plastic versus their previous campaign.</p>
           </div>
         </div>
-      </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- =================== GET A BESPOKE QUOTE =================== -->
-<section class="bg-stone/5 border-b border-line" id="get-quote">
-  <div class="max-w-8xl mx-auto px-4 lg:px-8 py-[70px]"
-       x-data="{
-         form: { name: '', email: '', company: '', message: '', fileName: '' },
-         errors: {},
-         submitted: false,
-         submitting: false,
-         validate() {
-           this.errors = {};
-           if (!this.form.name.trim())  this.errors.name    = 'Full name is required.';
-           if (!this.form.email.trim()) this.errors.email   = 'Email address is required.';
-           else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email))
-                                        this.errors.email   = 'Please enter a valid email address.';
-           if (!this.form.message.trim()) this.errors.message = 'Please tell us about your project.';
-           return Object.keys(this.errors).length === 0;
-         },
-         handleFile(e) {
-           const file = e.target.files[0];
-           if (!file) return;
-           if (file.size > 10 * 1024 * 1024) { this.errors.file = 'File must be under 10 MB.'; e.target.value = ''; return; }
-           delete this.errors.file;
-           this.form.fileName = file.name;
-         },
-         submit() {
-           if (!this.validate()) return;
-           this.submitting = true;
-           setTimeout(() => { this.submitting = false; this.submitted = true; }, 900);
-         }
-       }">
-
-    <!-- Section heading -->
-    <div class="mb-10">
-      <h2 class="display text-2xl lg:text-3xl text-ink mb-2">Get a Bespoke Quote</h2>
-      <p class="text-stone">We&rsquo;ll respond within 24&ndash;48 hours with ideas &amp; pricing.</p>
-    </div>
-
-    <!-- Success state -->
-    <div x-show="submitted" class="py-16 text-center bg-paper border border-line max-w-lg mx-auto">
-      <div class="w-12 h-12 bg-accent/10 flex items-center justify-center mx-auto mb-4">
-        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-      </div>
-      <h3 class="display text-lg mb-2">Thank you!</h3>
-      <p class="text-stone text-sm leading-relaxed px-8">Quote request sent successfully! We will get back to you within 24&ndash;48 hours.</p>
-      <button @click="submitted = false; form = { name:'', email:'', company:'', message:'', fileName:'' }"
-              class="mt-5 text-accent text-sm underline underline-offset-2 hover:no-underline">Submit another enquiry</button>
-    </div>
-
-    <!-- Form -->
-    <form @submit.prevent="submit()" x-show="!submitted" novalidate class="space-y-5">
-
-      <!-- Row 1: Name + Email -->
-      <div class="grid sm:grid-cols-2 gap-5">
-        <div>
-          <label for="q-name" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Full name <span class="text-accent">*</span></label>
-          <input id="q-name" type="text" x-model="form.name"
-                 :class="errors.name ? 'border-accent' : 'border-line focus:border-ink'"
-                 class="w-full border px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper"
-                 placeholder="Jane Smith" />
-          <p x-show="errors.name" x-text="errors.name" class="text-accent text-xs mt-1"></p>
-        </div>
-        <div>
-          <label for="q-email" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Email address <span class="text-accent">*</span></label>
-          <input id="q-email" type="email" x-model="form.email"
-                 :class="errors.email ? 'border-accent' : 'border-line focus:border-ink'"
-                 class="w-full border px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper"
-                 placeholder="jane@company.com" />
-          <p x-show="errors.email" x-text="errors.email" class="text-accent text-xs mt-1"></p>
-        </div>
-      </div>
-
-      <!-- Row 2: Company -->
-      <div>
-        <label for="q-company" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Company</label>
-        <input id="q-company" type="text" x-model="form.company"
-               class="w-full border border-line focus:border-ink px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper"
-               placeholder="Acme Ltd" />
-      </div>
-
-      <!-- Row 3: Message -->
-      <div>
-        <label for="q-message" class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Message <span class="text-accent">*</span></label>
-        <textarea id="q-message" x-model="form.message" rows="5"
-                  :class="errors.message ? 'border-accent' : 'border-line focus:border-ink'"
-                  class="w-full border px-4 py-3 text-sm text-ink placeholder:text-stone/50 focus:outline-none transition bg-paper resize-none"
-                  placeholder="Tell us about your project — product ideas, colours, event date, any specific requirements..."></textarea>
-        <p x-show="errors.message" x-text="errors.message" class="text-accent text-xs mt-1"></p>
-      </div>
-
-      <!-- Row 4: Quantity + File upload -->
-      <div class="grid sm:grid-cols-2 gap-5">
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Please TYPE the quantity you need <span class="text-accent">*</span></label>
-          <div x-data="{ qty: 1 }" class="flex items-center border border-line bg-paper w-full">
+        <!-- CTA Buttons -->
+        <hr class="border-line my-6" />
+        <div class="flex gap-3 mb-4" x-data="{ qty: 1 }">
+          <!-- Quantity stepper -->
+          <div class="flex items-stretch border border-line bg-paper shrink-0">
             <button type="button" @click="qty = Math.max(1, qty - 1)"
-                    class="w-12 h-12 flex items-center justify-center text-stone hover:bg-line transition text-xl select-none shrink-0">&minus;</button>
-            <input type="number" x-model="qty" min="1" name="quantity"
-                   class="flex-1 text-center border-x border-line h-12 focus:outline-none text-sm text-ink bg-paper" />
+                    class="w-10 flex items-center justify-center text-stone hover:bg-line transition text-lg select-none">&minus;</button>
+            <input type="number" x-model="qty" min="1"
+                   class="w-14 text-center border-x border-line focus:outline-none text-sm text-ink bg-paper" />
             <button type="button" @click="qty++"
-                    class="w-12 h-12 flex items-center justify-center text-stone hover:bg-line transition text-xl select-none shrink-0">+</button>
+                    class="w-10 flex items-center justify-center text-stone hover:bg-line transition text-lg select-none">+</button>
           </div>
+          <!-- Enquire Now -->
+          <button type="button" onclick="openQuoteModal()"
+             class="flex items-center justify-center gap-2 flex-1 bg-accent text-paper py-3.5 text-base font-bold hover:bg-ink transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+            Enquire Now
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </button>
         </div>
-        <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-stone mb-1.5">Please UPLOAD artwork for a visual</label>
-          <label for="q-file"
-                 class="flex items-center gap-3 border border-dashed border-line bg-paper px-4 h-12 cursor-pointer hover:border-ink transition group">
-            <svg class="w-4 h-4 text-stone shrink-0 group-hover:text-ink transition" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/></svg>
-            <div class="flex-1 min-w-0">
-              <p class="text-xs text-ink truncate" x-text="form.fileName || 'Click here or drag file to upload'"></p>
-              <p class="text-[10px] text-stone">PDF, DOC, JPG, PNG, AI, PSD, EPS (Max 10MB)</p>
-            </div>
-            <input id="q-file" type="file" class="sr-only" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.ai,.psd,.eps" @change="handleFile($event)" />
-          </label>
-          <p x-show="errors.file" x-text="errors.file" class="text-accent text-xs mt-1"></p>
-        </div>
+
+        <!-- Sample request -->
+        <p class="text-sm text-stone mb-6">Not sure yet? <a href="#" class="text-ink underline underline-offset-2 hover:text-accent transition font-medium">Request a sample</a></p>
+
+        <hr class="border-line mb-6" />
+
+        <!-- Product meta -->
+        <dl class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+          <div class="col-span-2 sm:col-span-1">
+            <dt class="text-stone mb-0.5">Product Code</dt>
+            <dd class="font-medium">PB-RAB-001</dd>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <dt class="text-stone mb-0.5">Quantity</dt>
+            <dd class="font-medium">5,000 units</dd>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <dt class="text-stone mb-0.5">Material</dt>
+            <dd class="font-medium">Recycled Aluminium</dd>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <dt class="text-stone mb-0.5">Dimensions</dt>
+            <dd class="font-medium">L14.5cm &times; &Oslash;1.1cm</dd>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <dt class="text-stone mb-0.5">Colours Available</dt>
+            <dd class="font-medium">6</dd>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <dt class="text-stone mb-0.5">Lead Time</dt>
+            <dd class="font-medium">10&ndash;14 business days</dd>
+          </div>
+        </dl>
+
+
       </div>
 
-      <!-- Submit -->
-      <button type="submit"
-              :disabled="submitting"
-              :class="submitting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-ink'"
-              class="w-full flex items-center justify-center gap-2 bg-accent text-paper py-4 text-base font-bold tracking-widest transition">
-        <span x-text="submitting ? 'Sending…' : 'SEND QUOTE REQUEST'"></span>
-        <svg x-show="!submitting" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
-        <svg x-show="submitting" class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
-      </button>
-
-      <p class="text-xs text-stone/70 text-center">By submitting you agree to our <a href="#" class="underline hover:text-ink">Privacy Policy</a>.</p>
-
-    </form>
-
+    </div>
   </div>
 </section>
+
+<!-- =================== PROJECT DETAIL TABS =================== -->
+<div id="project-description" class="bg-paper border-b border-line">
+  <div class="max-w-8xl mx-auto px-4 lg:px-8 pb-10 lg:pb-[70px]">
+
+    <!-- Tab bar -->
+    <div class="border-b border-line mb-8">
+      <div class="flex gap-0">
+        <button id="tab-spec"
+                onclick="switchTab('spec')"
+                class="pdp-tab shrink-0 px-6 py-4 text-sm lg:text-lg font-bold border-b-2 border-ink text-ink -mb-px transition"
+                role="tab" aria-controls="panel-spec" aria-selected="true">
+          Specifications
+        </button>
+        <button id="tab-brand"
+                onclick="switchTab('brand')"
+                class="pdp-tab shrink-0 px-6 py-4 text-sm lg:text-lg font-bold border-b-2 border-transparent text-stone hover:text-ink -mb-px transition"
+                role="tab" aria-controls="panel-brand" aria-selected="false">
+          Branding Information
+        </button>
+      </div>
+    </div>
+
+    <!-- Panel: Specifications -->
+    <div id="panel-spec" role="tabpanel" aria-labelledby="tab-spec">
+      <table class="w-4/5 text-sm" aria-label="Product specifications">
+        <tbody class="divide-y divide-line">
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal w-1/2">Material</th><td class="py-3 font-medium">Post-consumer Recycled Aluminium</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Length</th><td class="py-3 font-medium">14.5cm</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Diameter</th><td class="py-3 font-medium">1.1cm</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Weight</th><td class="py-3 font-medium">18g</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Ink Type</th><td class="py-3 font-medium">Blue gel-ink refill</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Colours Available</th><td class="py-3 font-medium">6 (Silver, Black, Navy, Red, Green, White)</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Packaging</th><td class="py-3 font-medium">Individual FSC-certified kraft sleeve</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">MOQ</th><td class="py-3 font-medium">250 units</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Lead Time</th><td class="py-3 font-medium">10&ndash;14 business days</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Panel: Branding Information -->
+    <div id="panel-brand" role="tabpanel" aria-labelledby="tab-brand" class="hidden">
+      <table class="w-4/5 text-sm" aria-label="Branding information">
+        <tbody class="divide-y divide-line">
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal w-1/2">Print Area</th><td class="py-3 font-medium">Barrel &mdash; 4cm &times; 1cm</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Branding Methods</th><td class="py-3 font-medium">Screen Print, Laser Engraving, Pad Print</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Screen Print Colours</th><td class="py-3 font-medium">Up to 4 spot colours</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Laser Engraving</th><td class="py-3 font-medium">Single colour (silver reveal)</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Artwork Formats</th><td class="py-3 font-medium">AI, EPS, PDF (vector preferred)</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Free Artwork Setup</th><td class="py-3 font-medium">Yes &mdash; mock-up within 24&nbsp;hours</td></tr>
+          <tr><th class="text-left py-3 pr-8 text-stone font-normal">Free Virtual Sample</th><td class="py-3 font-medium">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
 
 
 
@@ -594,6 +575,77 @@
 
 </footer>
 
+<!-- =================== QUOTE MODAL =================== -->
+<div id="quote-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 lg:p-8" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+
+  <!-- Backdrop -->
+  <div id="quote-modal-overlay" class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Panel -->
+  <div class="relative w-full max-w-2xl bg-paper max-h-[90vh] overflow-y-auto shadow-2xl">
+
+    <!-- Header -->
+    <div class="sticky top-0 z-10 bg-paper flex items-center justify-between px-6 lg:px-8 py-5 border-b border-line">
+      <h2 id="quote-modal-title" class="display text-2xl">Product Inquiry</h2>
+      <button id="quote-modal-close" aria-label="Close" class="w-9 h-9 flex items-center justify-center text-stone hover:text-ink transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Form -->
+    <form id="quote-form" class="px-6 lg:px-8 py-7 space-y-5" onsubmit="return false;">
+
+      <!-- Name -->
+      <div>
+        <label class="block text-sm font-semibold mb-1.5" for="q-name">Name: <span class="text-accent">*</span></label>
+        <input type="text" id="q-name" name="name" required
+               class="w-full border border-line px-3 py-2.5 text-sm focus:outline-none focus:border-ink transition" />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-semibold mb-1.5" for="q-email">E-Mail: <span class="text-accent">*</span></label>
+        <input type="email" id="q-email" name="email" required
+               class="w-full border border-line px-3 py-2.5 text-sm focus:outline-none focus:border-ink transition" />
+      </div>
+
+      <!-- Subject -->
+      <div>
+        <label class="block text-sm font-semibold mb-1.5" for="q-subject">Subject: <span class="text-accent">*</span></label>
+        <input type="text" id="q-subject" name="subject" required
+               class="w-full border border-line px-3 py-2.5 text-sm focus:outline-none focus:border-ink transition" />
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label class="block text-sm font-semibold mb-1.5" for="q-message">Message: <span class="text-accent">*</span></label>
+        <textarea id="q-message" name="message" rows="5" required
+                  class="w-full border border-line px-3 py-2.5 text-sm focus:outline-none focus:border-ink transition resize-none"></textarea>
+      </div>
+
+      <!-- Upload File -->
+      <div>
+        <label class="block text-sm font-semibold mb-1.5">Upload File</label>
+        <input type="file" id="q-upload" name="upload"
+               accept=".pdf,.csv,.xls,.xlsx,.docx,.txt,.jpg,.jpeg,.png,.gif"
+               class="block text-sm text-stone file:mr-3 file:py-1.5 file:px-3 file:border file:border-line file:bg-paper file:text-xs file:font-medium file:cursor-pointer hover:file:border-ink transition" />
+        <p class="text-xs text-stone mt-1">Allow Extensions: pdf,csv,xls,xlsx,docx,txt,jpg,jpeg,png,gif</p>
+      </div>
+
+      <!-- Submit -->
+      <div class="pt-2">
+        <button type="submit" class="bg-accent text-paper px-8 py-2.5 text-sm font-bold hover:bg-ink transition">
+          Submit
+        </button>
+      </div>
+
+      <!-- Required note -->
+      <p class="text-xs text-accent">* These fields are Required.</p>
+
+    </form>
+  </div>
+</div>
+
 <!-- =================== MOBILE NAV DRAWER =================== -->
 <div id="mobile-nav" class="fixed inset-0 z-50 hidden lg:hidden">
   <div id="mobile-nav-overlay" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
@@ -620,6 +672,47 @@
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 <script>
+  /* Product tabs */
+  function switchTab(id) {
+    ['spec', 'brand'].forEach(function(p) {
+      document.getElementById('panel-' + p).classList.add('hidden');
+      var btn = document.getElementById('tab-' + p);
+      btn.classList.remove('border-ink', 'text-ink');
+      btn.classList.add('border-transparent', 'text-stone');
+      btn.setAttribute('aria-selected', 'false');
+    });
+    document.getElementById('panel-' + id).classList.remove('hidden');
+    var active = document.getElementById('tab-' + id);
+    active.classList.remove('border-transparent', 'text-stone');
+    active.classList.add('border-ink', 'text-ink');
+    active.setAttribute('aria-selected', 'true');
+  }
+
+  /* Quote Modal */
+  (function () {
+    var modal    = document.getElementById('quote-modal');
+    var overlay  = document.getElementById('quote-modal-overlay');
+    var closeBtn = document.getElementById('quote-modal-close');
+
+    window.openQuoteModal = function () {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+
   /* Mobile nav */
   (function () {
     var nav      = document.getElementById('mobile-nav');
